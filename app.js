@@ -6,6 +6,7 @@
 (function () {
   'use strict';
 
+  const IS_GITHUB_PAGES = typeof window !== 'undefined' && window.location && window.location.hostname.includes('github.io');
   const GITHUB_PAGES_BASE = 'https://diyorbekashurbekov.github.io/tende.jalyuzi/';
 
   function resolveImgUrl(url) {
@@ -13,13 +14,19 @@
     if (url.startsWith('http://') || url.startsWith('https://') || url.startsWith('data:')) {
       return url;
     }
-    const clean = url.replace(/^\/+/, '');
-    return encodeURI(clean);
+    const clean = String(url).replace(/^\/+/, '');
+    const encoded = encodeURI(clean);
+    if (IS_GITHUB_PAGES) {
+      return GITHUB_PAGES_BASE + encoded;
+    }
+    return encoded;
   }
 
   function getSafeOnError(rel) {
     if (!rel) return 'this.onerror=null;';
-    return "this.onerror=null; this.src='" + GITHUB_PAGES_BASE + encodeURI(this.getAttribute('data-rel')) + "';";
+    const clean = String(rel).replace(/^\/+/, '');
+    const fallback = GITHUB_PAGES_BASE + encodeURI(clean);
+    return "this.onerror=null; this.src='" + fallback + "';";
   }
 
   // ==========================================================================
@@ -534,6 +541,14 @@
       const mediaBox = card.querySelector('.case-card-media');
       const titleEl = card.querySelector('.case-title');
 
+      // Preload secondary frames so switching to the 2nd photo is instantaneous
+      if (photos.length > 1) {
+        photos.slice(1).forEach(pUrl => {
+          const pImg = new Image();
+          pImg.src = resolveImgUrl(pUrl);
+        });
+      }
+
       function switchAngle(idx) {
         if (photos.length <= 1) return;
         if (idx < 0) idx = photos.length - 1;
@@ -544,9 +559,17 @@
 
         if (mainImg) {
           mainImg.style.opacity = '0.35';
+          const cleanRel = (photoUrl || '').replace(/^\/+/, '');
+          mainImg.setAttribute('data-rel', cleanRel);
+          mainImg.onerror = function () {
+            this.onerror = null;
+            this.src = GITHUB_PAGES_BASE + encodeURI(cleanRel);
+          };
+          mainImg.onload = function () {
+            mainImg.style.opacity = '1';
+          };
           mainImg.src = resolveImgUrl(photoUrl);
-          mainImg.setAttribute('data-rel', (photoUrl || '').replace(/^\/+/, ''));
-          setTimeout(() => { mainImg.style.opacity = '1'; }, 100);
+          setTimeout(() => { if (mainImg) mainImg.style.opacity = '1'; }, 100);
         }
 
         storyBars.forEach((bar, bIdx) => {
@@ -575,9 +598,14 @@
         });
       });
 
-      // Mini-thumbnails click and hover
+      // Mini-thumbnails click, touch and hover
       angleThumbs.forEach((th, tIdx) => {
         th.addEventListener('click', (e) => {
+          e.stopPropagation();
+          switchAngle(tIdx);
+        });
+        th.addEventListener('touchend', (e) => {
+          e.preventDefault();
           e.stopPropagation();
           switchAngle(tIdx);
         });
@@ -801,13 +829,12 @@
     const viewerFilmstrip = document.getElementById('viewerFilmstrip');
 
     if (viewerImg) {
-      viewerImg.src = resolveImgUrl(currentPhoto);
+      const cleanRel = (currentPhoto || '').replace(/^\/+/, '');
       viewerImg.onerror = function() {
         this.onerror = null;
-        if (!currentPhoto.startsWith('images/bedroom/') && !currentPhoto.startsWith('images/kitchen/')) {
-          this.src = GITHUB_PAGES_BASE + (currentPhoto || '').replace(/^\/+/, '');
-        }
+        this.src = GITHUB_PAGES_BASE + encodeURI(cleanRel);
       };
+      viewerImg.src = resolveImgUrl(currentPhoto);
     }
     if (viewerTag) viewerTag.textContent = activeCase.tag || 'TENDE';
     if (viewerCounter) viewerCounter.textContent = `${activePhotoIndex + 1} / ${photos.length}`;

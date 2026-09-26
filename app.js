@@ -648,7 +648,7 @@
 
   function filterCases(category = 'all', searchQuery = '') {
     currentCategory = category;
-    displayedCount = 12;
+    displayedCount = 24;
 
     FILTERED_CASES = ALL_PROJECT_CASES.filter(c => {
       const matchCat = (category === 'all') || (c.category === category);
@@ -727,6 +727,7 @@
         viewModeStacksBtn.classList.remove('active');
         if (projectsGrid) projectsGrid.style.display = 'grid';
         if (projectsStacksView) projectsStacksView.style.display = 'none';
+        renderProjectsGrid();
       });
 
       viewModeStacksBtn.addEventListener('click', () => {

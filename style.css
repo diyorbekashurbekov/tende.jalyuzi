@@ -573,6 +573,28 @@ img {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
+  min-height: 240px;
+}
+
+.grid-loading-spinner {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 0;
+}
+
+.spinner-ring {
+  width: 42px;
+  height: 42px;
+  border: 3px solid rgba(0, 0, 0, 0.08);
+  border-top-color: var(--gold-accent, #B8933A);
+  border-radius: 50%;
+  animation: spinnerRotate 0.8s linear infinite;
+}
+
+@keyframes spinnerRotate {
+  to { transform: rotate(360deg); }
 }
 
 .case-card {
@@ -1176,6 +1198,26 @@ body.wm-mode-hidden .photo-watermark {
   }
   .hero-card-title {
     font-size: 2.75rem;
+  }
+  .catalog-filter-controls {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+  }
+  .search-input-box {
+    max-width: 100%;
+    width: 100%;
+  }
+  .view-switch-box {
+    display: flex;
+    width: 100%;
+    justify-content: stretch;
+  }
+  .view-btn {
+    flex: 1;
+    text-align: center;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.75rem;
   }
   /* Нағыз көркем тор / сетка (2-колонкалы мобилді сетка) */
   .projects-editorial-grid {

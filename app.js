@@ -1,0 +1,875 @@
+/* ==========================================================================
+   TENDE ARCHITECTURAL CATALOG 2026
+   White Modern Luxury Online Catalog Application Engine (app.js)
+   ========================================================================== */
+
+(function () {
+  'use strict';
+
+  const GITHUB_PAGES_BASE = 'https://diyorbekashurbekov.github.io/tende.jalyuzi/';
+
+  function resolveImgUrl(url) {
+    if (!url) return '';
+    if (url.startsWith('http://') || url.startsWith('https://') || url.startsWith('data:')) {
+      return url;
+    }
+    const clean = url.replace(/^\/+/, '');
+    // Bedroom & Kitchen images ONLY exist locally, always serve from localhost!
+    if (clean.startsWith('images/bedroom/') || clean.startsWith('images/kitchen/')) {
+      return clean;
+    }
+    if (window.location.hostname.includes('github.io')) {
+      return clean;
+    }
+    // On localhost, first use the local path:
+    return clean;
+  }
+
+  function getSafeOnError(rel) {
+    if (!rel || rel.startsWith('images/bedroom/') || rel.startsWith('images/kitchen/')) {
+      return 'this.onerror=null;';
+    }
+    return "this.onerror=null; this.src='https://diyorbekashurbekov.github.io/tende.jalyuzi/' + this.getAttribute('data-rel');";
+  }
+
+  // ==========================================================================
+  // 1. WATERMARK SWITCHER (ROSE GOLD / WHITE / HIDDEN)
+  // ==========================================================================
+  const WM_MODES = ['pink', 'white', 'hidden'];
+  let currentWmIndex = 0;
+
+  function setWatermarkMode(mode) {
+    document.body.classList.remove('wm-mode-white', 'wm-mode-hidden');
+    const wmIcon = document.getElementById('wmStateIcon');
+    const viewerWmIcon = document.getElementById('viewerWmStateIcon');
+    const mDockWmIcon = document.getElementById('mDockWmIcon');
+
+    let iconChar = '🌸';
+    if (mode === 'white') {
+      document.body.classList.add('wm-mode-white');
+      iconChar = '⚪';
+    } else if (mode === 'hidden') {
+      document.body.classList.add('wm-mode-hidden');
+      iconChar = '👁️';
+    }
+    if (wmIcon) wmIcon.textContent = iconChar;
+    if (viewerWmIcon) viewerWmIcon.textContent = iconChar;
+    if (mDockWmIcon) mDockWmIcon.textContent = iconChar;
+    localStorage.setItem('tende_wm_mode', mode);
+  }
+
+  function cycleWatermark() {
+    currentWmIndex = (currentWmIndex + 1) % WM_MODES.length;
+    setWatermarkMode(WM_MODES[currentWmIndex]);
+  }
+
+  // ==========================================================================
+  // TOUCH SWIPE GESTURE ENGINE (MOBILE ULTRA-SMOOTH TOUCH GESTURES)
+  // ==========================================================================
+  function attachSwipeGesture(element, onSwipeLeft, onSwipeRight) {
+    if (!element) return;
+    let startX = 0;
+    let startY = 0;
+    let startTime = 0;
+    let isSwiping = false;
+
+    element.addEventListener('touchstart', (e) => {
+      if (e.touches.length !== 1) return;
+      const t = e.touches[0];
+      startX = t.clientX;
+      startY = t.clientY;
+      startTime = Date.now();
+      isSwiping = true;
+    }, { passive: true });
+
+    element.addEventListener('touchend', (e) => {
+      if (!isSwiping || e.changedTouches.length !== 1) return;
+      isSwiping = false;
+      const t = e.changedTouches[0];
+      const deltaX = t.clientX - startX;
+      const deltaY = t.clientY - startY;
+      const elapsed = Date.now() - startTime;
+
+      // Ensure horizontal swipe is dominant and above 35px threshold
+      if (Math.abs(deltaX) > 35 && Math.abs(deltaX) > Math.abs(deltaY) * 1.2 && elapsed < 800) {
+        if (deltaX < 0) {
+          if (typeof onSwipeLeft === 'function') onSwipeLeft();
+        } else {
+          if (typeof onSwipeRight === 'function') onSwipeRight();
+        }
+      }
+    }, { passive: true });
+  }
+
+  // ==========================================================================
+  // HERO ARCHITECTURAL SLIDER (WIDE ANGLE LUXURY HERO PHOTOS)
+  // ==========================================================================
+  const HERO_SLIDES = [
+    {
+      img: 'images/zal/20240106_204902.jpg',
+      badge: 'ЗАЛ / ҚОНАҚ БӨЛМЕ • ГОСТИНАЯ',
+      title: 'TENDE',
+      sub: 'СӘУЛЕТТІК ЖАРЫҚ ПЕН АВТОРЛЫҚ ПЕРДЕЛЕР / ДИЗАЙНЕРСКИЕ ШТОРЫ'
+    },
+    {
+      img: 'images/zal/20230913_014509.jpg',
+      badge: 'ПРЕМИУМ КЛАССИКА • ЖАРЫҚ ОЙЫНЫ',
+      title: 'TENDE',
+      sub: 'ИТАЛЬЯНДЫҚ ЗЫҒЫР МЕН ТАБИҒИ ТЕКСТУРАЛАР / НАТУРАЛЬНЫЙ ТЕКСТИЛЬ'
+    },
+    {
+      img: 'images/holl/20221223_193122.jpg',
+      badge: 'ХОЛЛ / ПРИХОЖАЯ • БИІК ВИТРАЖДАР',
+      title: 'TENDE',
+      sub: 'ЕКІНШІ ЖАРЫҚТЫ КЕҢІСТІКТЕРГЕ АРНАЛҒАН ЖҮЙЕЛЕР / ВТОРОЙ СВЕТ'
+    }
+  ];
+  let currentHeroSlide = 0;
+  let heroAutoTimer = null;
+
+  function setHeroSlide(index) {
+    if (index < 0) index = HERO_SLIDES.length - 1;
+    if (index >= HERO_SLIDES.length) index = 0;
+    currentHeroSlide = index;
+
+    const data = HERO_SLIDES[currentHeroSlide];
+    const heroImg = document.getElementById('heroPureImg');
+    const heroBadge = document.getElementById('heroBadgeText');
+    const heroSub = document.getElementById('heroSubCaption');
+    const dots = document.querySelectorAll('#heroSliderDots .hero-dot');
+
+    if (heroImg) {
+      heroImg.style.opacity = '0.35';
+      heroImg.src = resolveImgUrl(data.img);
+      heroImg.setAttribute('data-rel', data.img);
+      setTimeout(() => { heroImg.style.opacity = '1'; }, 120);
+    }
+    if (heroBadge) heroBadge.textContent = data.badge;
+    if (heroSub) heroSub.textContent = data.sub;
+
+    dots.forEach((dot, dIdx) => {
+      dot.classList.toggle('active', dIdx === currentHeroSlide);
+    });
+  }
+
+  function startHeroAutoPlay() {
+    stopHeroAutoPlay();
+    heroAutoTimer = setInterval(() => {
+      setHeroSlide(currentHeroSlide + 1);
+    }, 6000);
+  }
+
+  function stopHeroAutoPlay() {
+    if (heroAutoTimer) clearInterval(heroAutoTimer);
+  }
+
+  function initHeroSlider() {
+    const heroMediaFrame = document.getElementById('heroMediaFrame');
+    const heroPrevBtn = document.getElementById('heroPrevBtn');
+    const heroNextBtn = document.getElementById('heroNextBtn');
+    const dots = document.querySelectorAll('#heroSliderDots .hero-dot');
+
+    if (heroPrevBtn) {
+      heroPrevBtn.addEventListener('click', () => {
+        stopHeroAutoPlay();
+        setHeroSlide(currentHeroSlide - 1);
+        startHeroAutoPlay();
+      });
+    }
+
+    if (heroNextBtn) {
+      heroNextBtn.addEventListener('click', () => {
+        stopHeroAutoPlay();
+        setHeroSlide(currentHeroSlide + 1);
+        startHeroAutoPlay();
+      });
+    }
+
+    dots.forEach((dot, dIdx) => {
+      dot.addEventListener('click', () => {
+        stopHeroAutoPlay();
+        setHeroSlide(dIdx);
+        startHeroAutoPlay();
+      });
+    });
+
+    if (heroMediaFrame) {
+      attachSwipeGesture(
+        heroMediaFrame,
+        () => {
+          stopHeroAutoPlay();
+          setHeroSlide(currentHeroSlide + 1);
+          startHeroAutoPlay();
+        },
+        () => {
+          stopHeroAutoPlay();
+          setHeroSlide(currentHeroSlide - 1);
+          startHeroAutoPlay();
+        }
+      );
+    }
+
+    setHeroSlide(0);
+    startHeroAutoPlay();
+  }
+
+  // ==========================================================================
+  // 2. CURATED 500+ PHOTO DATABASE
+  // ==========================================================================
+  let ALL_PROJECT_CASES = [];
+  let FILTERED_CASES = [];
+  let currentCategory = 'all';
+  let displayedCount = 12;
+
+  function buildDatabase() {
+    const cases = [];
+
+    // Grand Salon & Living cases
+    if (window.CURTAIN_CASES_DATA && window.CURTAIN_CASES_DATA.cases) {
+      window.CURTAIN_CASES_DATA.cases.forEach((c, idx) => {
+        const rawList = [c.mainPhoto, ...(c.sidePhotos || []), ...(c.allPhotos || [])].filter(Boolean);
+        const photos = Array.from(new Set(rawList));
+        const numStr = String(idx + 1).padStart(2, '0');
+        const title = (c.title ? c.title.replace(/^ЗАЛ/, 'ЗАЛ / ҚОНАҚ БӨЛМЕ') : '') || `ЗАЛ / ҚОНАҚ БӨЛМЕ • НЫСАН ${numStr}`;
+        cases.push({
+          id: `zal-${c.id || idx + 1}`,
+          category: 'zal',
+          title: title,
+          mainPhoto: photos[0] || c.mainPhoto,
+          sidePhotos: photos.slice(1),
+          allPhotos: photos,
+          count: photos.length,
+          tag: '01 / ЗАЛ • ҚОНАҚ БӨЛМЕ'
+        });
+      });
+    }
+
+    // Grand Foyer / Hall cases
+    if (window.HOLL_CASES_DATA && window.HOLL_CASES_DATA.stacks) {
+      window.HOLL_CASES_DATA.stacks.forEach((stack, sIdx) => {
+        (stack.cases || []).forEach((c, cIdx) => {
+          const main = c.mainPhoto || c.photo;
+          const rawList = [main, ...(c.sidePhotos || []), ...(c.allPhotos || [])].filter(Boolean);
+          const photos = Array.from(new Set(rawList));
+          const numStr = String(cIdx + 1).padStart(2, '0');
+          const title = (c.title ? c.title.replace(/^ХОЛЛ/, 'ХОЛЛ / ПРИХОЖАЯ') : '') || `ХОЛЛ / ПРИХОЖАЯ • НЫСАН ${numStr}`;
+          cases.push({
+            id: `holl-${c.id || sIdx * 20 + cIdx + 1}`,
+            category: 'holl',
+            title: title,
+            mainPhoto: photos[0] || main,
+            sidePhotos: photos.slice(1),
+            allPhotos: photos,
+            count: photos.length,
+            tag: '02 / ХОЛЛ • ПРИХОЖАЯ'
+          });
+        });
+      });
+    }
+
+    // Master Bedroom cases (176 photos, 79 cases)
+    if (window.BEDROOM_CASES_DATA && window.BEDROOM_CASES_DATA.cases) {
+      window.BEDROOM_CASES_DATA.cases.forEach((c, idx) => {
+        const rawList = [c.mainPhoto, ...(c.sidePhotos || []), ...(c.allPhotos || [])].filter(Boolean);
+        const photos = Array.from(new Set(rawList));
+        const numStr = String(idx + 1).padStart(2, '0');
+        const title = (c.title ? c.title.replace(/^ЖАТЫН/, 'ЖАТЫН / СПАЛЬНЯ') : '') || `ЖАТЫН / СПАЛЬНЯ • НЫСАН ${numStr}`;
+        cases.push({
+          id: `bedroom-${c.id || idx + 1}`,
+          category: 'bedroom',
+          title: title,
+          mainPhoto: photos[0] || c.mainPhoto,
+          sidePhotos: photos.slice(1),
+          allPhotos: photos,
+          count: photos.length,
+          tag: '03 / ЖАТЫН • СПАЛЬНЯ'
+        });
+      });
+    }
+
+    // Bespoke Kitchen cases (from Telegram: 77 photos, 43 projects)
+    if (window.KITCHEN_CASES_DATA && window.KITCHEN_CASES_DATA.cases) {
+      window.KITCHEN_CASES_DATA.cases.forEach((c, idx) => {
+        const rawList = [c.mainPhoto, ...(c.sidePhotos || []), ...(c.allPhotos || [])].filter(Boolean);
+        const photos = Array.from(new Set(rawList));
+        const numStr = String(idx + 1).padStart(2, '0');
+        const title = (c.title ? c.title.replace(/^АС ҮЙ/, 'АС ҮЙ / КУХНЯ') : '') || `АС ҮЙ / КУХНЯ • НЫСАН ${numStr}`;
+        cases.push({
+          id: `kitchen-${c.id || idx + 1}`,
+          category: 'asui',
+          title: title,
+          mainPhoto: photos[0] || c.mainPhoto,
+          sidePhotos: photos.slice(1),
+          allPhotos: photos,
+          count: photos.length,
+          tag: '05 / АС ҮЙ • КУХНЯ'
+        });
+      });
+    }
+
+    // Roman shades cases
+    if (window.RIM_CASES_DATA && window.RIM_CASES_DATA.stacks) {
+      window.RIM_CASES_DATA.stacks.forEach((stack, sIdx) => {
+        let cat = 'asui';
+        let tagName = '05 / АС ҮЙ • КУХНЯ';
+        let defaultPrefix = 'РИМ / АС ҮЙ • НЫСАН ';
+        if (sIdx === 1 || sIdx === 2) { 
+          cat = 'classic'; 
+          tagName = '06 / КЛАССИКА'; 
+          defaultPrefix = 'КЛАССИКА • НЫСАН ';
+        }
+        if (sIdx === 3) { 
+          cat = 'motor'; 
+          tagName = '07 / МОТОРЛЫ • ЭЛЕКТРО'; 
+          defaultPrefix = 'МОТОРЛЫ / ЭЛЕКТРО • НЫСАН ';
+        }
+
+        (stack.cases || []).forEach((c, cIdx) => {
+          const main = c.mainPhoto || c.photo;
+          const rawList = [main, ...(c.sidePhotos || []), ...(c.allPhotos || [])].filter(Boolean);
+          const photos = Array.from(new Set(rawList));
+          const numStr = String(cIdx + 1).padStart(2, '0');
+          const title = (c.title ? c.title.replace(/^РИМ/, cat === 'asui' ? 'РИМ / АС ҮЙ' : 'КЛАССИКА') : '') || `${defaultPrefix}${numStr}`;
+          cases.push({
+            id: `rim-${c.id || sIdx * 30 + cIdx + 1}`,
+            category: cat,
+            title: title,
+            mainPhoto: photos[0] || main,
+            sidePhotos: photos.slice(1),
+            allPhotos: photos,
+            count: photos.length,
+            tag: tagName
+          });
+        });
+      });
+    }
+
+    // Tulle specific
+    if (window.CURTAIN_CASES_DATA && window.CURTAIN_CASES_DATA.cases) {
+      const tulleItems = window.CURTAIN_CASES_DATA.cases.slice(10, 30);
+      tulleItems.forEach((c, idx) => {
+        const rawList = [c.mainPhoto, ...(c.sidePhotos || []), ...(c.allPhotos || [])].filter(Boolean);
+        const photos = Array.from(new Set(rawList));
+        const numStr = String(idx + 1).padStart(2, '0');
+        cases.push({
+          id: `tulle-${idx + 1}`,
+          category: 'tulle',
+          title: `ТЮЛЬ / МӨЛДІР • НЫСАН ${numStr}`,
+          mainPhoto: photos[0] || c.mainPhoto,
+          sidePhotos: photos.slice(1),
+          allPhotos: photos,
+          count: photos.length,
+          tag: '04 / ТЮЛЬ • МӨЛДІР'
+        });
+      });
+    }
+
+    // Taraz cases
+    if (window.CURTAIN_CASES_DATA && window.CURTAIN_CASES_DATA.tarazList) {
+      window.CURTAIN_CASES_DATA.tarazList.forEach((photo, idx) => {
+        const numStr = String(idx + 1).padStart(2, '0');
+        cases.push({
+          id: `taraz-${idx + 1}`,
+          category: 'taraz',
+          title: `ТАРАЗ ЖОБАЛАРЫ • НЫСАН ${numStr}`,
+          mainPhoto: photo,
+          sidePhotos: [],
+          allPhotos: [photo],
+          count: 1,
+          tag: '08 / ТАРАЗ • ЖОБАЛАР'
+        });
+      });
+    }
+
+    // Fallbacks
+    if (cases.length === 0) {
+      const fallbacks = [
+        { id: 'z1', category: 'zal', title: 'ЗАЛ • 01', mainPhoto: 'images/zal/20220505_223134.jpg', tag: '01 / ЗАЛ', count: 2 },
+        { id: 'h1', category: 'holl', title: 'ХОЛЛ • 02', mainPhoto: 'images/holl/02a8dc5268de5c37373368b763175d69.jpg', tag: '02 / ХОЛЛ', count: 3 },
+        { id: 'b1', category: 'bedroom', title: 'ЖАТЫН • 03', mainPhoto: 'images/bedroom/20221222_212022.jpg', tag: '03 / ЖАТЫН', count: 2 },
+        { id: 't1', category: 'tulle', title: 'ТЮЛЬ • 04', mainPhoto: 'images/zal/20240715_190351.jpg', tag: '04 / ТЮЛЬ', count: 2 },
+        { id: 'r1', category: 'asui', title: 'АС ҮЙ • 05', mainPhoto: 'images/rim/0A9kZ0tC_2weNTqIEmdENY5onRQmu6cRW5QwJDXwZgmlSY69ECYnzlmG8JCk5c_Z.jpg', tag: '05 / АС ҮЙ', count: 2 },
+        { id: 'c1', category: 'classic', title: 'КЛАССИКА • 06', mainPhoto: 'images/rim/IMG-20250826-WA0014.jpg', tag: '06 / КЛАССИКА', count: 3 },
+        { id: 'm1', category: 'motor', title: 'МОТОРЛЫ • 07', mainPhoto: 'images/rim/20231016_212545.jpg', tag: '07 / МОТОРЛЫ', count: 2 },
+        { id: 'tr1', category: 'taraz', title: 'ТАРАЗ • 08', mainPhoto: 'images/zal/Screenshot_20221111_155517_Instagram.jpg', tag: '08 / ТАРАЗ', count: 1 }
+      ];
+      fallbacks.forEach(f => cases.push({ ...f, allPhotos: [f.mainPhoto], sidePhotos: [] }));
+    }
+
+    return cases;
+  }
+
+  function updateCategoryBadges() {
+    const counts = {
+      all: ALL_PROJECT_CASES.length,
+      zal: ALL_PROJECT_CASES.filter(c => c.category === 'zal').length,
+      holl: ALL_PROJECT_CASES.filter(c => c.category === 'holl').length,
+      bedroom: ALL_PROJECT_CASES.filter(c => c.category === 'bedroom').length,
+      tulle: ALL_PROJECT_CASES.filter(c => c.category === 'tulle').length,
+      asui: ALL_PROJECT_CASES.filter(c => c.category === 'asui').length,
+      classic: ALL_PROJECT_CASES.filter(c => c.category === 'classic').length,
+      motor: ALL_PROJECT_CASES.filter(c => c.category === 'motor').length,
+      taraz: ALL_PROJECT_CASES.filter(c => c.category === 'taraz').length
+    };
+    const map = {
+      badgeAll: counts.all,
+      badgeZal: counts.zal,
+      badgeHoll: counts.holl,
+      badgeBedroom: counts.bedroom,
+      badgeTulle: counts.tulle,
+      badgeAsui: counts.asui,
+      badgeClassic: counts.classic,
+      badgeMotor: counts.motor,
+      badgeTaraz: counts.taraz
+    };
+    Object.entries(map).forEach(([id, val]) => {
+      const el = document.getElementById(id);
+      if (el) el.textContent = val;
+    });
+
+    const desktopButtons = document.querySelectorAll('#desktopNav .nav-pill');
+    desktopButtons.forEach(btn => {
+      const cat = btn.getAttribute('data-category');
+      const label = btn.querySelector('span');
+      if (label && counts[cat] !== undefined) {
+        if (cat === 'all') label.textContent = 'БАРЛЫҒЫ / ВСЕ';
+        else if (cat === 'zal') label.textContent = `ЗАЛ / ҚОНАҚ БӨЛМЕ (${counts.zal})`;
+        else if (cat === 'holl') label.textContent = `ХОЛЛ / ПРИХОЖАЯ (${counts.holl})`;
+        else if (cat === 'bedroom') label.textContent = `ЖАТЫН / СПАЛЬНЯ (${counts.bedroom})`;
+        else if (cat === 'tulle') label.textContent = `ТЮЛЬ (${counts.tulle})`;
+        else if (cat === 'asui') label.textContent = `АС ҮЙ / КУХНЯ (${counts.asui})`;
+        else if (cat === 'classic') label.textContent = `КЛАССИКА (${counts.classic})`;
+        else if (cat === 'motor') label.textContent = `МОТОРЛЫ / ЭЛЕКТРО (${counts.motor})`;
+        else if (cat === 'taraz') label.textContent = `ТАРАЗ (${counts.taraz})`;
+      }
+    });
+  }
+
+  function renderProjectsGrid() {
+    const grid = document.getElementById('projectsGrid');
+    if (!grid) return;
+
+    const visibleItems = FILTERED_CASES.slice(0, displayedCount);
+
+    if (visibleItems.length === 0) {
+      grid.innerHTML = `
+        <div style="grid-column: 1 / -1; text-align: center; padding: 4rem 0; color: var(--text-secondary);">
+          <p style="margin-bottom: 1rem; font-size: 1.05rem;">Бұл санат бойынша нәтиже табылмады / Ничего не найдено.</p>
+          <button class="btn-luxe-dark" id="resetFilterBtn">БАРЛЫҒЫН КӨРСЕТУ / ПОКАЗАТЬ ВСЕ</button>
+        </div>
+      `;
+      const btn = document.getElementById('resetFilterBtn');
+      if (btn) btn.addEventListener('click', () => filterCases('all', ''));
+      return;
+    }
+
+    grid.innerHTML = visibleItems.map(item => {
+      const photos = (item.allPhotos && item.allPhotos.length > 0) ? item.allPhotos : [item.mainPhoto];
+      const hasMultiple = photos.length > 1;
+      const initialImg = photos[0];
+
+      return `
+        <article class="case-card" data-case-id="${item.id}">
+          <div class="case-card-media" title="Үлкейтіп көру / Открыть на весь экран">
+            ${hasMultiple ? `
+              <div class="card-story-segments">
+                ${photos.map((_, i) => `<div class="story-segment-bar ${i === 0 ? 'active' : ''}" data-segment-idx="${i}"></div>`).join('')}
+              </div>
+              <button class="card-angle-arrow prev" data-dir="-1" title="Алдыңғы ракурс / Назад" aria-label="Предыдущий ракурс">‹</button>
+              <button class="card-angle-arrow next" data-dir="1" title="Келесі ракурс / Вперед" aria-label="Следующий ракурс">›</button>
+              <span class="swipe-hint-badge">‹ сырғытыңыз / свайп ›</span>
+            ` : ''}
+            <img src="${resolveImgUrl(initialImg)}" data-rel="${(initialImg || '').replace(/^\/+/, '')}" onerror="${getSafeOnError(initialImg)}" alt="${item.title}" class="case-card-img" loading="lazy">
+            <div class="photo-watermark">
+              <img src="assets/tende-logo-pink-512.png" alt="TENDE">
+            </div>
+            <span class="case-card-badge">${item.tag}</span>
+            <span class="case-photo-count">${hasMultiple ? `${photos.length} КАДР / ФОТО` : '1 ФОТО'}</span>
+          </div>
+
+          ${hasMultiple ? `
+            <div class="card-angle-thumbs-strip" title="Ракурсты таңдау / Выбрать ракурс">
+              <span class="angle-label-note">РАКУРСТАР / КАДРЫ:</span>
+              ${photos.map((p, pIdx) => `
+                <img src="${resolveImgUrl(p)}" data-rel="${(p || '').replace(/^\/+/, '')}" onerror="${getSafeOnError(p)}" class="angle-thumb-item ${pIdx === 0 ? 'active' : ''}" data-angle-idx="${pIdx}" title="${pIdx + 1}-кадр" alt="Кадр ${pIdx + 1}" loading="lazy">
+              `).join('')}
+            </div>
+          ` : ''}
+
+          <div class="case-card-body">
+            <h3 class="case-title">${item.title}</h3>
+            <a href="https://wa.me/77078458493?text=${encodeURIComponent(`Сәлеметсіз бе / Здравствуйте! TENDE онлайн каталогындағы мына жоба бойынша есептегім келеді: ${item.title} (${resolveImgUrl(initialImg)})`)}" target="_blank" class="case-wa-direct-btn">
+              ЕСЕПТЕУ / РАСЧЕТ ↗
+            </a>
+          </div>
+        </article>
+      `;
+    }).join('');
+
+    // Attach card interactive angle switching and click handlers
+    grid.querySelectorAll('.case-card').forEach(card => {
+      const cid = card.getAttribute('data-case-id');
+      const item = ALL_PROJECT_CASES.find(c => c.id === cid);
+      if (!item) return;
+
+      const photos = (item.allPhotos && item.allPhotos.length > 0) ? item.allPhotos : [item.mainPhoto];
+      let currentAngle = 0;
+
+      const mainImg = card.querySelector('.case-card-img');
+      const storyBars = card.querySelectorAll('.story-segment-bar');
+      const angleThumbs = card.querySelectorAll('.angle-thumb-item');
+      const waBtn = card.querySelector('.case-wa-direct-btn');
+      const mediaBox = card.querySelector('.case-card-media');
+      const titleEl = card.querySelector('.case-title');
+
+      function switchAngle(idx) {
+        if (photos.length <= 1) return;
+        if (idx < 0) idx = photos.length - 1;
+        if (idx >= photos.length) idx = 0;
+        currentAngle = idx;
+
+        const photoUrl = photos[currentAngle];
+
+        if (mainImg) {
+          mainImg.style.opacity = '0.35';
+          mainImg.src = resolveImgUrl(photoUrl);
+          mainImg.setAttribute('data-rel', (photoUrl || '').replace(/^\/+/, ''));
+          setTimeout(() => { mainImg.style.opacity = '1'; }, 100);
+        }
+
+        storyBars.forEach((bar, bIdx) => {
+          bar.classList.toggle('active', bIdx === currentAngle);
+        });
+
+        angleThumbs.forEach((th, tIdx) => {
+          th.classList.toggle('active', tIdx === currentAngle);
+          if (tIdx === currentAngle) {
+            th.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+          }
+        });
+
+        if (waBtn) {
+          const msg = `Сәлеметсіз бе! TENDE онлайн каталогындағы мына перде бойынша есептегім келеді: ${item.title} (Кадр ${currentAngle + 1}: ${resolveImgUrl(photoUrl)})`;
+          waBtn.href = `https://wa.me/77078458493?text=${encodeURIComponent(msg)}`;
+        }
+      }
+
+      // Prev / Next arrow buttons
+      card.querySelectorAll('.card-angle-arrow').forEach(arr => {
+        arr.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const dir = parseInt(arr.getAttribute('data-dir'), 10) || 1;
+          switchAngle(currentAngle + dir);
+        });
+      });
+
+      // Mini-thumbnails click and hover
+      angleThumbs.forEach((th, tIdx) => {
+        th.addEventListener('click', (e) => {
+          e.stopPropagation();
+          switchAngle(tIdx);
+        });
+        th.addEventListener('mouseenter', () => {
+          switchAngle(tIdx);
+        });
+      });
+
+      // Touch swipe on card media for phone users!
+      if (mediaBox && photos.length > 1) {
+        attachSwipeGesture(
+          mediaBox,
+          () => switchAngle(currentAngle + 1), // Swipe left -> Next frame
+          () => switchAngle(currentAngle - 1)  // Swipe right -> Prev frame
+        );
+      }
+
+      // Clicking main media opens Fullscreen Viewer directly at current angle
+      if (mediaBox) {
+        mediaBox.addEventListener('click', (e) => {
+          if (e.target.closest('.card-angle-arrow')) return;
+          openViewer(item, currentAngle);
+        });
+      }
+
+      if (titleEl) {
+        titleEl.addEventListener('click', (e) => {
+          e.stopPropagation();
+          openViewer(item, currentAngle);
+        });
+      }
+
+      if (waBtn) {
+        waBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+        });
+      }
+    });
+  }
+
+  function filterCases(category = 'all', searchQuery = '') {
+    currentCategory = category;
+    displayedCount = 12;
+
+    FILTERED_CASES = ALL_PROJECT_CASES.filter(c => {
+      const matchCat = (category === 'all') || (c.category === category);
+      const matchSearch = !searchQuery || 
+        c.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
+        c.tag.toLowerCase().includes(searchQuery.toLowerCase());
+      return matchCat && matchSearch;
+    });
+
+    // Update active tab buttons in header & toolbar
+    document.querySelectorAll('[data-category]').forEach(btn => {
+      btn.classList.toggle('active', btn.getAttribute('data-category') === category);
+    });
+
+    renderProjectsGrid();
+  }
+
+  function initCatalogEvents() {
+    // Category clicks (both header pills and toolbar pills)
+    document.querySelectorAll('[data-category]').forEach(pill => {
+      pill.addEventListener('click', (e) => {
+        const cat = pill.getAttribute('data-category');
+        const searchInput = document.getElementById('caseSearchInput');
+        const query = searchInput ? searchInput.value.trim() : '';
+        filterCases(cat, query);
+        pill.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+      });
+    });
+
+    // Search input
+    const searchInput = document.getElementById('caseSearchInput');
+    if (searchInput) {
+      searchInput.addEventListener('input', (e) => {
+        filterCases(currentCategory, e.target.value.trim());
+      });
+    }
+
+    // Load more
+    const loadMoreCasesBtn = document.getElementById('loadMoreCasesBtn');
+    if (loadMoreCasesBtn) {
+      loadMoreCasesBtn.addEventListener('click', () => {
+        displayedCount += 12;
+        renderProjectsGrid();
+        if (displayedCount >= FILTERED_CASES.length) {
+          loadMoreCasesBtn.style.display = 'none';
+        }
+      });
+    }
+
+    // View switch (Grid vs Stacks)
+    const viewModeGridBtn = document.getElementById('viewModeGridBtn');
+    const viewModeStacksBtn = document.getElementById('viewModeStacksBtn');
+    const projectsGrid = document.getElementById('projectsGrid');
+    const projectsStacksView = document.getElementById('projectsStacksView');
+
+    if (viewModeGridBtn && viewModeStacksBtn) {
+      viewModeGridBtn.addEventListener('click', () => {
+        viewModeGridBtn.classList.add('active');
+        viewModeStacksBtn.classList.remove('active');
+        if (projectsGrid) projectsGrid.style.display = 'grid';
+        if (projectsStacksView) projectsStacksView.style.display = 'none';
+      });
+
+      viewModeStacksBtn.addEventListener('click', () => {
+        viewModeStacksBtn.classList.add('active');
+        viewModeGridBtn.classList.remove('active');
+        if (projectsGrid) projectsGrid.style.display = 'none';
+        if (projectsStacksView) {
+          projectsStacksView.style.display = 'block';
+          renderStacksView();
+        }
+      });
+    }
+  }
+
+  function renderStacksView() {
+    const stacksGrid = document.getElementById('stacksGrid');
+    if (!stacksGrid) return;
+
+    const stackGroups = [
+      { title: 'ЗАЛ / ҚОНАҚ БӨЛМЕ (ГОСТИНАЯ)', cat: 'zal' },
+      { title: 'ХОЛЛ / ПРИХОЖАЯ (ВИТРАЖДАР)', cat: 'holl' },
+      { title: 'ЖАТЫН БӨЛМЕ (СПАЛЬНЯ)', cat: 'bedroom' },
+      { title: 'АС ҮЙ ЖӘНЕ РИМ (КУХНЯ)', cat: 'asui' },
+      { title: 'ЭФИРЛІ ТЮЛЬ (ТЮЛИ)', cat: 'tulle' },
+      { title: 'ИТАЛЬЯН КЛАССИКАСЫ (КЛАССИКА)', cat: 'classic' },
+      { title: 'МОТОРЛЫ ЖҮЙЕЛЕР (ЭЛЕКТРОКАРНИЗ)', cat: 'motor' },
+      { title: 'ТАРАЗ ЖОБАЛАРЫ (ПРОЕКТЫ ТАРАЗ)', cat: 'taraz' }
+    ];
+
+    stacksGrid.innerHTML = stackGroups.map(sg => {
+      const items = ALL_PROJECT_CASES.filter(c => c.category === sg.cat);
+      const slice = items.slice(0, 3);
+      const img1 = slice[0] ? resolveImgUrl(slice[0].mainPhoto) : '';
+      const img2 = slice[1] ? resolveImgUrl(slice[1].mainPhoto) : img1;
+      const img3 = slice[2] ? resolveImgUrl(slice[2].mainPhoto) : img1;
+
+      return `
+        <div class="stack-card" data-stack-cat="${sg.cat}">
+          <div class="stack-media-fan">
+            <img src="${img1}" class="stack-img-item" alt="Stack">
+            <img src="${img2}" class="stack-img-item" alt="Stack">
+            <img src="${img3}" class="stack-img-item" alt="Stack">
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1.25rem;">
+            <h4 style="font-family: var(--font-serif); font-size: 1.02rem; color: var(--text-primary);">${sg.title}</h4>
+            <span style="font-size: 0.72rem; color: var(--gold-dark); font-weight: 700;">${items.length} ЖОБА / ПРОЕКТ ✦</span>
+          </div>
+        </div>
+      `;
+    }).join('');
+
+    stacksGrid.querySelectorAll('.stack-card').forEach(card => {
+      card.addEventListener('click', () => {
+        const cat = card.getAttribute('data-stack-cat');
+        const viewModeGridBtn = document.getElementById('viewModeGridBtn');
+        if (viewModeGridBtn) viewModeGridBtn.click();
+        filterCases(cat);
+      });
+    });
+  }
+
+  // ==========================================================================
+  // 3. FULLSCREEN VIEWER / LIGHTBOX
+  // ==========================================================================
+  let activeCase = null;
+  let activePhotoIndex = 0;
+
+  function openViewer(caseItem, startIdx = 0) {
+    activeCase = caseItem;
+    activePhotoIndex = (typeof startIdx === 'number' && startIdx >= 0) ? startIdx : 0;
+
+    const viewer = document.getElementById('dhFullscreenViewer');
+    if (!viewer) return;
+
+    viewer.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    updateViewerContent();
+  }
+
+  function closeViewer() {
+    const viewer = document.getElementById('dhFullscreenViewer');
+    if (viewer) viewer.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  function updateViewerContent() {
+    if (!activeCase) return;
+
+    const photos = activeCase.allPhotos && activeCase.allPhotos.length > 0
+      ? activeCase.allPhotos
+      : [activeCase.mainPhoto];
+
+    const currentPhoto = photos[activePhotoIndex];
+
+    const viewerImg = document.getElementById('viewerImg');
+    const viewerTag = document.getElementById('viewerTag');
+    const viewerCounter = document.getElementById('viewerCounter');
+    const viewerWaLink = document.getElementById('viewerWaLink');
+    const viewerFilmstrip = document.getElementById('viewerFilmstrip');
+
+    if (viewerImg) {
+      viewerImg.src = resolveImgUrl(currentPhoto);
+      viewerImg.onerror = function() {
+        this.onerror = null;
+        if (!currentPhoto.startsWith('images/bedroom/') && !currentPhoto.startsWith('images/kitchen/')) {
+          this.src = GITHUB_PAGES_BASE + (currentPhoto || '').replace(/^\/+/, '');
+        }
+      };
+    }
+    if (viewerTag) viewerTag.textContent = activeCase.tag || 'TENDE';
+    if (viewerCounter) viewerCounter.textContent = `${activePhotoIndex + 1} / ${photos.length}`;
+
+    if (viewerWaLink) {
+      const msg = `Сәлеметсіз бе / Здравствуйте! Мені мына жоба қызықтырды / Интересует проект: ${activeCase.title} (${resolveImgUrl(currentPhoto)}). Бағасын білгім келеді / Подскажите стоимость?`;
+      viewerWaLink.href = `https://wa.me/77078458493?text=${encodeURIComponent(msg)}`;
+    }
+
+    if (viewerFilmstrip) {
+      viewerFilmstrip.innerHTML = photos.map((p, idx) => `
+        <img src="${resolveImgUrl(p)}" onerror="${getSafeOnError(p)}" class="filmstrip-thumb ${idx === activePhotoIndex ? 'active' : ''}" data-idx="${idx}" alt="Thumb">
+      `).join('');
+
+      viewerFilmstrip.querySelectorAll('.filmstrip-thumb').forEach(th => {
+        th.addEventListener('click', () => {
+          activePhotoIndex = parseInt(th.getAttribute('data-idx'), 10);
+          updateViewerContent();
+        });
+      });
+    }
+  }
+
+  function initViewerEvents() {
+    const viewerCloseBtn = document.getElementById('viewerCloseBtn');
+    const viewerNextBtn = document.getElementById('viewerNextBtn');
+    const viewerPrevBtn = document.getElementById('viewerPrevBtn');
+    const viewerWmToggleBtn = document.getElementById('viewerWmToggleBtn');
+    const viewerStage = document.querySelector('.viewer-stage');
+
+    if (viewerCloseBtn) viewerCloseBtn.addEventListener('click', closeViewer);
+    if (viewerNextBtn) viewerNextBtn.addEventListener('click', () => {
+      if (!activeCase) return;
+      const photos = activeCase.allPhotos || [activeCase.mainPhoto];
+      activePhotoIndex = (activePhotoIndex + 1) % photos.length;
+      updateViewerContent();
+    });
+    if (viewerPrevBtn) viewerPrevBtn.addEventListener('click', () => {
+      if (!activeCase) return;
+      const photos = activeCase.allPhotos || [activeCase.mainPhoto];
+      activePhotoIndex = (activePhotoIndex - 1 + photos.length) % photos.length;
+      updateViewerContent();
+    });
+    if (viewerWmToggleBtn) viewerWmToggleBtn.addEventListener('click', cycleWatermark);
+
+    // Mobile touch swipe inside Fullscreen Lightbox
+    if (viewerStage) {
+      attachSwipeGesture(
+        viewerStage,
+        () => { if (viewerNextBtn) viewerNextBtn.click(); }, // Swipe left -> Next
+        () => { if (viewerPrevBtn) viewerPrevBtn.click(); }  // Swipe right -> Prev
+      );
+    }
+
+    window.addEventListener('keydown', (e) => {
+      const viewer = document.getElementById('dhFullscreenViewer');
+      if (!viewer || !viewer.classList.contains('open')) return;
+      if (e.key === 'Escape') closeViewer();
+      if (e.key === 'ArrowRight' && viewerNextBtn) viewerNextBtn.click();
+      if (e.key === 'ArrowLeft' && viewerPrevBtn) viewerPrevBtn.click();
+    });
+  }
+
+  // ==========================================================================
+  // INITIALIZATION
+  // ==========================================================================
+  document.addEventListener('DOMContentLoaded', () => {
+    initHeroSlider();
+
+    ALL_PROJECT_CASES = buildDatabase();
+    FILTERED_CASES = [...ALL_PROJECT_CASES];
+    updateCategoryBadges();
+
+    const scrollProgressBar = document.getElementById('scrollProgressBar');
+    window.addEventListener('scroll', () => {
+      const totalScroll = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = (window.scrollY / totalScroll) * 100;
+      if (scrollProgressBar) scrollProgressBar.style.width = `${progress}%`;
+    });
+
+    const wmToggleBtn = document.getElementById('wmToggleBtn');
+    const mDockWmToggle = document.getElementById('mDockWmToggle');
+    if (wmToggleBtn) wmToggleBtn.addEventListener('click', cycleWatermark);
+    if (mDockWmToggle) mDockWmToggle.addEventListener('click', cycleWatermark);
+
+    initCatalogEvents();
+    initViewerEvents();
+
+    renderProjectsGrid();
+
+    const savedWm = localStorage.getItem('tende_wm_mode') || 'pink';
+    setWatermarkMode(savedWm);
+  });
+
+})();

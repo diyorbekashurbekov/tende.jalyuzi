@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="kk" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>TENDE • ARCHITECTURAL CATALOG 2026</title>
+  
+  <meta name="description" content="TENDE — Сәулеттік перделер мен интеллектуалды жалюзилердің ақ премиум онлайн каталогы. 500+ нақты фото-кейстер.">
+  <meta property="og:title" content="TENDE • Архитектуралық Онлайн Каталог">
+  <meta property="og:image" content="assets/tende-logo-pink-512.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/tende-logo-pink-512.png">
+
+  <!-- Google Fonts: Luxury Serif & Precision Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css?v=2026_white_luxe_v9">
+</head>
+<body class="luxury-app white-luxe-mode">
+
+  <!-- ======================================================================
+       1. СӘУЛЕТТІК АҚ ХЭДЕР (MINIMAL ARCHITECTURAL TOPBAR)
+       ====================================================================== -->
+  <header class="luxury-header" id="mainHeader">
+    <div class="header-container">
+      
+      <!-- Бренд логотипі -->
+      <a href="#catalog" class="brand-link" id="brandHomeLink">
+        <div class="brand-emblem-box">
+          <img src="assets/tende-logo-pink-512.png" alt="TENDE" class="brand-logo-img" id="headerLogoImg">
+        </div>
+        <div class="brand-meta">
+          <span class="brand-title">TENDE</span>
+          <span class="brand-subtitle">ARCHITECTURAL TEXTILES</span>
+        </div>
+      </a>
+
+      <!-- Орталық жылдам навигация (Sticky Pills) -->
+      <nav class="header-nav catalog-nav-pills" id="desktopNav">
+        <button class="nav-pill active" data-category="all"><span>БАРЛЫҒЫ / ВСЕ</span></button>
+        <button class="nav-pill" data-category="zal"><span>ЗАЛ / ҚОНАҚ БӨЛМЕ (68)</span></button>
+        <button class="nav-pill" data-category="holl"><span>ХОЛЛ / ПРИХОЖАЯ (58)</span></button>
+        <button class="nav-pill" data-category="bedroom"><span>ЖАТЫН / СПАЛЬНЯ (79)</span></button>
+        <button class="nav-pill" data-category="tulle"><span>ТЮЛЬ (20)</span></button>
+        <button class="nav-pill" data-category="asui"><span>АС ҮЙ / КУХНЯ (65)</span></button>
+        <button class="nav-pill" data-category="classic"><span>КЛАССИКА (21)</span></button>
+        <button class="nav-pill" data-category="motor"><span>МОТОРЛЫ / ЭЛЕКТРО (21)</span></button>
+        <button class="nav-pill" data-category="taraz"><span>ТАРАЗ (35)</span></button>
+      </nav>
+
+      <!-- Оң жақ: Таңба түймесі және WhatsApp -->
+      <div class="header-actions">
+        <!-- Таңба ауыстыру -->
+        <button class="wm-toggle-btn" id="wmToggleBtn" title="Таңба (🌸 / ⚪ / Жоқ)">
+          <span class="wm-icon" id="wmStateIcon">🌸</span>
+        </button>
+
+        <!-- WhatsApp батырмасы -->
+        <a href="https://wa.me/77078458493?text=Сәлеметсіз+бе!+TENDE+онлайн+каталогы+бойынша+кеңес+алғым+келеді." target="_blank" class="vip-wa-btn" id="headerWaBtn">
+          <span class="wa-status-pulse"></span>
+          <span class="wa-btn-text">+7 707 845 84 93</span>
+          <span class="wa-btn-arrow">↗</span>
+        </a>
+      </div>
+
+    </div>
+
+    <!-- Индикатор жолағы -->
+    <div class="header-scroll-progress" id="scrollProgressBar"></div>
+  </header>
+
+  <!-- ======================================================================
+       2. ЧИСТЫЙ МУЗЕЙЛІК HERO (AMERICAN EDITORIAL HERO)
+       ====================================================================== -->
+  <section class="hero-white-gallery" id="hero">
+    <div class="section-container">
+      <div class="hero-card-frame">
+        <div class="hero-card-media" id="heroMediaFrame">
+          <img src="images/zal/20240106_204902.jpg" data-rel="images/zal/20240106_204902.jpg" onerror="this.onerror=null; this.src='https://diyorbekashurbekov.github.io/tende.jalyuzi/images/zal/20240106_204902.jpg';" alt="TENDE Architecture" class="hero-card-img" id="heroPureImg">
+          <div class="photo-watermark">
+            <img src="assets/tende-logo-pink-512.png" alt="TENDE">
+          </div>
+          
+          <!-- Hero Слайдер навигациясы (Нүктелер мен Бағыттауыштар) -->
+          <div class="hero-slider-nav" id="heroSliderNav">
+            <button class="hero-arrow-btn prev" id="heroPrevBtn" aria-label="Алдыңғы слайд" title="Алдыңғы фото">‹</button>
+            <div class="hero-slider-dots" id="heroSliderDots">
+              <span class="hero-dot active" data-slide="0" title="1-ракурс"></span>
+              <span class="hero-dot" data-slide="1" title="2-ракурс"></span>
+              <span class="hero-dot" data-slide="2" title="3-ракурс"></span>
+            </div>
+            <button class="hero-arrow-btn next" id="heroNextBtn" aria-label="Келесі слайд" title="Келесі фото">›</button>
+          </div>
+
+          <div class="hero-card-overlay">
+            <div class="hero-card-badge" id="heroBadgeText">ЗАЛ / ҚОНАҚ БӨЛМЕ • ГОСТИНАЯ</div>
+            <h1 class="hero-card-title">TENDE</h1>
+            <div class="hero-card-sub" id="heroSubCaption">СӘУЛЕТТІК ЖАРЫҚ ПЕН АВТОРЛЫҚ ПЕРДЕЛЕР / ДИЗАЙНЕРСКИЕ ШТОРЫ</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       3. БАСТЫ ОНЛАЙН КАТАЛОГ (500+ НАҚТЫ ФОТО, ЖҮЙРІК СҮЗГІЛЕР)
+       ====================================================================== -->
+  <section class="section catalog-gallery-section" id="catalog">
+    <div class="section-container">
+      
+      <!-- Сүзгілер және іздеу панелі -->
+      <div class="catalog-action-bar">
+        
+        <!-- Санаттар таспасы -->
+        <div class="category-tabs-scroll">
+          <div class="category-tabs-track" id="categoryTabsTrack">
+            <button class="cat-pill active" data-category="all">
+              <span class="cat-icon">✦</span>
+              <span class="cat-name">БАРЛЫҒЫ / ВСЕ</span>
+              <span class="cat-badge" id="badgeAll">367</span>
+            </button>
+            <button class="cat-pill" data-category="zal">
+              <span class="cat-num">01</span>
+              <span class="cat-name">ЗАЛ / ҚОНАҚ БӨЛМЕ</span>
+              <span class="cat-badge" id="badgeZal">68</span>
+            </button>
+            <button class="cat-pill" data-category="holl">
+              <span class="cat-num">02</span>
+              <span class="cat-name">ХОЛЛ / ПРИХОЖАЯ</span>
+              <span class="cat-badge" id="badgeHoll">58</span>
+            </button>
+            <button class="cat-pill" data-category="bedroom">
+              <span class="cat-num">03</span>
+              <span class="cat-name">ЖАТЫН БӨЛМЕ / СПАЛЬНЯ</span>
+              <span class="cat-badge" id="badgeBedroom">79</span>
+            </button>
+            <button class="cat-pill" data-category="tulle">
+              <span class="cat-num">04</span>
+              <span class="cat-name">ТЮЛЬ / МӨЛДІР ШТОРА</span>
+              <span class="cat-badge" id="badgeTulle">20</span>
+            </button>
+            <button class="cat-pill" data-category="asui">
+              <span class="cat-num">05</span>
+              <span class="cat-name">АС ҮЙ / КУХНЯ</span>
+              <span class="cat-badge" id="badgeAsui">65</span>
+            </button>
+            <button class="cat-pill" data-category="classic">
+              <span class="cat-num">06</span>
+              <span class="cat-name">КЛАССИКА / КЛАССИЧЕСКИЕ</span>
+              <span class="cat-badge" id="badgeClassic">21</span>
+            </button>
+            <button class="cat-pill" data-category="motor">
+              <span class="cat-num">07</span>
+              <span class="cat-name">МОТОРЛЫ / ЭЛЕКТРОКАРНИЗ</span>
+              <span class="cat-badge" id="badgeMotor">21</span>
+            </button>
+            <button class="cat-pill" data-category="taraz">
+              <span class="cat-num">08</span>
+              <span class="cat-name">ТАРАЗ ЖОБАЛАРЫ / ПРОЕКТЫ</span>
+              <span class="cat-badge" id="badgeTaraz">35</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Іздеу жолағы мен Режим ауыстырғыш -->
+        <div class="catalog-filter-controls">
+          <div class="search-input-box">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="caseSearchInput" placeholder="Нысан немесе бөлме бойынша іздеу / Поиск по каталогу...">
+          </div>
+          <div class="view-switch-box">
+            <button class="view-btn active" id="viewModeGridBtn" title="Көркем тор / Сетка">⊞ ТОР / СЕТКА</button>
+            <button class="view-btn" id="viewModeStacksBtn" title="Жинақталған стопка / Стопки">☷ ЖИНАҚ / СТОПКИ</button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Фото галереясы (Museum Gallery Grid) -->
+      <div class="projects-editorial-grid" id="projectsGrid">
+        <div class="grid-loading-spinner">
+          <div class="spinner-ring"></div>
+        </div>
+      </div>
+
+      <!-- 3D Тактильді Стектер режимі -->
+      <div class="projects-stacks-viewport" id="projectsStacksView" style="display: none;">
+        <div class="stacks-editorial-grid" id="stacksGrid"></div>
+      </div>
+
+      <!-- Төменгі түймелер -->
+      <div class="catalog-bottom-cta">
+        <button class="btn-luxe-white" id="loadMoreCasesBtn">
+          <span>ТАҒЫ КӨРСЕТУ / ПОКАЗАТЬ ЕЩЕ ↓</span>
+        </button>
+        <a href="https://wa.me/77078458493?text=Сәлеметсіз+бе!+TENDE+каталогындағы+барлық+маталар+бойынша+кеңес+алғым+келеді." target="_blank" class="btn-luxe-dark">
+          <span>ТОЛЫҚ КАТАЛОГ WHATSAPP / ЗАПРОС КАТАЛОГА ↗</span>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       4. ТОЛЫҚ ЭКРАНДЫ МҰРАЖАЙЛЫҚ КӨРУ (LIGHTBOX 2.0)
+       ====================================================================== -->
+  <div class="dh-fullscreen-viewer" id="dhFullscreenViewer">
+    <div class="viewer-top-bar">
+      <div class="viewer-meta">
+        <span class="viewer-tag" id="viewerTag">TENDE</span>
+        <span class="viewer-counter" id="viewerCounter">01 / 01</span>
+      </div>
+
+      <div class="viewer-actions">
+        <button class="viewer-btn" id="viewerWmToggleBtn" title="Таңба ауыстыру / Сменить знак">
+          <span id="viewerWmStateIcon">🌸</span>
+        </button>
+        <a href="#" id="viewerWaLink" target="_blank" class="viewer-btn-wa" title="WhatsApp-та есептеу / Расчет стоимости">
+          <span>WHATSAPP-ТА ЕСЕПТЕУ / РАСЧЕТ ↗</span>
+        </a>
+        <button class="viewer-btn-close" id="viewerCloseBtn" title="Жабу (Esc)">✕</button>
+      </div>
+    </div>
+
+    <div class="viewer-stage" id="viewerStage">
+      <button class="viewer-arrow prev" id="viewerPrevBtn" title="Алдыңғы">‹</button>
+      <div class="viewer-photo-wrap" id="viewerPhotoWrap">
+        <img src="" alt="TENDE" id="viewerImg" class="viewer-img">
+        <div class="photo-watermark viewer-wm" id="viewerWatermark">
+          <img src="assets/tende-logo-pink-512.png" alt="TENDE" class="wm-img-target" id="viewerWatermarkImg">
+        </div>
+      </div>
+      <button class="viewer-arrow next" id="viewerNextBtn" title="Келесі">›</button>
+    </div>
+
+    <div class="viewer-bottom-bar">
+      <div class="viewer-filmstrip" id="viewerFilmstrip"></div>
+    </div>
+  </div>
+
+  <!-- ======================================================================
+       6. МИНИМАЛИСТІК АҚ ФУТЕР
+       ====================================================================== -->
+  <footer class="clean-luxe-footer">
+    <div class="section-container">
+      <div class="footer-clean-inner">
+        <div class="footer-clean-brand">
+          <img src="assets/tende-logo-pink-512.png" alt="TENDE" class="footer-clean-logo">
+          <span>TENDE ARCHITECTURAL SHADING</span>
+        </div>
+        <div class="footer-clean-links">
+          <a href="https://wa.me/77078458493" target="_blank" class="footer-wa-link">
+            <span>WHATSAPP: +7 707 845 84 93</span>
+          </a>
+          <a href="https://instagram.com/tende.jalyuzi" target="_blank" class="footer-ig-link">
+            <span>INSTAGRAM: @tende.jalyuzi</span>
+          </a>
+          <span class="footer-copy">ТАРАЗ • 2026</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ======================================================================
+       7. МОБИЛЬДІ АҚ ДОК
+       ====================================================================== -->
+  <nav class="mobile-luxury-dock" id="mobileLuxuryDock">
+    <a href="#catalog" class="m-dock-btn active">
+      <span class="m-icon">✦</span>
+      <span class="m-label">КАТАЛОГ / ВСЕ</span>
+    </a>
+    <button class="m-dock-btn" id="mDockWmToggle">
+      <span class="m-icon" id="mDockWmIcon">🌸</span>
+      <span class="m-label">ТАҢБА / ЗНАК</span>
+    </button>
+    <a href="https://wa.me/77078458493?text=Сәлеметсіз+бе!+TENDE+бойынша+кеңес+алғым+келеді." target="_blank" class="m-dock-btn m-dock-wa">
+      <span class="m-icon">💬</span>
+      <span class="m-label">WHATSAPP</span>
+    </a>
+  </nav>
+
+  <script src="curtain_data.js"></script>
+  <script src="holl_data.js"></script>
+  <script src="bedroom_data.js"></script>
+  <script src="kitchen_data.js"></script>
+  <script src="rim_data.js"></script>
+  <script src="app.js?v=2026_white_luxe_v9"></script>
+</body>
+</html>

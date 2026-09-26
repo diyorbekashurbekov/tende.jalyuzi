@@ -1,0 +1,537 @@
+{
+  "id": "holl",
+  "num": "02",
+  "title": "ХОЛЛ МЕН КІРЕБЕРІС КЕҢІСТІГІ",
+  "titleEn": "GRAND FOYER & STAIRCASE BESPOKE",
+  "cover": "images/holl/02a8dc5268de5c37373368b763175d69.jpg",
+  "totalCases": 58,
+  "stacks": [
+    {
+      "id": "holl-stack-1",
+      "title": "БИІК ВИТРАЖДЫ ХОЛЛДАР",
+      "desc": "Екінші жарығы бар, биік төбелі сәулеттік кеңістіктерге арналған монументалды перделер.",
+      "cases": [
+        {
+          "id": 701,
+          "title": "ХОЛЛ • НЫСАН 01",
+          "mainPhoto": "images/holl/02a8dc5268de5c37373368b763175d69.jpg",
+          "sidePhotos": [],
+          "count": 1
+        },
+        {
+          "id": 702,
+          "title": "ХОЛЛ • НЫСАН 02",
+          "mainPhoto": "images/holl/20221222_212032.jpg",
+          "sidePhotos": [],
+          "count": 1
+        },
+        {
+          "id": 703,
+          "title": "ХОЛЛ • НЫСАН 03",
+          "mainPhoto": "images/holl/20221223_193122.jpg",
+          "sidePhotos": [
+            "images/holl/20221223_193137.jpg",
+            "images/holl/20221223_193142.jpg"
+          ],
+          "count": 3
+        },
+        {
+          "id": 704,
+          "title": "ХОЛЛ • НЫСАН 04",
+          "mainPhoto": "images/holl/20230404_220120.jpg",
+          "sidePhotos": [
+            "images/holl/20230404_220146.jpg"
+          ],
+          "count": 2
+        },
+        {
+          "id": 705,
+          "title": "ХОЛЛ • НЫСАН 05",
+          "mainPhoto": "images/holl/20230522_213415.jpg",
+          "sidePhotos": [
+            "images/holl/20230522_213422.jpg"
+          ],
+          "count": 2
+        },
+        {
+          "id": 706,
+          "title": "ХОЛЛ • НЫСАН 06",
+          "mainPhoto": "images/holl/20230922_225154.jpg",
+          "sidePhotos": [
+            "images/holl/20230922_225341.jpg",
+            "images/holl/20230922_225355.jpg"
+          ],
+          "count": 3
+        },
+        {
+          "id": 707,
+          "title": "ХОЛЛ • НЫСАН 07",
+          "mainPhoto": "images/holl/20230928_025359.jpg",
+          "sidePhotos": [
+            "images/holl/20230928_025439.jpg",
+            "images/holl/20230928_025458.jpg"
+          ],
+          "count": 3
+        },
+        {
+          "id": 708,
+          "title": "ХОЛЛ • НЫСАН 08",
+          "mainPhoto": "images/holl/20231016_213104.jpg",
+          "sidePhotos": [
+            "images/holl/20231016_213111.jpg",
+            "images/holl/20231016_213128.jpg",
+            "images/holl/20231016_213155.jpg",
+            "images/holl/20231016_213205.jpg",
+            "images/holl/20231016_213220.jpg"
+          ],
+          "count": 6
+        },
+        {
+          "id": 709,
+          "title": "ХОЛЛ • НЫСАН 09",
+          "mainPhoto": "images/holl/20231225_215214.jpg",
+          "sidePhotos": [
+            "images/holl/20231225_215227.jpg",
+            "images/holl/20231225_215231.jpg",
+            "images/holl/20231225_215525.jpg",
+            "images/holl/20231225_215606.jpg",
+            "images/holl/20231225_215656.jpg"
+          ],
+          "count": 6
+        },
+        {
+          "id": 710,
+          "title": "ХОЛЛ • НЫСАН 10",
+          "mainPhoto": "images/holl/20240109_224148.jpg",
+          "sidePhotos": [
+            "images/holl/20240109_224455.jpg"
+          ],
+          "count": 2
+        },
+        {
+          "id": 711,
+          "title": "ХОЛЛ • НЫСАН 11",
+          "mainPhoto": "images/holl/20240119_202934.jpg",
+          "sidePhotos": [
+            "images/holl/20240119_203008__2_.jpg",
+            "images/holl/20240119_203106.jpg",
+            "images/holl/20240119_204017.jpg",
+            "images/holl/20240119_204234.jpg",
+            "images/holl/20240119_204239.jpg"
+          ],
+          "count": 6
+        },
+        {
+          "id": 712,
+          "title": "ХОЛЛ • НЫСАН 12",
+          "mainPhoto": "images/holl/20240907_230012.jpg",
+          "sidePhotos": [
+            "images/holl/20240907_230023.jpg",
+            "images/holl/20240907_230032.jpg"
+          ],
+          "count": 3
+        },
+        {
+          "id": 713,
+          "title": "ХОЛЛ • НЫСАН 13",
+          "mainPhoto": "images/holl/20241128_223430.jpg",
+          "sidePhotos": [
+            "images/holl/20241128_223458.jpg"
+          ],
+          "count": 2
+        },
+        {
+          "id": 714,
+          "title": "ХОЛЛ • НЫСАН 14",
+          "mainPhoto": "images/holl/20260216_220325.jpg",
+          "sidePhotos": [
+            "images/holl/20260216_220415.jpg"
+          ],
+          "count": 2
+        },
+        {
+          "id": 715,
+          "title": "ХОЛЛ • НЫСАН 15",
+          "mainPhoto": "images/holl/20260301_231521.jpg",
+          "sidePhotos": [],
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "holl-stack-2",
+      "title": "КІРЕБЕРІС ЖӘНЕ ЖАРЫҚ ОЙЫНЫ",
+      "desc": "Күндізгі жұмсақ жарықты сүзгіден өткізетін премиум түлдер мен сәнді жалюзилер.",
+      "cases": [
+        {
+          "id": 716,
+          "title": "ХОЛЛ • НЫСАН 16",
+          "mainPhoto": "images/holl/20260318_213204.jpg",
+          "sidePhotos": [],
+          "count": 1
+        },
+        {
+          "id": 717,
+          "title": "ХОЛЛ • НЫСАН 17",
+          "mainPhoto": "images/holl/20260520_224815.jpg",
+          "sidePhotos": [
+            "images/holl/20260520_224831.jpg",
+            "images/holl/20260520_224859.jpg",
+            "images/holl/20260520_225729.jpg",
+            "images/holl/20260520_225740.jpg",
+            "images/holl/20260520_225749.jpg"
+          ],
+          "count": 6
+        },
+        {
+          "id": 718,
+          "title": "ХОЛЛ • НЫСАН 18",
+          "mainPhoto": "images/holl/20260611_223944.jpg",
+          "sidePhotos": [
+            "images/holl/20260611_224037.jpg"
+          ],
+          "count": 2
+        },
+        {
+          "id": 719,
+          "title": "ХОЛЛ • НЫСАН 19",
+          "mainPhoto": "images/holl/20260612_111329.jpg",
+          "sidePhotos": [
+            "images/holl/20260612_111359.jpg"
+          ],
+          "count": 2
+        },
+        {
+          "id": 720,
+          "title": "ХОЛЛ • НЫСАН 20",
+          "mainPhoto": "images/holl/20260711_111658.jpg",
+          "sidePhotos": [
+            "images/holl/20260711_114312.jpg",
+            "images/holl/20260711_114332.jpg"
+          ],
+          "count": 3
+        },
+        {
+          "id": 721,
+          "title": "ХОЛЛ • НЫСАН 21",
+          "mainPhoto": "images/holl/20260802_185854.jpg",
+          "sidePhotos": [],
+          "count": 1
+        },
+        {
+          "id": 722,
+          "title": "ХОЛЛ • НЫСАН 22",
+          "mainPhoto": "images/holl/20260908_200430.jpg",
+          "sidePhotos": [],
+          "count": 1
+        },
+        {
+          "id": 723,
+          "title": "ХОЛЛ • НЫСАН 23",
+          "mainPhoto": "images/holl/3443d82e843e9d769748480d57ab0f1e.jpg",
+          "sidePhotos": [],
+          "count": 1
+        },
+        {
+          "id": 724,
+          "title": "ХОЛЛ • НЫСАН 24",
+          "mainPhoto": "images/holl/3b02c74720ec5a948d9f54450557f76c__2_.jpg",
+          "sidePhotos": [],
+          "count": 1
+        },
+        {
+          "id": 725,
+          "title": "ХОЛЛ • НЫСАН 25",
+          "mainPhoto": "images/holl/3ca1cd7e57696d1fc1a9005526ebb885.jpg",
+          "sidePhotos": [],
+          "count": 1
+        },
+        {
+          "id": 726,
+          "title": "ХОЛЛ • НЫСАН 26",
+          "mainPhoto": "images/holl/8bf1281fb08cab03cdfa34eb0780924f.jpg",
+          "sidePhotos": [],
+          "count": 1
+        },
+        {
+          "id": 727,
+          "title": "ХОЛЛ • НЫСАН 27",
+          "mainPhoto": "images/holl/IMG-20230527-WA0057.jpg",
+          "sidePhotos": [
+            "images/holl/IMG-20230527-WA0059.jpg"
+          ],
+          "count": 2
+        },
+        {
+          "id": 728,
+          "title": "ХОЛЛ • НЫСАН 28",
+          "mainPhoto": "images/holl/IMG-20240528-WA0073.jpg",
+          "sidePhotos": [],
+          "count": 1
+        },
+        {
+          "id": 729,
+          "title": "ХОЛЛ • НЫСАН 29",
+          "mainPhoto": "images/holl/IMG-20240805-WA0031.jpg",
+          "sidePhotos": [
+            "images/holl/IMG-20240805-WA0035.jpg"
+          ],
+          "count": 2
+        },
+        {
+          "id": 730,
+          "title": "ХОЛЛ • НЫСАН 30",
+          "mainPhoto": "images/holl/IMG-20241228-WA0006.jpg",
+          "sidePhotos": [],
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "holl-stack-3",
+      "title": "ТАБИҒИ ЗЫҒЫР МЕН БЕДЕРЛЕР",
+      "desc": "Итальяндық тығыз маталар, қолмен тігілген текстуралар мен табиғи фактуралар.",
+      "cases": [
+        {
+          "id": 731,
+          "title": "ХОЛЛ • НЫСАН 31",
+          "mainPhoto": "images/holl/IMG-20250416-WA0155.jpg",
+          "sidePhotos": [],
+          "count": 1
+        },
+        {
+          "id": 732,
+          "title": "ХОЛЛ • НЫСАН 32",
+          "mainPhoto": "images/holl/IMG-20250424-WA0057.jpg",
+          "sidePhotos": [
+            "images/holl/IMG-20250424-WA0066__2_.jpg"
+          ],
+          "count": 2
+        },
+        {
+          "id": 733,
+          "title": "ХОЛЛ • НЫСАН 33",
+          "mainPhoto": "images/holl/IMG-20250506-WA0008.jpg",
+          "sidePhotos": [],
+          "count": 1
+        },
+        {
+          "id": 734,
+          "title": "ХОЛЛ • НЫСАН 34",
+          "mainPhoto": "images/holl/IMG-20250525-WA0033.jpg",
+          "sidePhotos": [],
+          "count": 1
+        },
+        {
+          "id": 735,
+          "title": "ХОЛЛ • НЫСАН 35",
+          "mainPhoto": "images/holl/IMG-20250831-WA0091.jpg",
+          "sidePhotos": [],
+          "count": 1
+        },
+        {
+          "id": 736,
+          "title": "ХОЛЛ • НЫСАН 36",
+          "mainPhoto": "images/holl/IMG-20251008-WA0003.jpg",
+          "sidePhotos": [
+            "images/holl/IMG-20251008-WA0012__2_.jpg"
+          ],
+          "count": 2
+        },
+        {
+          "id": 737,
+          "title": "ХОЛЛ • НЫСАН 37",
+          "mainPhoto": "images/holl/IMG-20251015-WA0007.jpg",
+          "sidePhotos": [],
+          "count": 1
+        },
+        {
+          "id": 738,
+          "title": "ХОЛЛ • НЫСАН 38",
+          "mainPhoto": "images/holl/IMG-20251025-WA0032.jpg",
+          "sidePhotos": [],
+          "count": 1
+        },
+        {
+          "id": 739,
+          "title": "ХОЛЛ • НЫСАН 39",
+          "mainPhoto": "images/holl/IMG-20251221-WA0062.jpg",
+          "sidePhotos": [],
+          "count": 1
+        },
+        {
+          "id": 740,
+          "title": "ХОЛЛ • НЫСАН 40",
+          "mainPhoto": "images/holl/IMG-20260302-WA0009.jpg",
+          "sidePhotos": [],
+          "count": 1
+        },
+        {
+          "id": 741,
+          "title": "ХОЛЛ • НЫСАН 41",
+          "mainPhoto": "images/holl/IMG-20260506-WA0039.jpg",
+          "sidePhotos": [
+            "images/holl/IMG-20260506-WA0041.jpg"
+          ],
+          "count": 2
+        },
+        {
+          "id": 742,
+          "title": "ХОЛЛ • НЫСАН 42",
+          "mainPhoto": "images/holl/IMG-20260514-WA0139__2_.jpg",
+          "sidePhotos": [
+            "images/holl/IMG-20260514-WA0142.jpg"
+          ],
+          "count": 2
+        },
+        {
+          "id": 743,
+          "title": "ХОЛЛ • НЫСАН 43",
+          "mainPhoto": "images/holl/IMG-20260908-WA0097.jpeg",
+          "sidePhotos": [],
+          "count": 1
+        },
+        {
+          "id": 744,
+          "title": "ХОЛЛ • НЫСАН 44",
+          "mainPhoto": "images/holl/IMG_20260126_163939_026.jpg",
+          "sidePhotos": [
+            "images/holl/IMG_20260126_163943_536.jpg",
+            "images/holl/IMG_20260126_164007_692.jpg"
+          ],
+          "count": 3
+        },
+        {
+          "id": 745,
+          "title": "ХОЛЛ • НЫСАН 45",
+          "mainPhoto": "images/holl/IMG_20260625_071315_988.jpg",
+          "sidePhotos": [
+            "images/holl/IMG_20260625_071316_024.jpg",
+            "images/holl/IMG_20260625_071316_538.jpg"
+          ],
+          "count": 3
+        }
+      ]
+    },
+    {
+      "id": "holl-stack-4",
+      "title": "АВТОМАТТАНДЫРЫЛҒАН ХОЛЛ КАРНИЗДЕРІ",
+      "desc": "Smart Home жүйесімен интеграцияланған, биік терезелерді қашықтан басқаратын моторлы перделер.",
+      "cases": [
+        {
+          "id": 746,
+          "title": "ХОЛЛ • НЫСАН 46",
+          "mainPhoto": "images/holl/IMG_20260925_210131_554.jpg",
+          "sidePhotos": [
+            "images/holl/IMG_20260925_210131_629.jpg",
+            "images/holl/IMG_20260925_210131_692.jpg"
+          ],
+          "count": 3
+        },
+        {
+          "id": 747,
+          "title": "ХОЛЛ • НЫСАН 47",
+          "mainPhoto": "images/holl/Screenshot_20221114_100456_WhatsAppBusiness.jpg",
+          "sidePhotos": [
+            "images/holl/Screenshot_20221114_100519_WhatsAppBusiness.jpg"
+          ],
+          "count": 2
+        },
+        {
+          "id": 748,
+          "title": "ХОЛЛ • НЫСАН 48",
+          "mainPhoto": "images/holl/Screenshot_20230128_113009_Instagram.jpg",
+          "sidePhotos": [
+            "images/holl/Screenshot_20230128_113602_Instagram.jpg",
+            "images/holl/Screenshot_20230128_114535_Instagram.jpg"
+          ],
+          "count": 3
+        },
+        {
+          "id": 749,
+          "title": "ХОЛЛ • НЫСАН 49",
+          "mainPhoto": "images/holl/Screenshot_20230131_135350_Instagram.jpg",
+          "sidePhotos": [
+            "images/holl/Screenshot_20230131_140521_Instagram.jpg"
+          ],
+          "count": 2
+        },
+        {
+          "id": 750,
+          "title": "ХОЛЛ • НЫСАН 50",
+          "mainPhoto": "images/holl/Screenshot_20230203_182302_Instagram.jpg",
+          "sidePhotos": [],
+          "count": 1
+        },
+        {
+          "id": 751,
+          "title": "ХОЛЛ • НЫСАН 51",
+          "mainPhoto": "images/holl/Screenshot_20230328_220451_WhatsAppBusiness.jpg",
+          "sidePhotos": [],
+          "count": 1
+        },
+        {
+          "id": 752,
+          "title": "ХОЛЛ • НЫСАН 52",
+          "mainPhoto": "images/holl/Screenshot_20230329_162800_WhatsAppBusiness.jpg",
+          "sidePhotos": [],
+          "count": 1
+        },
+        {
+          "id": 753,
+          "title": "ХОЛЛ • НЫСАН 53",
+          "mainPhoto": "images/holl/Screenshot_20240322_192427_Instagram.jpg",
+          "sidePhotos": [
+            "images/holl/Screenshot_20240322_192439_Instagram.jpg",
+            "images/holl/Screenshot_20240322_192451_Instagram.jpg",
+            "images/holl/Screenshot_20240322_192727_Instagram.jpg",
+            "images/holl/Screenshot_20240322_192746_Instagram.jpg",
+            "images/holl/Screenshot_20240322_192933_Instagram.jpg",
+            "images/holl/Screenshot_20240322_192944_Instagram.jpg",
+            "images/holl/Screenshot_20240322_193014_Instagram.jpg"
+          ],
+          "count": 8
+        },
+        {
+          "id": 754,
+          "title": "ХОЛЛ • НЫСАН 54",
+          "mainPhoto": "images/holl/Screenshot_20240429_152322_Instagram.jpg",
+          "sidePhotos": [],
+          "count": 1
+        },
+        {
+          "id": 755,
+          "title": "ХОЛЛ • НЫСАН 55",
+          "mainPhoto": "images/holl/Screenshot_20240513_212228_Instagram.jpg",
+          "sidePhotos": [
+            "images/holl/Screenshot_20240513_212306_Instagram.jpg"
+          ],
+          "count": 2
+        },
+        {
+          "id": 756,
+          "title": "ХОЛЛ • НЫСАН 56",
+          "mainPhoto": "images/holl/Screenshot_20241223_141800_Instagram.jpg",
+          "sidePhotos": [],
+          "count": 1
+        },
+        {
+          "id": 757,
+          "title": "ХОЛЛ • НЫСАН 57",
+          "mainPhoto": "images/holl/dc07568e0e1e6d9c49e71fac69d7aa80.jpg",
+          "sidePhotos": [],
+          "count": 1
+        },
+        {
+          "id": 758,
+          "title": "ХОЛЛ • НЫСАН 58",
+          "mainPhoto": "images/holl/file_00000000512c81faace26ae8f69c2839.png.jpg",
+          "sidePhotos": [
+            "images/holl/file_00000000524c8211b02df6fa6e328ab8.png.jpg"
+          ],
+          "count": 2
+        }
+      ]
+    }
+  ]
+}

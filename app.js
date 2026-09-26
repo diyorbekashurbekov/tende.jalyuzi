@@ -14,22 +14,12 @@
       return url;
     }
     const clean = url.replace(/^\/+/, '');
-    // Bedroom & Kitchen images ONLY exist locally, always serve from localhost!
-    if (clean.startsWith('images/bedroom/') || clean.startsWith('images/kitchen/')) {
-      return clean;
-    }
-    if (window.location.hostname.includes('github.io')) {
-      return clean;
-    }
-    // On localhost, first use the local path:
-    return clean;
+    return encodeURI(clean);
   }
 
   function getSafeOnError(rel) {
-    if (!rel || rel.startsWith('images/bedroom/') || rel.startsWith('images/kitchen/')) {
-      return 'this.onerror=null;';
-    }
-    return "this.onerror=null; this.src='https://diyorbekashurbekov.github.io/tende.jalyuzi/' + this.getAttribute('data-rel');";
+    if (!rel) return 'this.onerror=null;';
+    return "this.onerror=null; this.src='" + GITHUB_PAGES_BASE + encodeURI(this.getAttribute('data-rel')) + "';";
   }
 
   // ==========================================================================
@@ -219,7 +209,7 @@
   let ALL_PROJECT_CASES = [];
   let FILTERED_CASES = [];
   let currentCategory = 'all';
-  let displayedCount = 12;
+  let displayedCount = 24;
 
   function buildDatabase() {
     const cases = [];
@@ -364,6 +354,25 @@
       });
     }
 
+    // Staircase cases (from Telegram: 39 photos, 13 projects)
+    if (window.STAIRS_CASES_DATA && window.STAIRS_CASES_DATA.cases) {
+      window.STAIRS_CASES_DATA.cases.forEach((c, idx) => {
+        const rawList = [c.mainPhoto, ...(c.sidePhotos || []), ...(c.allPhotos || [])].filter(Boolean);
+        const photos = Array.from(new Set(rawList));
+        const numStr = String(idx + 1).padStart(2, '0');
+        cases.push({
+          id: `stairs-${c.id || idx + 1}`,
+          category: 'stairs',
+          title: c.title || `БАСПАЛДАҚ / ЛЕСТНИЦА • НЫСАН ${numStr}`,
+          mainPhoto: photos[0] || c.mainPhoto,
+          sidePhotos: photos.slice(1),
+          allPhotos: photos,
+          count: photos.length,
+          tag: '08 / БАСПАЛДАҚ'
+        });
+      });
+    }
+
     // Taraz cases
     if (window.CURTAIN_CASES_DATA && window.CURTAIN_CASES_DATA.tarazList) {
       window.CURTAIN_CASES_DATA.tarazList.forEach((photo, idx) => {
@@ -376,7 +385,7 @@
           sidePhotos: [],
           allPhotos: [photo],
           count: 1,
-          tag: '08 / ТАРАЗ • ЖОБАЛАР'
+          tag: '09 / ТАРАЗ • ЖОБАЛАР'
         });
       });
     }
@@ -409,6 +418,7 @@
       asui: ALL_PROJECT_CASES.filter(c => c.category === 'asui').length,
       classic: ALL_PROJECT_CASES.filter(c => c.category === 'classic').length,
       motor: ALL_PROJECT_CASES.filter(c => c.category === 'motor').length,
+      stairs: ALL_PROJECT_CASES.filter(c => c.category === 'stairs').length,
       taraz: ALL_PROJECT_CASES.filter(c => c.category === 'taraz').length
     };
     const map = {
@@ -420,6 +430,7 @@
       badgeAsui: counts.asui,
       badgeClassic: counts.classic,
       badgeMotor: counts.motor,
+      badgeStairs: counts.stairs,
       badgeTaraz: counts.taraz
     };
     Object.entries(map).forEach(([id, val]) => {
@@ -440,6 +451,7 @@
         else if (cat === 'asui') label.textContent = `АС ҮЙ / КУХНЯ (${counts.asui})`;
         else if (cat === 'classic') label.textContent = `КЛАССИКА (${counts.classic})`;
         else if (cat === 'motor') label.textContent = `МОТОРЛЫ / ЭЛЕКТРО (${counts.motor})`;
+        else if (cat === 'stairs') label.textContent = `БАСПАЛДАҚ / ЛЕСТНИЦА (${counts.stairs})`;
         else if (cat === 'taraz') label.textContent = `ТАРАЗ (${counts.taraz})`;
       }
     });
@@ -658,6 +670,23 @@
       });
     }
 
+    // Infinite smooth scroll
+    let isScrollLoading = false;
+    window.addEventListener('scroll', () => {
+      if (displayedCount >= FILTERED_CASES.length || isScrollLoading) return;
+      const scrollPos = window.innerHeight + window.scrollY;
+      const threshold = document.documentElement.scrollHeight - 650;
+      if (scrollPos >= threshold) {
+        isScrollLoading = true;
+        displayedCount += 12;
+        renderProjectsGrid();
+        if (loadMoreCasesBtn && displayedCount >= FILTERED_CASES.length) {
+          loadMoreCasesBtn.style.display = 'none';
+        }
+        setTimeout(() => { isScrollLoading = false; }, 250);
+      }
+    }, { passive: true });
+
     // View switch (Grid vs Stacks)
     const viewModeGridBtn = document.getElementById('viewModeGridBtn');
     const viewModeStacksBtn = document.getElementById('viewModeStacksBtn');
@@ -696,6 +725,7 @@
       { title: 'ЭФИРЛІ ТЮЛЬ (ТЮЛИ)', cat: 'tulle' },
       { title: 'ИТАЛЬЯН КЛАССИКАСЫ (КЛАССИКА)', cat: 'classic' },
       { title: 'МОТОРЛЫ ЖҮЙЕЛЕР (ЭЛЕКТРОКАРНИЗ)', cat: 'motor' },
+      { title: 'БАСПАЛДАҚ / ЛЕСТНИЦА (ВИТРАЖДАР)', cat: 'stairs' },
       { title: 'ТАРАЗ ЖОБАЛАРЫ (ПРОЕКТЫ ТАРАЗ)', cat: 'taraz' }
     ];
 

@@ -713,15 +713,13 @@
       "title": "ЗАЛ • НЫСАН 047",
       "mainPhoto": "images/zal/IMG-20251025-WA0030.jpg",
       "sidePhotos": [
-        "images/zal/IMG-20251025-WA0068_2.jpg",
         "images/zal/IMG-20251025-WA0068.jpg"
       ],
       "allPhotos": [
         "images/zal/IMG-20251025-WA0030.jpg",
-        "images/zal/IMG-20251025-WA0068_2.jpg",
         "images/zal/IMG-20251025-WA0068.jpg"
       ],
-      "count": 3
+      "count": 2
     },
     {
       "id": 48,
@@ -873,15 +871,12 @@
       "id": 59,
       "key": "20260617",
       "title": "ЗАЛ • НЫСАН 059",
-      "mainPhoto": "images/zal/IMG-20260617-WA0054_2.jpg",
-      "sidePhotos": [
-        "images/zal/IMG-20260617-WA0054.jpg"
-      ],
+      "mainPhoto": "images/zal/IMG-20260617-WA0054.jpg",
+      "sidePhotos": [],
       "allPhotos": [
-        "images/zal/IMG-20260617-WA0054_2.jpg",
         "images/zal/IMG-20260617-WA0054.jpg"
       ],
-      "count": 2
+      "count": 1
     },
     {
       "id": 60,
@@ -922,17 +917,15 @@
       "title": "ЗАЛ • НЫСАН 063",
       "mainPhoto": "images/zal/lv_0_20260613192414.jpg",
       "sidePhotos": [
-        "images/zal/lv_0_20260715105425_1.jpg",
         "images/zal/lv_0_20260728144206.jpg",
         "images/zal/lv_0_20260728144318.jpg"
       ],
       "allPhotos": [
         "images/zal/lv_0_20260613192414.jpg",
-        "images/zal/lv_0_20260715105425_1.jpg",
         "images/zal/lv_0_20260728144206.jpg",
         "images/zal/lv_0_20260728144318.jpg"
       ],
-      "count": 4
+      "count": 3
     },
     {
       "id": 64,

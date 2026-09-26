@@ -330,6 +330,61 @@
             "images/rim/20260703_214051.jpg",
             "images/rim/20260703_213952.jpg"
           ]
+        },
+        {
+          "id": 22,
+          "title": "РИМ / АС ҮЙ • НЫСАН 22",
+          "mainPhoto": "images/rim/20251226_115322(0).jpg",
+          "sidePhotos": [],
+          "allPhotos": [
+            "images/rim/20251226_115322(0).jpg"
+          ],
+          "count": 1,
+          "tag": "05 / АС ҮЙ • КУХНЯ"
+        },
+        {
+          "id": 23,
+          "title": "РИМ / АС ҮЙ • НЫСАН 23",
+          "mainPhoto": "images/rim/20260225_193225 (1).jpg",
+          "sidePhotos": [],
+          "allPhotos": [
+            "images/rim/20260225_193225 (1).jpg"
+          ],
+          "count": 1,
+          "tag": "05 / АС ҮЙ • КУХНЯ"
+        },
+        {
+          "id": 24,
+          "title": "РИМ / АС ҮЙ • НЫСАН 24",
+          "mainPhoto": "images/rim/20260225_193246 (1).jpg",
+          "sidePhotos": [],
+          "allPhotos": [
+            "images/rim/20260225_193246 (1).jpg"
+          ],
+          "count": 1,
+          "tag": "05 / АС ҮЙ • КУХНЯ"
+        },
+        {
+          "id": 25,
+          "title": "РИМ / АС ҮЙ • НЫСАН 25",
+          "mainPhoto": "images/rim/20260225_193435 (1).jpg",
+          "sidePhotos": [],
+          "allPhotos": [
+            "images/rim/20260225_193435 (1).jpg"
+          ],
+          "count": 1,
+          "tag": "05 / АС ҮЙ • КУХНЯ"
+        },
+        {
+          "id": 26,
+          "title": "РИМ / АС ҮЙ • НЫСАН 26",
+          "mainPhoto": "images/rim/IMG-20260513-WA0120 (2).jpg",
+          "sidePhotos": [],
+          "allPhotos": [
+            "images/rim/IMG-20260513-WA0120 (2).jpg"
+          ],
+          "count": 1,
+          "tag": "05 / АС ҮЙ • КУХНЯ"
         }
       ]
     },

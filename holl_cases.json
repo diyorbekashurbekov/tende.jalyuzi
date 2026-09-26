@@ -155,6 +155,39 @@
           "mainPhoto": "images/holl/20260301_231521.jpg",
           "sidePhotos": [],
           "count": 1
+        },
+        {
+          "id": 16,
+          "title": "ХОЛЛ / ПРИХОЖАЯ • НЫСАН 16",
+          "mainPhoto": "images/holl/file_00000000512c81faace26ae8f69c2839.png",
+          "sidePhotos": [],
+          "allPhotos": [
+            "images/holl/file_00000000512c81faace26ae8f69c2839.png"
+          ],
+          "count": 1,
+          "tag": "02 / ХОЛЛ • ПРИХОЖАЯ"
+        },
+        {
+          "id": 17,
+          "title": "ХОЛЛ / ПРИХОЖАЯ • НЫСАН 17",
+          "mainPhoto": "images/holl/file_00000000524c8211b02df6fa6e328ab8.png",
+          "sidePhotos": [],
+          "allPhotos": [
+            "images/holl/file_00000000524c8211b02df6fa6e328ab8.png"
+          ],
+          "count": 1,
+          "tag": "02 / ХОЛЛ • ПРИХОЖАЯ"
+        },
+        {
+          "id": 18,
+          "title": "ХОЛЛ / ПРИХОЖАЯ • НЫСАН 18",
+          "mainPhoto": "images/holl/file_0000000081c081fab88dae0748fb785c.png",
+          "sidePhotos": [],
+          "allPhotos": [
+            "images/holl/file_0000000081c081fab88dae0748fb785c.png"
+          ],
+          "count": 1,
+          "tag": "02 / ХОЛЛ • ПРИХОЖАЯ"
         }
       ]
     },

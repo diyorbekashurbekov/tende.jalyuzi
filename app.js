@@ -521,7 +521,7 @@
               <button class="card-angle-arrow next" data-dir="1" title="Келесі ракурс / Вперед" aria-label="Следующий ракурс">›</button>
               <span class="swipe-hint-badge">‹ сырғытыңыз / свайп ›</span>
             ` : ''}
-            <img src="${resolveImgUrl(initialImg)}" data-rel="${(initialImg || '').replace(/^\/+/, '')}" onerror="${getSafeOnError(initialImg)}" alt="${item.title}" class="case-card-img" loading="lazy">
+            <img src="${resolveImgUrl(initialImg)}" data-rel="${(initialImg || '').replace(/^\/+/, '')}" onerror="${getSafeOnError(initialImg)}" alt="${item.title}" class="case-card-img" loading="lazy" decoding="async">
             <div class="photo-watermark">
               <img src="assets/tende-logo-pink-512.png" alt="TENDE">
             </div>
@@ -533,7 +533,7 @@
             <div class="card-angle-thumbs-strip" title="Ракурсты таңдау / Выбрать ракурс">
               <span class="angle-label-note">РАКУРСТАР / КАДРЫ:</span>
               ${photos.map((p, pIdx) => `
-                <img src="${resolveImgUrl(p)}" data-rel="${(p || '').replace(/^\/+/, '')}" onerror="${getSafeOnError(p)}" class="angle-thumb-item ${pIdx === 0 ? 'active' : ''}" data-angle-idx="${pIdx}" title="${pIdx + 1}-кадр" alt="Кадр ${pIdx + 1}" loading="lazy">
+                <img src="${resolveImgUrl(p)}" data-rel="${(p || '').replace(/^\/+/, '')}" onerror="${getSafeOnError(p)}" class="angle-thumb-item ${pIdx === 0 ? 'active' : ''}" data-angle-idx="${pIdx}" title="${pIdx + 1}-кадр" alt="Кадр ${pIdx + 1}" loading="lazy" decoding="async">
               `).join('')}
             </div>
           ` : ''}
@@ -564,6 +564,21 @@
       const mediaBox = card.querySelector('.case-card-media');
       const titleEl = card.querySelector('.case-title');
 
+      // Preload photos immediately on user pointer/touch anticipation
+      card.addEventListener('pointerenter', () => {
+        photos.forEach(pUrl => {
+          const pImg = new Image();
+          pImg.src = resolveImgUrl(pUrl);
+        });
+      }, { once: true, passive: true });
+
+      card.addEventListener('touchstart', () => {
+        photos.forEach(pUrl => {
+          const pImg = new Image();
+          pImg.src = resolveImgUrl(pUrl);
+        });
+      }, { once: true, passive: true });
+
       // Preload secondary frames so switching to the 2nd photo is instantaneous
       if (photos.length > 1) {
         photos.slice(1).forEach(pUrl => {
@@ -581,18 +596,25 @@
         const photoUrl = photos[currentAngle];
 
         if (mainImg) {
-          mainImg.style.opacity = '0.35';
           const cleanRel = (photoUrl || '').replace(/^\/+/, '');
-          mainImg.setAttribute('data-rel', cleanRel);
-          mainImg.onerror = function () {
-            this.onerror = null;
-            this.src = GITHUB_PAGES_BASE + encodeURI(cleanRel);
-          };
-          mainImg.onload = function () {
+          const targetUrl = resolveImgUrl(photoUrl);
+
+          mainImg.style.opacity = '0.4';
+          const pTemp = new Image();
+          pTemp.onload = function() {
+            mainImg.src = targetUrl;
             mainImg.style.opacity = '1';
           };
-          mainImg.src = resolveImgUrl(photoUrl);
-          setTimeout(() => { if (mainImg) mainImg.style.opacity = '1'; }, 100);
+          pTemp.onerror = function() {
+            mainImg.src = GITHUB_PAGES_BASE + encodeURI(cleanRel);
+            mainImg.style.opacity = '1';
+          };
+          pTemp.src = targetUrl;
+
+          if (pTemp.complete) {
+            mainImg.src = targetUrl;
+            mainImg.style.opacity = '1';
+          }
         }
 
         storyBars.forEach((bar, bIdx) => {
@@ -848,6 +870,7 @@
     const currentPhoto = photos[activePhotoIndex];
 
     const viewerImg = document.getElementById('viewerImg');
+    const viewerLoader = document.getElementById('viewerLoader');
     const viewerTag = document.getElementById('viewerTag');
     const viewerCounter = document.getElementById('viewerCounter');
     const viewerWaLink = document.getElementById('viewerWaLink');
@@ -855,11 +878,40 @@
 
     if (viewerImg) {
       const cleanRel = (currentPhoto || '').replace(/^\/+/, '');
-      viewerImg.onerror = function() {
-        this.onerror = null;
-        this.src = GITHUB_PAGES_BASE + encodeURI(cleanRel);
+      const targetSrc = resolveImgUrl(currentPhoto);
+
+      // Smooth loading state
+      if (viewerLoader) viewerLoader.classList.add('active');
+      viewerImg.classList.remove('loaded');
+
+      const tempImg = new Image();
+      tempImg.onload = function() {
+        viewerImg.src = targetSrc;
+        viewerImg.classList.add('loaded');
+        if (viewerLoader) viewerLoader.classList.remove('active');
       };
-      viewerImg.src = resolveImgUrl(currentPhoto);
+      tempImg.onerror = function() {
+        viewerImg.src = GITHUB_PAGES_BASE + encodeURI(cleanRel);
+        viewerImg.classList.add('loaded');
+        if (viewerLoader) viewerLoader.classList.remove('active');
+      };
+      tempImg.src = targetSrc;
+
+      if (tempImg.complete) {
+        viewerImg.src = targetSrc;
+        viewerImg.classList.add('loaded');
+        if (viewerLoader) viewerLoader.classList.remove('active');
+      }
+
+      // Preload adjacent frames for instant response when user navigates
+      if (photos.length > 1) {
+        const nextIdx = (activePhotoIndex + 1) % photos.length;
+        const prevIdx = (activePhotoIndex - 1 + photos.length) % photos.length;
+        const pNext = new Image();
+        pNext.src = resolveImgUrl(photos[nextIdx]);
+        const pPrev = new Image();
+        pPrev.src = resolveImgUrl(photos[prevIdx]);
+      }
     }
     if (viewerTag) viewerTag.textContent = activeCase.tag || 'TENDE';
     if (viewerCounter) viewerCounter.textContent = `${activePhotoIndex + 1} / ${photos.length}`;
@@ -871,7 +923,7 @@
 
     if (viewerFilmstrip) {
       viewerFilmstrip.innerHTML = photos.map((p, idx) => `
-        <img src="${resolveImgUrl(p)}" onerror="${getSafeOnError(p)}" class="filmstrip-thumb ${idx === activePhotoIndex ? 'active' : ''}" data-idx="${idx}" alt="Thumb">
+        <img src="${resolveImgUrl(p)}" onerror="${getSafeOnError(p)}" class="filmstrip-thumb ${idx === activePhotoIndex ? 'active' : ''}" data-idx="${idx}" alt="Thumb" loading="lazy" decoding="async">
       `).join('');
 
       viewerFilmstrip.querySelectorAll('.filmstrip-thumb').forEach(th => {

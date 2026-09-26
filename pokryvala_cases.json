@@ -1,0 +1,1375 @@
+{
+  "cases": [
+    {
+      "id": 1201,
+      "title": "ПОКРЫВАЛО / ТӨСЕК ЖАПҚЫШ • НЫСАН 01",
+      "category": "pokryvala",
+      "mainPhoto": "images/pokryvala/20220821_213722.jpg",
+      "sidePhotos": [],
+      "allPhotos": [
+        "images/pokryvala/20220821_213722.jpg"
+      ],
+      "count": 1,
+      "tag": "10 / ПОКРЫВАЛА • ТӨСЕК ЖАПҚЫШ"
+    },
+    {
+      "id": 1202,
+      "title": "ПОКРЫВАЛО / ТӨСЕК ЖАПҚЫШ • НЫСАН 02",
+      "category": "pokryvala",
+      "mainPhoto": "images/pokryvala/20220830_200436.jpg",
+      "sidePhotos": [
+        "images/pokryvala/20220830_200453.jpg"
+      ],
+      "allPhotos": [
+        "images/pokryvala/20220830_200436.jpg",
+        "images/pokryvala/20220830_200453.jpg"
+      ],
+      "count": 2,
+      "tag": "10 / ПОКРЫВАЛА • ТӨСЕК ЖАПҚЫШ"
+    },
+    {
+      "id": 1203,
+      "title": "ПОКРЫВАЛО / ТӨСЕК ЖАПҚЫШ • НЫСАН 03",
+      "category": "pokryvala",
+      "mainPhoto": "images/pokryvala/20220830_201248.jpg",
+      "sidePhotos": [
+        "images/pokryvala/20220830_201310.jpg"
+      ],
+      "allPhotos": [
+        "images/pokryvala/20220830_201248.jpg",
+        "images/pokryvala/20220830_201310.jpg"
+      ],
+      "count": 2,
+      "tag": "10 / ПОКРЫВАЛА • ТӨСЕК ЖАПҚЫШ"
+    },
+    {
+      "id": 1204,
+      "title": "ПОКРЫВАЛО / ТӨСЕК ЖАПҚЫШ • НЫСАН 04",
+      "category": "pokryvala",
+      "mainPhoto": "images/pokryvala/20230325_223255.jpg",
+      "sidePhotos": [
+        "images/pokryvala/20230325_223306.jpg"
+      ],
+      "allPhotos": [
+        "images/pokryvala/20230325_223255.jpg",
+        "images/pokryvala/20230325_223306.jpg"
+      ],
+      "count": 2,
+      "tag": "10 / ПОКРЫВАЛА • ТӨСЕК ЖАПҚЫШ"
+    },
+    {
+      "id": 1205,
+      "title": "ПОКРЫВАЛО / ТӨСЕК ЖАПҚЫШ • НЫСАН 05",
+      "category": "pokryvala",
+      "mainPhoto": "images/pokryvala/20230803_222038.jpg",
+      "sidePhotos": [
+        "images/pokryvala/20230803_222058.jpg",
+        "images/pokryvala/20230803_222133.jpg"
+      ],
+      "allPhotos": [
+        "images/pokryvala/20230803_222038.jpg",
+        "images/pokryvala/20230803_222058.jpg",
+        "images/pokryvala/20230803_222133.jpg"
+      ],
+      "count": 3,
+      "tag": "10 / ПОКРЫВАЛА • ТӨСЕК ЖАПҚЫШ"
+    },
+    {
+      "id": 1206,
+      "title": "ПОКРЫВАЛО / ТӨСЕК ЖАПҚЫШ • НЫСАН 06",
+      "category": "pokryvala",
+      "mainPhoto": "images/pokryvala/20231102_173035.jpg",
+      "sidePhotos": [],
+      "allPhotos": [
+        "images/pokryvala/20231102_173035.jpg"
+      ],
+      "count": 1,
+      "tag": "10 / ПОКРЫВАЛА • ТӨСЕК ЖАПҚЫШ"
+    },
+    {
+      "id": 1207,
+      "title": "ПОКРЫВАЛО / ТӨСЕК ЖАПҚЫШ • НЫСАН 07",
+      "category": "pokryvala",
+      "mainPhoto": "images/pokryvala/20231102_185315.jpg",
+      "sidePhotos": [],
+      "allPhotos": [
+        "images/pokryvala/20231102_185315.jpg"
+      ],
+      "count": 1,
+      "tag": "10 / ПОКРЫВАЛА • ТӨСЕК ЖАПҚЫШ"
+    },
+    {
+      "id": 1208,
+      "title": "ПОКРЫВАЛО / ТӨСЕК ЖАПҚЫШ • НЫСАН 08",
+      "category": "pokryvala",
+      "mainPhoto": "images/pokryvala/20231102_185732.jpg",
+      "sidePhotos": [
+        "images/pokryvala/20231102_185858.jpg"
+      ],
+      "allPhotos": [
+        "images/pokryvala/20231102_185732.jpg",
+        "images/pokryvala/20231102_185858.jpg"
+      ],
+      "count": 2,
+      "tag": "10 / ПОКРЫВАЛА • ТӨСЕК ЖАПҚЫШ"
+    },
+    {
+      "id": 1209,
+      "title": "ПОКРЫВАЛО / ТӨСЕК ЖАПҚЫШ • НЫСАН 09",
+      "category": "pokryvala",
+      "mainPhoto": "images/pokryvala/20231115_224558.jpg",
+      "sidePhotos": [
+        "images/pokryvala/20231115_224643.jpg"
+      ],
+      "allPhotos": [
+        "images/pokryvala/20231115_224558.jpg",
+        "images/pokryvala/20231115_224643.jpg"
+      ],
+      "count": 2,
+      "tag": "10 / ПОКРЫВАЛА • ТӨСЕК ЖАПҚЫШ"
+    },
+    {
+      "id": 1210,
+      "title": "ПОКРЫВАЛО / ТӨСЕК ЖАПҚЫШ • НЫСАН 10",
+      "category": "pokryvala",
+      "mainPhoto": "images/pokryvala/20240325_113435.jpg",
+      "sidePhotos": [],
+      "allPhotos": [
+        "images/pokryvala/20240325_113435.jpg"
+      ],
+      "count": 1,
+      "tag": "10 / ПОКРЫВАЛА • ТӨСЕК ЖАПҚЫШ"
+    },
+    {
+      "id": 1211,
+      "title": "ПОКРЫВАЛО / ТӨСЕК ЖАПҚЫШ • НЫСАН 11",
+      "category": "pokryvala",
+      "mainPhoto": "images/pokryvala/20240519_151150.jpg",
+      "sidePhotos": [
+        "images/pokryvala/20240519_151223.jpg",
+        "images/pokryvala/20240519_151251.jpg"
+      ],
+      "allPhotos": [
+        "images/pokryvala/20240519_151150.jpg",
+        "images/pokryvala/20240519_151223.jpg",
+        "images/pokryvala/20240519_151251.jpg"
+      ],
+      "count": 3,
+      "tag": "10 / ПОКРЫВАЛА • ТӨСЕК ЖАПҚЫШ"
+    },
+    {
+      "id": 1212,
+      "title": "ПОКРЫВАЛО / ТӨСЕК ЖАПҚЫШ • НЫСАН 12",
+      "category": "pokryvala",
+      "mainPhoto": "images/pokryvala/20240723_121128.jpg",
+      "sidePhotos": [],
+      "allPhotos": [
+        "images/pokryvala/20240723_121128.jpg"
+      ],
+      "count": 1,
+      "tag": "10 / ПОКРЫВАЛА • ТӨСЕК ЖАПҚЫШ"
+    },
+    {
+      "id": 1213,
+      "title": "ПОКРЫВАЛО / ТӨСЕК ЖАПҚЫШ • НЫСАН 13",
+      "category": "pokryvala",
+      "mainPhoto": "images/pokryvala/20240723_133941.jpg",
+      "sidePhotos": [
+        "images/pokryvala/20240723_134228.jpg",
+        "images/pokryvala/20240723_134229.jpg"
+      ],
+      "allPhotos": [
+        "images/pokryvala/20240723_133941.jpg",
+        "images/pokryvala/20240723_134228.jpg",
+        "images/pokryvala/20240723_134229.jpg"
+      ],
+      "count": 3,
+      "tag": "10 / ПОКРЫВАЛА • ТӨСЕК ЖАПҚЫШ"
+    },
+    {
+      "id": 1214,
+      "title": "ПОКРЫВАЛО / ТӨСЕК ЖАПҚЫШ • НЫСАН 14",
+      "category": "pokryvala",
+      "mainPhoto": "images/pokryvala/20240723_141226.jpg",
+      "sidePhotos": [],
+      "allPhotos": [
+        "images/pokryvala/20240723_141226.jpg"
+      ],
+      "count": 1,
+      "tag": "10 / ПОКРЫВАЛА • ТӨСЕК ЖАПҚЫШ"
+    },
+    {
+      "id": 1215,
+      "title": "ПОКРЫВАЛО / ТӨСЕК ЖАПҚЫШ • НЫСАН 15",
+      "category": "pokryvala",
+      "mainPhoto": "images/pokryvala/20240723_143811.jpg",
+      "sidePhotos": [],
+      "allPhotos": [
+        "images/pokryvala/20240723_143811.jpg"
+      ],
+      "count": 1,
+      "tag": "10 / ПОКРЫВАЛА • ТӨСЕК ЖАПҚЫШ"
+    },
+    {
+      "id": 1216,
+      "title": "ПОКРЫВАЛО / ТӨСЕК ЖАПҚЫШ • НЫСАН 16",
+      "category": "pokryvala",
+      "mainPhoto": "images/pokryvala/20240723_165220.jpg",
+      "sidePhotos": [],
+      "allPhotos": [
+        "images/pokryvala/20240723_165220.jpg"
+      ],
+      "count": 1,
+      "tag": "10 / ПОКРЫВАЛА • ТӨСЕК ЖАПҚЫШ"
+    },
+    {
+      "id": 1217,
+      "title": "ПОКРЫВАЛО / ТӨСЕК ЖАПҚЫШ • НЫСАН 17",
+      "category": "pokryvala",
+      "mainPhoto": "images/pokryvala/20240723_171629.jpg",
+      "sidePhotos": [],
+      "allPhotos": [
+        "images/pokryvala/20240723_171629.jpg"
+      ],
+      "count": 1,
+      "tag": "10 / ПОКРЫВАЛА • ТӨСЕК ЖАПҚЫШ"
+    },
+    {
+      "id": 1218,
+      "title": "ПОКРЫВАЛО / ТӨСЕК ЖАПҚЫШ • НЫСАН 18",
+      "category": "pokryvala",
+      "mainPhoto": "images/pokryvala/20240724_233754.jpg",
+      "sidePhotos": [
+        "images/pokryvala/20240724_234000.jpg",
+        "images/pokryvala/20240724_234034.jpg",
+        "images/pokryvala/20240724_234136.jpg"
+      ],
+      "allPhotos": [
+        "images/pokryvala/20240724_233754.jpg",
+        "images/pokryvala/20240724_234000.jpg",
+        "images/pokryvala/20240724_234034.jpg",
+        "images/pokryvala/20240724_234136.jpg"
+      ],
+      "count": 4,
+      "tag": "10 / ПОКРЫВАЛА • ТӨСЕК ЖАПҚЫШ"
+    },
+    {
+      "id": 1219,
+      "title": "ПОКРЫВАЛО / ТӨСЕК ЖАПҚЫШ • НЫСАН 19",
+      "category": "pokryvala",
+      "mainPhoto": "images/pokryvala/20260909_215038.jpg",
+      "sidePhotos": [
+        "images/pokryvala/20260909_215044.jpg"
+      ],
+      "allPhotos": [
+        "images/pokryvala/20260909_215038.jpg",
+        "images/pokryvala/20260909_215044.jpg"
+      ],
+      "count": 2,
+      "tag": "10 / ПОКРЫВАЛА • ТӨСЕК ЖАПҚЫШ"
+    },
+    {
+      "id": 1220,
+      "title": "ПОКРЫВАЛО / ТӨСЕК ЖАПҚЫШ • НЫСАН 20",
+      "category": "pokryvala",
+      "mainPhoto": "images/pokryvala/27oApRL00riciwAuHs3jqHZqHJOxHzSvnwKyuwpUC36Fsy2trhVAmTTRU_ou53SyWgtu.jpg",
+      "sidePhotos": [],
+      "allPhotos": [
+        "images/pokryvala/27oApRL00riciwAuHs3jqHZqHJOxHzSvnwKyuwpUC36Fsy2trhVAmTTRU_ou53SyWgtu.jpg"
+      ],
+      "count": 1,
+      "tag": "10 / ПОКРЫВАЛА • ТӨСЕК ЖАПҚЫШ"
+    },
+    {
+      "id": 1221,
+      "title": "ПОКРЫВАЛО / ТӨСЕК ЖАПҚЫШ • НЫСАН 21",
+      "category": "pokryvala",
+      "mainPhoto": "images/pokryvala/929ba2c3f747acbe74ecf04c0df3ba6e.jpg",
+      "sidePhotos": [],
+      "allPhotos": [
+        "images/pokryvala/929ba2c3f747acbe74ecf04c0df3ba6e.jpg"
+      ],
+      "count": 1,
+      "tag": "10 / ПОКРЫВАЛА • ТӨСЕК ЖАПҚЫШ"
+    },
+    {
+      "id": 1222,
+      "title": "ПОКРЫВАЛО / ТӨСЕК ЖАПҚЫШ • НЫСАН 22",
+      "category": "pokryvala",
+      "mainPhoto": "images/pokryvala/ByG_aOxbyfQ_lF07oZ8AByRTkQrRYP44ybwdaRSVjAvs_bwjd0L3Eq6RyF9fYnV.jpg",
+      "sidePhotos": [],
+      "allPhotos": [
+        "images/pokryvala/ByG_aOxbyfQ_lF07oZ8AByRTkQrRYP44ybwdaRSVjAvs_bwjd0L3Eq6RyF9fYnV.jpg"
+      ],
+      "count": 1,
+      "tag": "10 / ПОКРЫВАЛА • ТӨСЕК ЖАПҚЫШ"
+    },
+    {
+      "id": 1223,
+      "title": "ПОКРЫВАЛО / ТӨСЕК ЖАПҚЫШ • НЫСАН 23",
+      "category": "pokryvala",
+      "mainPhoto": "images/pokryvala/CiYAiimgPLH12AvF8fpqkw8cDlsokSZDVPRt3tdSdiIIj2oExvlhB9RDB0i6_C5.jpg",
+      "sidePhotos": [],
+      "allPhotos": [
+        "images/pokryvala/CiYAiimgPLH12AvF8fpqkw8cDlsokSZDVPRt3tdSdiIIj2oExvlhB9RDB0i6_C5.jpg"
+      ],
+      "count": 1,
+      "tag": "10 / ПОКРЫВАЛА • ТӨСЕК ЖАПҚЫШ"
+    },
+    {
+      "id": 1224,
+      "title": "ПОКРЫВАЛО / ТӨСЕК ЖАПҚЫШ • НЫСАН 24",
+      "category": "pokryvala",
+      "mainPhoto": "images/pokryvala/GgKdXYOCE8CZTI9OumcHn92cUag0a8jD49M4xIrCGl1lN5mQ4zaGYYMq6OTi12HoaCPRrR.jpg",
+      "sidePhotos": [],
+      "allPhotos": [
+        "images/pokryvala/GgKdXYOCE8CZTI9OumcHn92cUag0a8jD49M4xIrCGl1lN5mQ4zaGYYMq6OTi12HoaCPRrR.jpg"
+      ],
+      "count": 1,
+      "tag": "10 / ПОКРЫВАЛА • ТӨСЕК ЖАПҚЫШ"
+    },
+    {
+      "id": 1225,
+      "title": "ПОКРЫВАЛО / ТӨСЕК ЖАПҚЫШ • НЫСАН 25",
+      "category": "pokryvala",
+      "mainPhoto": "images/pokryvala/IMG-20230723-WA0014.jpg",
+      "sidePhotos": [
+        "images/pokryvala/IMG-20230723-WA0015.jpg"
+      ],
+      "allPhotos": [
+        "images/pokryvala/IMG-20230723-WA0014.jpg",
+        "images/pokryvala/IMG-20230723-WA0015.jpg"
+      ],
+      "count": 2,
+      "tag": "10 / ПОКРЫВАЛА • ТӨСЕК ЖАПҚЫШ"
+    },
+    {
+      "id": 1226,
+      "title": "ПОКРЫВАЛО / ТӨСЕК ЖАПҚЫШ • НЫСАН 26",
+      "category": "pokryvala",
+      "mainPhoto": "images/pokryvala/IMG-20240528-WA0074.jpg",
+      "sidePhotos": [],
+      "allPhotos": [
+        "images/pokryvala/IMG-20240528-WA0074.jpg"
+      ],
+      "count": 1,
+      "tag": "10 / ПОКРЫВАЛА • ТӨСЕК ЖАПҚЫШ"
+    },
+    {
+      "id": 1227,
+      "title": "ПОКРЫВАЛО / ТӨСЕК ЖАПҚЫШ • НЫСАН 27",
+      "category": "pokryvala",
+      "mainPhoto": "images/pokryvala/IMG-20240727-WA0005.jpg",
+      "sidePhotos": [
+        "images/pokryvala/IMG-20240727-WA0006.jpg"
+      ],
+      "allPhotos": [
+        "images/pokryvala/IMG-20240727-WA0005.jpg",
+        "images/pokryvala/IMG-20240727-WA0006.jpg"
+      ],
+      "count": 2,
+      "tag": "10 / ПОКРЫВАЛА • ТӨСЕК ЖАПҚЫШ"
+    },
+    {
+      "id": 1228,
+      "title": "ПОКРЫВАЛО / ТӨСЕК ЖАПҚЫШ • НЫСАН 28",
+      "category": "pokryvala",
+      "mainPhoto": "images/pokryvala/IMG-20240803-WA0016.jpg",
+      "sidePhotos": [
+        "images/pokryvala/IMG-20240803-WA0017.jpg"
+      ],
+      "allPhotos": [
+        "images/pokryvala/IMG-20240803-WA0016.jpg",
+        "images/pokryvala/IMG-20240803-WA0017.jpg"
+      ],
+      "count": 2,
+      "tag": "10 / ПОКРЫВАЛА • ТӨСЕК ЖАПҚЫШ"
+    },
+    {
+      "id": 1229,
+      "title": "ПОКРЫВАЛО / ТӨСЕК ЖАПҚЫШ • НЫСАН 29",
+      "category": "pokryvala",
+      "mainPhoto": "images/pokryvala/IMG-20240803-WA0019.jpg",
+      "sidePhotos": [],
+      "allPhotos": [
+        "images/pokryvala/IMG-20240803-WA0019.jpg"
+      ],
+      "count": 1,
+      "tag": "10 / ПОКРЫВАЛА • ТӨСЕК ЖАПҚЫШ"
+    },
+    {
+      "id": 1230,
+      "title": "ПОКРЫВАЛО / ТӨСЕК ЖАПҚЫШ • НЫСАН 30",
+      "category": "pokryvala",
+      "mainPhoto": "images/pokryvala/IMG-20241002-WA0204.jpg",
+      "sidePhotos": [],
+      "allPhotos": [
+        "images/pokryvala/IMG-20241002-WA0204.jpg"
+      ],
+      "count": 1,
+      "tag": "10 / ПОКРЫВАЛА • ТӨСЕК ЖАПҚЫШ"
+    },
+    {
+      "id": 1231,
+      "title": "ПОКРЫВАЛО / ТӨСЕК ЖАПҚЫШ • НЫСАН 31",
+      "category": "pokryvala",
+      "mainPhoto": "images/pokryvala/IMG-20241101-WA0000.jpg",
+      "sidePhotos": [
+        "images/pokryvala/IMG-20241101-WA0001.jpg",
+        "images/pokryvala/IMG-20241101-WA0002.jpg"
+      ],
+      "allPhotos": [
+        "images/pokryvala/IMG-20241101-WA0000.jpg",
+        "images/pokryvala/IMG-20241101-WA0001.jpg",
+        "images/pokryvala/IMG-20241101-WA0002.jpg"
+      ],
+      "count": 3,
+      "tag": "10 / ПОКРЫВАЛА • ТӨСЕК ЖАПҚЫШ"
+    },
+    {
+      "id": 1232,
+      "title": "ПОКРЫВАЛО / ТӨСЕК ЖАПҚЫШ • НЫСАН 32",
+      "category": "pokryvala",
+      "mainPhoto": "images/pokryvala/IMG-20241113-WA0160.jpg",
+      "sidePhotos": [],
+      "allPhotos": [
+        "images/pokryvala/IMG-20241113-WA0160.jpg"
+      ],
+      "count": 1,
+      "tag": "10 / ПОКРЫВАЛА • ТӨСЕК ЖАПҚЫШ"
+    },
+    {
+      "id": 1233,
+      "title": "ПОКРЫВАЛО / ТӨСЕК ЖАПҚЫШ • НЫСАН 33",
+      "category": "pokryvala",
+      "mainPhoto": "images/pokryvala/IMG-20241113-WA0166.jpg",
+      "sidePhotos": [
+        "images/pokryvala/IMG-20241113-WA0167.jpg",
+        "images/pokryvala/IMG-20241113-WA0168.jpg",
+        "images/pokryvala/IMG-20241113-WA0169.jpg"
+      ],
+      "allPhotos": [
+        "images/pokryvala/IMG-20241113-WA0166.jpg",
+        "images/pokryvala/IMG-20241113-WA0167.jpg",
+        "images/pokryvala/IMG-20241113-WA0168.jpg",
+        "images/pokryvala/IMG-20241113-WA0169.jpg"
+      ],
+      "count": 4,
+      "tag": "10 / ПОКРЫВАЛА • ТӨСЕК ЖАПҚЫШ"
+    },
+    {
+      "id": 1234,
+      "title": "ПОКРЫВАЛО / ТӨСЕК ЖАПҚЫШ • НЫСАН 34",
+      "category": "pokryvala",
+      "mainPhoto": "images/pokryvala/IMG-20241201-WA0003.jpg",
+      "sidePhotos": [],
+      "allPhotos": [
+        "images/pokryvala/IMG-20241201-WA0003.jpg"
+      ],
+      "count": 1,
+      "tag": "10 / ПОКРЫВАЛА • ТӨСЕК ЖАПҚЫШ"
+    },
+    {
+      "id": 1235,
+      "title": "ПОКРЫВАЛО / ТӨСЕК ЖАПҚЫШ • НЫСАН 35",
+      "category": "pokryvala",
+      "mainPhoto": "images/pokryvala/IMG-20241205-WA0089(1).jpg",
+      "sidePhotos": [],
+      "allPhotos": [
+        "images/pokryvala/IMG-20241205-WA0089(1).jpg"
+      ],
+      "count": 1,
+      "tag": "10 / ПОКРЫВАЛА • ТӨСЕК ЖАПҚЫШ"
+    },
+    {
+      "id": 1236,
+      "title": "ПОКРЫВАЛО / ТӨСЕК ЖАПҚЫШ • НЫСАН 36",
+      "category": "pokryvala",
+      "mainPhoto": "images/pokryvala/IMG-20241230-WA0113.jpg",
+      "sidePhotos": [],
+      "allPhotos": [
+        "images/pokryvala/IMG-20241230-WA0113.jpg"
+      ],
+      "count": 1,
+      "tag": "10 / ПОКРЫВАЛА • ТӨСЕК ЖАПҚЫШ"
+    },
+    {
+      "id": 1237,
+      "title": "ПОКРЫВАЛО / ТӨСЕК ЖАПҚЫШ • НЫСАН 37",
+      "category": "pokryvala",
+      "mainPhoto": "images/pokryvala/IMG-20241230-WA0117.jpg",
+      "sidePhotos": [],
+      "allPhotos": [
+        "images/pokryvala/IMG-20241230-WA0117.jpg"
+      ],
+      "count": 1,
+      "tag": "10 / ПОКРЫВАЛА • ТӨСЕК ЖАПҚЫШ"
+    },
+    {
+      "id": 1238,
+      "title": "ПОКРЫВАЛО / ТӨСЕК ЖАПҚЫШ • НЫСАН 38",
+      "category": "pokryvala",
+      "mainPhoto": "images/pokryvala/IMG-20241230-WA0121.jpg",
+      "sidePhotos": [],
+      "allPhotos": [
+        "images/pokryvala/IMG-20241230-WA0121.jpg"
+      ],
+      "count": 1,
+      "tag": "10 / ПОКРЫВАЛА • ТӨСЕК ЖАПҚЫШ"
+    },
+    {
+      "id": 1239,
+      "title": "ПОКРЫВАЛО / ТӨСЕК ЖАПҚЫШ • НЫСАН 39",
+      "category": "pokryvala",
+      "mainPhoto": "images/pokryvala/IMG-20250130-WA0041.jpg",
+      "sidePhotos": [],
+      "allPhotos": [
+        "images/pokryvala/IMG-20250130-WA0041.jpg"
+      ],
+      "count": 1,
+      "tag": "10 / ПОКРЫВАЛА • ТӨСЕК ЖАПҚЫШ"
+    },
+    {
+      "id": 1240,
+      "title": "ПОКРЫВАЛО / ТӨСЕК ЖАПҚЫШ • НЫСАН 40",
+      "category": "pokryvala",
+      "mainPhoto": "images/pokryvala/IMG-20250130-WA0043.jpg",
+      "sidePhotos": [],
+      "allPhotos": [
+        "images/pokryvala/IMG-20250130-WA0043.jpg"
+      ],
+      "count": 1,
+      "tag": "10 / ПОКРЫВАЛА • ТӨСЕК ЖАПҚЫШ"
+    },
+    {
+      "id": 1241,
+      "title": "ПОКРЫВАЛО / ТӨСЕК ЖАПҚЫШ • НЫСАН 41",
+      "category": "pokryvala",
+      "mainPhoto": "images/pokryvala/IMG-20250327-WA0009.jpg",
+      "sidePhotos": [],
+      "allPhotos": [
+        "images/pokryvala/IMG-20250327-WA0009.jpg"
+      ],
+      "count": 1,
+      "tag": "10 / ПОКРЫВАЛА • ТӨСЕК ЖАПҚЫШ"
+    },
+    {
+      "id": 1242,
+      "title": "ПОКРЫВАЛО / ТӨСЕК ЖАПҚЫШ • НЫСАН 42",
+      "category": "pokryvala",
+      "mainPhoto": "images/pokryvala/IMG-20250416-WA0182.jpg",
+      "sidePhotos": [],
+      "allPhotos": [
+        "images/pokryvala/IMG-20250416-WA0182.jpg"
+      ],
+      "count": 1,
+      "tag": "10 / ПОКРЫВАЛА • ТӨСЕК ЖАПҚЫШ"
+    },
+    {
+      "id": 1243,
+      "title": "ПОКРЫВАЛО / ТӨСЕК ЖАПҚЫШ • НЫСАН 43",
+      "category": "pokryvala",
+      "mainPhoto": "images/pokryvala/IMG-20250416-WA0191.jpg",
+      "sidePhotos": [],
+      "allPhotos": [
+        "images/pokryvala/IMG-20250416-WA0191.jpg"
+      ],
+      "count": 1,
+      "tag": "10 / ПОКРЫВАЛА • ТӨСЕК ЖАПҚЫШ"
+    },
+    {
+      "id": 1244,
+      "title": "ПОКРЫВАЛО / ТӨСЕК ЖАПҚЫШ • НЫСАН 44",
+      "category": "pokryvala",
+      "mainPhoto": "images/pokryvala/IMG-20250416-WA0197.jpg",
+      "sidePhotos": [
+        "images/pokryvala/IMG-20250416-WA0198.jpg"
+      ],
+      "allPhotos": [
+        "images/pokryvala/IMG-20250416-WA0197.jpg",
+        "images/pokryvala/IMG-20250416-WA0198.jpg"
+      ],
+      "count": 2,
+      "tag": "10 / ПОКРЫВАЛА • ТӨСЕК ЖАПҚЫШ"
+    },
+    {
+      "id": 1245,
+      "title": "ПОКРЫВАЛО / ТӨСЕК ЖАПҚЫШ • НЫСАН 45",
+      "category": "pokryvala",
+      "mainPhoto": "images/pokryvala/IMG-20250416-WA0202.jpg",
+      "sidePhotos": [],
+      "allPhotos": [
+        "images/pokryvala/IMG-20250416-WA0202.jpg"
+      ],
+      "count": 1,
+      "tag": "10 / ПОКРЫВАЛА • ТӨСЕК ЖАПҚЫШ"
+    },
+    {
+      "id": 1246,
+      "title": "ПОКРЫВАЛО / ТӨСЕК ЖАПҚЫШ • НЫСАН 46",
+      "category": "pokryvala",
+      "mainPhoto": "images/pokryvala/IMG-20250416-WA0217.jpg",
+      "sidePhotos": [],
+      "allPhotos": [
+        "images/pokryvala/IMG-20250416-WA0217.jpg"
+      ],
+      "count": 1,
+      "tag": "10 / ПОКРЫВАЛА • ТӨСЕК ЖАПҚЫШ"
+    },
+    {
+      "id": 1247,
+      "title": "ПОКРЫВАЛО / ТӨСЕК ЖАПҚЫШ • НЫСАН 47",
+      "category": "pokryvala",
+      "mainPhoto": "images/pokryvala/IMG-20250416-WA0219.jpg",
+      "sidePhotos": [
+        "images/pokryvala/IMG-20250416-WA0220.jpg"
+      ],
+      "allPhotos": [
+        "images/pokryvala/IMG-20250416-WA0219.jpg",
+        "images/pokryvala/IMG-20250416-WA0220.jpg"
+      ],
+      "count": 2,
+      "tag": "10 / ПОКРЫВАЛА • ТӨСЕК ЖАПҚЫШ"
+    },
+    {
+      "id": 1248,
+      "title": "ПОКРЫВАЛО / ТӨСЕК ЖАПҚЫШ • НЫСАН 48",
+      "category": "pokryvala",
+      "mainPhoto": "images/pokryvala/IMG-20250419-WA0011.jpg",
+      "sidePhotos": [],
+      "allPhotos": [
+        "images/pokryvala/IMG-20250419-WA0011.jpg"
+      ],
+      "count": 1,
+      "tag": "10 / ПОКРЫВАЛА • ТӨСЕК ЖАПҚЫШ"
+    },
+    {
+      "id": 1249,
+      "title": "ПОКРЫВАЛО / ТӨСЕК ЖАПҚЫШ • НЫСАН 49",
+      "category": "pokryvala",
+      "mainPhoto": "images/pokryvala/IMG-20250419-WA0015.jpg",
+      "sidePhotos": [],
+      "allPhotos": [
+        "images/pokryvala/IMG-20250419-WA0015.jpg"
+      ],
+      "count": 1,
+      "tag": "10 / ПОКРЫВАЛА • ТӨСЕК ЖАПҚЫШ"
+    },
+    {
+      "id": 1250,
+      "title": "ПОКРЫВАЛО / ТӨСЕК ЖАПҚЫШ • НЫСАН 50",
+      "category": "pokryvala",
+      "mainPhoto": "images/pokryvala/IMG-20250419-WA0021.jpg",
+      "sidePhotos": [],
+      "allPhotos": [
+        "images/pokryvala/IMG-20250419-WA0021.jpg"
+      ],
+      "count": 1,
+      "tag": "10 / ПОКРЫВАЛА • ТӨСЕК ЖАПҚЫШ"
+    },
+    {
+      "id": 1251,
+      "title": "ПОКРЫВАЛО / ТӨСЕК ЖАПҚЫШ • НЫСАН 51",
+      "category": "pokryvala",
+      "mainPhoto": "images/pokryvala/IMG-20250419-WA0025.jpg",
+      "sidePhotos": [],
+      "allPhotos": [
+        "images/pokryvala/IMG-20250419-WA0025.jpg"
+      ],
+      "count": 1,
+      "tag": "10 / ПОКРЫВАЛА • ТӨСЕК ЖАПҚЫШ"
+    },
+    {
+      "id": 1252,
+      "title": "ПОКРЫВАЛО / ТӨСЕК ЖАПҚЫШ • НЫСАН 52",
+      "category": "pokryvala",
+      "mainPhoto": "images/pokryvala/IMG-20250419-WA0028.jpg",
+      "sidePhotos": [],
+      "allPhotos": [
+        "images/pokryvala/IMG-20250419-WA0028.jpg"
+      ],
+      "count": 1,
+      "tag": "10 / ПОКРЫВАЛА • ТӨСЕК ЖАПҚЫШ"
+    },
+    {
+      "id": 1253,
+      "title": "ПОКРЫВАЛО / ТӨСЕК ЖАПҚЫШ • НЫСАН 53",
+      "category": "pokryvala",
+      "mainPhoto": "images/pokryvala/IMG-20250419-WA0032 (2).jpg",
+      "sidePhotos": [],
+      "allPhotos": [
+        "images/pokryvala/IMG-20250419-WA0032 (2).jpg"
+      ],
+      "count": 1,
+      "tag": "10 / ПОКРЫВАЛА • ТӨСЕК ЖАПҚЫШ"
+    },
+    {
+      "id": 1254,
+      "title": "ПОКРЫВАЛО / ТӨСЕК ЖАПҚЫШ • НЫСАН 54",
+      "category": "pokryvala",
+      "mainPhoto": "images/pokryvala/IMG-20250419-WA0062.jpg",
+      "sidePhotos": [],
+      "allPhotos": [
+        "images/pokryvala/IMG-20250419-WA0062.jpg"
+      ],
+      "count": 1,
+      "tag": "10 / ПОКРЫВАЛА • ТӨСЕК ЖАПҚЫШ"
+    },
+    {
+      "id": 1255,
+      "title": "ПОКРЫВАЛО / ТӨСЕК ЖАПҚЫШ • НЫСАН 55",
+      "category": "pokryvala",
+      "mainPhoto": "images/pokryvala/IMG-20250419-WA0064.jpg",
+      "sidePhotos": [],
+      "allPhotos": [
+        "images/pokryvala/IMG-20250419-WA0064.jpg"
+      ],
+      "count": 1,
+      "tag": "10 / ПОКРЫВАЛА • ТӨСЕК ЖАПҚЫШ"
+    },
+    {
+      "id": 1256,
+      "title": "ПОКРЫВАЛО / ТӨСЕК ЖАПҚЫШ • НЫСАН 56",
+      "category": "pokryvala",
+      "mainPhoto": "images/pokryvala/IMG-20250528-WA0037.jpg",
+      "sidePhotos": [
+        "images/pokryvala/IMG-20250528-WA0038.jpg",
+        "images/pokryvala/IMG-20250528-WA0039.jpg"
+      ],
+      "allPhotos": [
+        "images/pokryvala/IMG-20250528-WA0037.jpg",
+        "images/pokryvala/IMG-20250528-WA0038.jpg",
+        "images/pokryvala/IMG-20250528-WA0039.jpg"
+      ],
+      "count": 3,
+      "tag": "10 / ПОКРЫВАЛА • ТӨСЕК ЖАПҚЫШ"
+    },
+    {
+      "id": 1257,
+      "title": "ПОКРЫВАЛО / ТӨСЕК ЖАПҚЫШ • НЫСАН 57",
+      "category": "pokryvala",
+      "mainPhoto": "images/pokryvala/IMG-20250627-WA0010.jpg",
+      "sidePhotos": [],
+      "allPhotos": [
+        "images/pokryvala/IMG-20250627-WA0010.jpg"
+      ],
+      "count": 1,
+      "tag": "10 / ПОКРЫВАЛА • ТӨСЕК ЖАПҚЫШ"
+    },
+    {
+      "id": 1258,
+      "title": "ПОКРЫВАЛО / ТӨСЕК ЖАПҚЫШ • НЫСАН 58",
+      "category": "pokryvala",
+      "mainPhoto": "images/pokryvala/IMG-20250627-WA0012.jpg",
+      "sidePhotos": [],
+      "allPhotos": [
+        "images/pokryvala/IMG-20250627-WA0012.jpg"
+      ],
+      "count": 1,
+      "tag": "10 / ПОКРЫВАЛА • ТӨСЕК ЖАПҚЫШ"
+    },
+    {
+      "id": 1259,
+      "title": "ПОКРЫВАЛО / ТӨСЕК ЖАПҚЫШ • НЫСАН 59",
+      "category": "pokryvala",
+      "mainPhoto": "images/pokryvala/IMG-20250627-WA0016 (2).jpg",
+      "sidePhotos": [
+        "images/pokryvala/IMG-20250627-WA0017.jpg",
+        "images/pokryvala/IMG-20250627-WA0018.jpg"
+      ],
+      "allPhotos": [
+        "images/pokryvala/IMG-20250627-WA0016 (2).jpg",
+        "images/pokryvala/IMG-20250627-WA0017.jpg",
+        "images/pokryvala/IMG-20250627-WA0018.jpg"
+      ],
+      "count": 3,
+      "tag": "10 / ПОКРЫВАЛА • ТӨСЕК ЖАПҚЫШ"
+    },
+    {
+      "id": 1260,
+      "title": "ПОКРЫВАЛО / ТӨСЕК ЖАПҚЫШ • НЫСАН 60",
+      "category": "pokryvala",
+      "mainPhoto": "images/pokryvala/IMG-20250706-WA0022 (2).jpg",
+      "sidePhotos": [
+        "images/pokryvala/IMG-20250706-WA0023.jpg",
+        "images/pokryvala/IMG-20250706-WA0024.jpg",
+        "images/pokryvala/IMG-20250706-WA0025.jpg",
+        "images/pokryvala/IMG-20250706-WA0026.jpg"
+      ],
+      "allPhotos": [
+        "images/pokryvala/IMG-20250706-WA0022 (2).jpg",
+        "images/pokryvala/IMG-20250706-WA0023.jpg",
+        "images/pokryvala/IMG-20250706-WA0024.jpg",
+        "images/pokryvala/IMG-20250706-WA0025.jpg",
+        "images/pokryvala/IMG-20250706-WA0026.jpg"
+      ],
+      "count": 5,
+      "tag": "10 / ПОКРЫВАЛА • ТӨСЕК ЖАПҚЫШ"
+    },
+    {
+      "id": 1261,
+      "title": "ПОКРЫВАЛО / ТӨСЕК ЖАПҚЫШ • НЫСАН 61",
+      "category": "pokryvala",
+      "mainPhoto": "images/pokryvala/IMG-20250710-WA0091.jpg",
+      "sidePhotos": [],
+      "allPhotos": [
+        "images/pokryvala/IMG-20250710-WA0091.jpg"
+      ],
+      "count": 1,
+      "tag": "10 / ПОКРЫВАЛА • ТӨСЕК ЖАПҚЫШ"
+    },
+    {
+      "id": 1262,
+      "title": "ПОКРЫВАЛО / ТӨСЕК ЖАПҚЫШ • НЫСАН 62",
+      "category": "pokryvala",
+      "mainPhoto": "images/pokryvala/IMG-20250710-WA0104.jpg",
+      "sidePhotos": [],
+      "allPhotos": [
+        "images/pokryvala/IMG-20250710-WA0104.jpg"
+      ],
+      "count": 1,
+      "tag": "10 / ПОКРЫВАЛА • ТӨСЕК ЖАПҚЫШ"
+    },
+    {
+      "id": 1263,
+      "title": "ПОКРЫВАЛО / ТӨСЕК ЖАПҚЫШ • НЫСАН 63",
+      "category": "pokryvala",
+      "mainPhoto": "images/pokryvala/IMG-20250710-WA0111.jpg",
+      "sidePhotos": [],
+      "allPhotos": [
+        "images/pokryvala/IMG-20250710-WA0111.jpg"
+      ],
+      "count": 1,
+      "tag": "10 / ПОКРЫВАЛА • ТӨСЕК ЖАПҚЫШ"
+    },
+    {
+      "id": 1264,
+      "title": "ПОКРЫВАЛО / ТӨСЕК ЖАПҚЫШ • НЫСАН 64",
+      "category": "pokryvala",
+      "mainPhoto": "images/pokryvala/IMG-20250710-WA0114.jpg",
+      "sidePhotos": [],
+      "allPhotos": [
+        "images/pokryvala/IMG-20250710-WA0114.jpg"
+      ],
+      "count": 1,
+      "tag": "10 / ПОКРЫВАЛА • ТӨСЕК ЖАПҚЫШ"
+    },
+    {
+      "id": 1265,
+      "title": "ПОКРЫВАЛО / ТӨСЕК ЖАПҚЫШ • НЫСАН 65",
+      "category": "pokryvala",
+      "mainPhoto": "images/pokryvala/IMG-20250716-WA0066.jpg",
+      "sidePhotos": [
+        "images/pokryvala/IMG-20250716-WA0067.jpg",
+        "images/pokryvala/IMG-20250716-WA0068.jpg"
+      ],
+      "allPhotos": [
+        "images/pokryvala/IMG-20250716-WA0066.jpg",
+        "images/pokryvala/IMG-20250716-WA0067.jpg",
+        "images/pokryvala/IMG-20250716-WA0068.jpg"
+      ],
+      "count": 3,
+      "tag": "10 / ПОКРЫВАЛА • ТӨСЕК ЖАПҚЫШ"
+    },
+    {
+      "id": 1266,
+      "title": "ПОКРЫВАЛО / ТӨСЕК ЖАПҚЫШ • НЫСАН 66",
+      "category": "pokryvala",
+      "mainPhoto": "images/pokryvala/IMG-20250820-WA0022.jpg",
+      "sidePhotos": [],
+      "allPhotos": [
+        "images/pokryvala/IMG-20250820-WA0022.jpg"
+      ],
+      "count": 1,
+      "tag": "10 / ПОКРЫВАЛА • ТӨСЕК ЖАПҚЫШ"
+    },
+    {
+      "id": 1267,
+      "title": "ПОКРЫВАЛО / ТӨСЕК ЖАПҚЫШ • НЫСАН 67",
+      "category": "pokryvala",
+      "mainPhoto": "images/pokryvala/IMG-20250820-WA0026.jpg",
+      "sidePhotos": [],
+      "allPhotos": [
+        "images/pokryvala/IMG-20250820-WA0026.jpg"
+      ],
+      "count": 1,
+      "tag": "10 / ПОКРЫВАЛА • ТӨСЕК ЖАПҚЫШ"
+    },
+    {
+      "id": 1268,
+      "title": "ПОКРЫВАЛО / ТӨСЕК ЖАПҚЫШ • НЫСАН 68",
+      "category": "pokryvala",
+      "mainPhoto": "images/pokryvala/IMG-20251013-WA0027.jpg",
+      "sidePhotos": [
+        "images/pokryvala/IMG-20251013-WA0028.jpg"
+      ],
+      "allPhotos": [
+        "images/pokryvala/IMG-20251013-WA0027.jpg",
+        "images/pokryvala/IMG-20251013-WA0028.jpg"
+      ],
+      "count": 2,
+      "tag": "10 / ПОКРЫВАЛА • ТӨСЕК ЖАПҚЫШ"
+    },
+    {
+      "id": 1269,
+      "title": "ПОКРЫВАЛО / ТӨСЕК ЖАПҚЫШ • НЫСАН 69",
+      "category": "pokryvala",
+      "mainPhoto": "images/pokryvala/IMG-20251013-WA0031.jpg",
+      "sidePhotos": [],
+      "allPhotos": [
+        "images/pokryvala/IMG-20251013-WA0031.jpg"
+      ],
+      "count": 1,
+      "tag": "10 / ПОКРЫВАЛА • ТӨСЕК ЖАПҚЫШ"
+    },
+    {
+      "id": 1270,
+      "title": "ПОКРЫВАЛО / ТӨСЕК ЖАПҚЫШ • НЫСАН 70",
+      "category": "pokryvala",
+      "mainPhoto": "images/pokryvala/IMG-20251013-WA0037.jpg",
+      "sidePhotos": [
+        "images/pokryvala/IMG-20251013-WA0038.jpg",
+        "images/pokryvala/IMG-20251013-WA0039.jpg"
+      ],
+      "allPhotos": [
+        "images/pokryvala/IMG-20251013-WA0037.jpg",
+        "images/pokryvala/IMG-20251013-WA0038.jpg",
+        "images/pokryvala/IMG-20251013-WA0039.jpg"
+      ],
+      "count": 3,
+      "tag": "10 / ПОКРЫВАЛА • ТӨСЕК ЖАПҚЫШ"
+    },
+    {
+      "id": 1271,
+      "title": "ПОКРЫВАЛО / ТӨСЕК ЖАПҚЫШ • НЫСАН 71",
+      "category": "pokryvala",
+      "mainPhoto": "images/pokryvala/IMG-20251013-WA0041.jpg",
+      "sidePhotos": [
+        "images/pokryvala/IMG-20251013-WA0042.jpg"
+      ],
+      "allPhotos": [
+        "images/pokryvala/IMG-20251013-WA0041.jpg",
+        "images/pokryvala/IMG-20251013-WA0042.jpg"
+      ],
+      "count": 2,
+      "tag": "10 / ПОКРЫВАЛА • ТӨСЕК ЖАПҚЫШ"
+    },
+    {
+      "id": 1272,
+      "title": "ПОКРЫВАЛО / ТӨСЕК ЖАПҚЫШ • НЫСАН 72",
+      "category": "pokryvala",
+      "mainPhoto": "images/pokryvala/IMG-20260302-WA0010 (2).jpg",
+      "sidePhotos": [],
+      "allPhotos": [
+        "images/pokryvala/IMG-20260302-WA0010 (2).jpg"
+      ],
+      "count": 1,
+      "tag": "10 / ПОКРЫВАЛА • ТӨСЕК ЖАПҚЫШ"
+    },
+    {
+      "id": 1273,
+      "title": "ПОКРЫВАЛО / ТӨСЕК ЖАПҚЫШ • НЫСАН 73",
+      "category": "pokryvala",
+      "mainPhoto": "images/pokryvala/IMG-20260302-WA0021.jpg",
+      "sidePhotos": [
+        "images/pokryvala/IMG-20260302-WA0022.jpg",
+        "images/pokryvala/IMG-20260302-WA0023.jpg",
+        "images/pokryvala/IMG-20260302-WA0024.jpg"
+      ],
+      "allPhotos": [
+        "images/pokryvala/IMG-20260302-WA0021.jpg",
+        "images/pokryvala/IMG-20260302-WA0022.jpg",
+        "images/pokryvala/IMG-20260302-WA0023.jpg",
+        "images/pokryvala/IMG-20260302-WA0024.jpg"
+      ],
+      "count": 4,
+      "tag": "10 / ПОКРЫВАЛА • ТӨСЕК ЖАПҚЫШ"
+    },
+    {
+      "id": 1274,
+      "title": "ПОКРЫВАЛО / ТӨСЕК ЖАПҚЫШ • НЫСАН 74",
+      "category": "pokryvala",
+      "mainPhoto": "images/pokryvala/IMG-20260302-WA0027 (2).jpg",
+      "sidePhotos": [
+        "images/pokryvala/IMG-20260302-WA0028.jpg"
+      ],
+      "allPhotos": [
+        "images/pokryvala/IMG-20260302-WA0027 (2).jpg",
+        "images/pokryvala/IMG-20260302-WA0028.jpg"
+      ],
+      "count": 2,
+      "tag": "10 / ПОКРЫВАЛА • ТӨСЕК ЖАПҚЫШ"
+    },
+    {
+      "id": 1275,
+      "title": "ПОКРЫВАЛО / ТӨСЕК ЖАПҚЫШ • НЫСАН 75",
+      "category": "pokryvala",
+      "mainPhoto": "images/pokryvala/IMG-20260920-WA0020.jpg",
+      "sidePhotos": [],
+      "allPhotos": [
+        "images/pokryvala/IMG-20260920-WA0020.jpg"
+      ],
+      "count": 1,
+      "tag": "10 / ПОКРЫВАЛА • ТӨСЕК ЖАПҚЫШ"
+    },
+    {
+      "id": 1276,
+      "title": "ПОКРЫВАЛО / ТӨСЕК ЖАПҚЫШ • НЫСАН 76",
+      "category": "pokryvala",
+      "mainPhoto": "images/pokryvala/IMG-20260920-WA0023.jpg",
+      "sidePhotos": [],
+      "allPhotos": [
+        "images/pokryvala/IMG-20260920-WA0023.jpg"
+      ],
+      "count": 1,
+      "tag": "10 / ПОКРЫВАЛА • ТӨСЕК ЖАПҚЫШ"
+    },
+    {
+      "id": 1277,
+      "title": "ПОКРЫВАЛО / ТӨСЕК ЖАПҚЫШ • НЫСАН 77",
+      "category": "pokryvala",
+      "mainPhoto": "images/pokryvala/IMG_20260504_154057_564.jpg",
+      "sidePhotos": [
+        "images/pokryvala/IMG_20260504_154057_777.jpg"
+      ],
+      "allPhotos": [
+        "images/pokryvala/IMG_20260504_154057_564.jpg",
+        "images/pokryvala/IMG_20260504_154057_777.jpg"
+      ],
+      "count": 2,
+      "tag": "10 / ПОКРЫВАЛА • ТӨСЕК ЖАПҚЫШ"
+    },
+    {
+      "id": 1278,
+      "title": "ПОКРЫВАЛО / ТӨСЕК ЖАПҚЫШ • НЫСАН 78",
+      "category": "pokryvala",
+      "mainPhoto": "images/pokryvala/IMG_20260808_182856_577.jpg",
+      "sidePhotos": [],
+      "allPhotos": [
+        "images/pokryvala/IMG_20260808_182856_577.jpg"
+      ],
+      "count": 1,
+      "tag": "10 / ПОКРЫВАЛА • ТӨСЕК ЖАПҚЫШ"
+    },
+    {
+      "id": 1279,
+      "title": "ПОКРЫВАЛО / ТӨСЕК ЖАПҚЫШ • НЫСАН 79",
+      "category": "pokryvala",
+      "mainPhoto": "images/pokryvala/IMG_20260809_111348_437.jpg",
+      "sidePhotos": [
+        "images/pokryvala/IMG_20260809_111350_773.jpg"
+      ],
+      "allPhotos": [
+        "images/pokryvala/IMG_20260809_111348_437.jpg",
+        "images/pokryvala/IMG_20260809_111350_773.jpg"
+      ],
+      "count": 2,
+      "tag": "10 / ПОКРЫВАЛА • ТӨСЕК ЖАПҚЫШ"
+    },
+    {
+      "id": 1280,
+      "title": "ПОКРЫВАЛО / ТӨСЕК ЖАПҚЫШ • НЫСАН 80",
+      "category": "pokryvala",
+      "mainPhoto": "images/pokryvala/IMG_20260926_100949_905.jpg",
+      "sidePhotos": [],
+      "allPhotos": [
+        "images/pokryvala/IMG_20260926_100949_905.jpg"
+      ],
+      "count": 1,
+      "tag": "10 / ПОКРЫВАЛА • ТӨСЕК ЖАПҚЫШ"
+    },
+    {
+      "id": 1281,
+      "title": "ПОКРЫВАЛО / ТӨСЕК ЖАПҚЫШ • НЫСАН 81",
+      "category": "pokryvala",
+      "mainPhoto": "images/pokryvala/IMG_20260926_132245_258.jpg",
+      "sidePhotos": [
+        "images/pokryvala/IMG_20260926_132245_461.jpg",
+        "images/pokryvala/IMG_20260926_132245_514.jpg",
+        "images/pokryvala/IMG_20260926_132245_533.jpg",
+        "images/pokryvala/IMG_20260926_132253_969.jpg",
+        "images/pokryvala/IMG_20260926_132254_041.jpg",
+        "images/pokryvala/IMG_20260926_132254_249.jpg",
+        "images/pokryvala/IMG_20260926_132254_410.jpg",
+        "images/pokryvala/IMG_20260926_132254_781.jpg",
+        "images/pokryvala/IMG_20260926_132254_801.jpg",
+        "images/pokryvala/IMG_20260926_132308_762.jpg",
+        "images/pokryvala/IMG_20260926_132308_865.jpg",
+        "images/pokryvala/IMG_20260926_132309_067.jpg",
+        "images/pokryvala/IMG_20260926_132309_685.jpg",
+        "images/pokryvala/IMG_20260926_132314_337.jpg",
+        "images/pokryvala/IMG_20260926_132314_456.jpg",
+        "images/pokryvala/IMG_20260926_132328_885.jpg"
+      ],
+      "allPhotos": [
+        "images/pokryvala/IMG_20260926_132245_258.jpg",
+        "images/pokryvala/IMG_20260926_132245_461.jpg",
+        "images/pokryvala/IMG_20260926_132245_514.jpg",
+        "images/pokryvala/IMG_20260926_132245_533.jpg",
+        "images/pokryvala/IMG_20260926_132253_969.jpg",
+        "images/pokryvala/IMG_20260926_132254_041.jpg",
+        "images/pokryvala/IMG_20260926_132254_249.jpg",
+        "images/pokryvala/IMG_20260926_132254_410.jpg",
+        "images/pokryvala/IMG_20260926_132254_781.jpg",
+        "images/pokryvala/IMG_20260926_132254_801.jpg",
+        "images/pokryvala/IMG_20260926_132308_762.jpg",
+        "images/pokryvala/IMG_20260926_132308_865.jpg",
+        "images/pokryvala/IMG_20260926_132309_067.jpg",
+        "images/pokryvala/IMG_20260926_132309_685.jpg",
+        "images/pokryvala/IMG_20260926_132314_337.jpg",
+        "images/pokryvala/IMG_20260926_132314_456.jpg",
+        "images/pokryvala/IMG_20260926_132328_885.jpg"
+      ],
+      "count": 17,
+      "tag": "10 / ПОКРЫВАЛА • ТӨСЕК ЖАПҚЫШ"
+    },
+    {
+      "id": 1282,
+      "title": "ПОКРЫВАЛО / ТӨСЕК ЖАПҚЫШ • НЫСАН 82",
+      "category": "pokryvala",
+      "mainPhoto": "images/pokryvala/Q8m2Rx29NPucZ2D_N1i46YtDL3Jgs_Fj7uxQ9CxBu_1FDAoDuz8koONf04MK37u.jpg",
+      "sidePhotos": [],
+      "allPhotos": [
+        "images/pokryvala/Q8m2Rx29NPucZ2D_N1i46YtDL3Jgs_Fj7uxQ9CxBu_1FDAoDuz8koONf04MK37u.jpg"
+      ],
+      "count": 1,
+      "tag": "10 / ПОКРЫВАЛА • ТӨСЕК ЖАПҚЫШ"
+    },
+    {
+      "id": 1283,
+      "title": "ПОКРЫВАЛО / ТӨСЕК ЖАПҚЫШ • НЫСАН 83",
+      "category": "pokryvala",
+      "mainPhoto": "images/pokryvala/Screenshot_20221202_020310_Instagram.jpg",
+      "sidePhotos": [],
+      "allPhotos": [
+        "images/pokryvala/Screenshot_20221202_020310_Instagram.jpg"
+      ],
+      "count": 1,
+      "tag": "10 / ПОКРЫВАЛА • ТӨСЕК ЖАПҚЫШ"
+    },
+    {
+      "id": 1284,
+      "title": "ПОКРЫВАЛО / ТӨСЕК ЖАПҚЫШ • НЫСАН 84",
+      "category": "pokryvala",
+      "mainPhoto": "images/pokryvala/Screenshot_20230128_113206_Instagram.jpg",
+      "sidePhotos": [
+        "images/pokryvala/Screenshot_20230128_113216_Instagram (2).jpg",
+        "images/pokryvala/Screenshot_20230131_135404_Instagram.jpg",
+        "images/pokryvala/Screenshot_20230131_135958_Instagram.jpg",
+        "images/pokryvala/Screenshot_20230131_140005_Instagram.jpg",
+        "images/pokryvala/Screenshot_20230131_140017_Instagram.jpg",
+        "images/pokryvala/Screenshot_20230131_140050_Instagram.jpg",
+        "images/pokryvala/Screenshot_20230131_140058_Instagram.jpg",
+        "images/pokryvala/Screenshot_20230131_140206_Instagram.jpg",
+        "images/pokryvala/Screenshot_20230131_140619_Instagram.jpg",
+        "images/pokryvala/Screenshot_20230131_140630_Instagram (2).jpg",
+        "images/pokryvala/Screenshot_20230608_170143_Instagram.jpg",
+        "images/pokryvala/Screenshot_20230726_155948_Gallery.jpg"
+      ],
+      "allPhotos": [
+        "images/pokryvala/Screenshot_20230128_113206_Instagram.jpg",
+        "images/pokryvala/Screenshot_20230128_113216_Instagram (2).jpg",
+        "images/pokryvala/Screenshot_20230131_135404_Instagram.jpg",
+        "images/pokryvala/Screenshot_20230131_135958_Instagram.jpg",
+        "images/pokryvala/Screenshot_20230131_140005_Instagram.jpg",
+        "images/pokryvala/Screenshot_20230131_140017_Instagram.jpg",
+        "images/pokryvala/Screenshot_20230131_140050_Instagram.jpg",
+        "images/pokryvala/Screenshot_20230131_140058_Instagram.jpg",
+        "images/pokryvala/Screenshot_20230131_140206_Instagram.jpg",
+        "images/pokryvala/Screenshot_20230131_140619_Instagram.jpg",
+        "images/pokryvala/Screenshot_20230131_140630_Instagram (2).jpg",
+        "images/pokryvala/Screenshot_20230608_170143_Instagram.jpg",
+        "images/pokryvala/Screenshot_20230726_155948_Gallery.jpg"
+      ],
+      "count": 13,
+      "tag": "10 / ПОКРЫВАЛА • ТӨСЕК ЖАПҚЫШ"
+    },
+    {
+      "id": 1285,
+      "title": "ПОКРЫВАЛО / ТӨСЕК ЖАПҚЫШ • НЫСАН 85",
+      "category": "pokryvala",
+      "mainPhoto": "images/pokryvala/Screenshot_20240130_201943_Instagram.jpg",
+      "sidePhotos": [
+        "images/pokryvala/Screenshot_20240322_192609_Instagram.jpg",
+        "images/pokryvala/Screenshot_20240322_192622_Instagram.jpg",
+        "images/pokryvala/Screenshot_20240322_192633_Instagram.jpg",
+        "images/pokryvala/Screenshot_20240322_192645_Instagram.jpg",
+        "images/pokryvala/Screenshot_20240322_193117_Instagram.jpg",
+        "images/pokryvala/Screenshot_20240322_193128_Instagram.jpg",
+        "images/pokryvala/Screenshot_20240429_215012_Instagram.jpg",
+        "images/pokryvala/Screenshot_20240429_215040_Instagram.jpg",
+        "images/pokryvala/Screenshot_20240429_215055_Instagram.jpg"
+      ],
+      "allPhotos": [
+        "images/pokryvala/Screenshot_20240130_201943_Instagram.jpg",
+        "images/pokryvala/Screenshot_20240322_192609_Instagram.jpg",
+        "images/pokryvala/Screenshot_20240322_192622_Instagram.jpg",
+        "images/pokryvala/Screenshot_20240322_192633_Instagram.jpg",
+        "images/pokryvala/Screenshot_20240322_192645_Instagram.jpg",
+        "images/pokryvala/Screenshot_20240322_193117_Instagram.jpg",
+        "images/pokryvala/Screenshot_20240322_193128_Instagram.jpg",
+        "images/pokryvala/Screenshot_20240429_215012_Instagram.jpg",
+        "images/pokryvala/Screenshot_20240429_215040_Instagram.jpg",
+        "images/pokryvala/Screenshot_20240429_215055_Instagram.jpg"
+      ],
+      "count": 10,
+      "tag": "10 / ПОКРЫВАЛА • ТӨСЕК ЖАПҚЫШ"
+    },
+    {
+      "id": 1286,
+      "title": "ПОКРЫВАЛО / ТӨСЕК ЖАПҚЫШ • НЫСАН 86",
+      "category": "pokryvala",
+      "mainPhoto": "images/pokryvala/W02fPRlN5FWAc_nDCywmXjyYN0ac4jTPwVSfpGD0QMQeTb2wwe3rwNXKdzP7MTX8E8Z3fofxYZDpy.jpg",
+      "sidePhotos": [],
+      "allPhotos": [
+        "images/pokryvala/W02fPRlN5FWAc_nDCywmXjyYN0ac4jTPwVSfpGD0QMQeTb2wwe3rwNXKdzP7MTX8E8Z3fofxYZDpy.jpg"
+      ],
+      "count": 1,
+      "tag": "10 / ПОКРЫВАЛА • ТӨСЕК ЖАПҚЫШ"
+    },
+    {
+      "id": 1287,
+      "title": "ПОКРЫВАЛО / ТӨСЕК ЖАПҚЫШ • НЫСАН 87",
+      "category": "pokryvala",
+      "mainPhoto": "images/pokryvala/_c6AO4r9b9TFrWHTYCLJ7Ijya6K_cXhoFUDsIOV_55iUBjy_ZfWRtcEWhMLfC1a.jpg",
+      "sidePhotos": [],
+      "allPhotos": [
+        "images/pokryvala/_c6AO4r9b9TFrWHTYCLJ7Ijya6K_cXhoFUDsIOV_55iUBjy_ZfWRtcEWhMLfC1a.jpg"
+      ],
+      "count": 1,
+      "tag": "10 / ПОКРЫВАЛА • ТӨСЕК ЖАПҚЫШ"
+    },
+    {
+      "id": 1288,
+      "title": "ПОКРЫВАЛО / ТӨСЕК ЖАПҚЫШ • НЫСАН 88",
+      "category": "pokryvala",
+      "mainPhoto": "images/pokryvala/_tm_npXiAw4Ziv_lVstg3VFM_bz_gO983_y5_yDl64jl_7SAuK0rwsS2GvukMFLS.jpg",
+      "sidePhotos": [],
+      "allPhotos": [
+        "images/pokryvala/_tm_npXiAw4Ziv_lVstg3VFM_bz_gO983_y5_yDl64jl_7SAuK0rwsS2GvukMFLS.jpg"
+      ],
+      "count": 1,
+      "tag": "10 / ПОКРЫВАЛА • ТӨСЕК ЖАПҚЫШ"
+    },
+    {
+      "id": 1289,
+      "title": "ПОКРЫВАЛО / ТӨСЕК ЖАПҚЫШ • НЫСАН 89",
+      "category": "pokryvala",
+      "mainPhoto": "images/pokryvala/ad437c2b0a1d0db7368208d260184bf5.jpg",
+      "sidePhotos": [],
+      "allPhotos": [
+        "images/pokryvala/ad437c2b0a1d0db7368208d260184bf5.jpg"
+      ],
+      "count": 1,
+      "tag": "10 / ПОКРЫВАЛА • ТӨСЕК ЖАПҚЫШ"
+    },
+    {
+      "id": 1290,
+      "title": "ПОКРЫВАЛО / ТӨСЕК ЖАПҚЫШ • НЫСАН 90",
+      "category": "pokryvala",
+      "mainPhoto": "images/pokryvala/c449095c3390f04cfd034e8dafc071b7.jpg",
+      "sidePhotos": [],
+      "allPhotos": [
+        "images/pokryvala/c449095c3390f04cfd034e8dafc071b7.jpg"
+      ],
+      "count": 1,
+      "tag": "10 / ПОКРЫВАЛА • ТӨСЕК ЖАПҚЫШ"
+    },
+    {
+      "id": 1291,
+      "title": "ПОКРЫВАЛО / ТӨСЕК ЖАПҚЫШ • НЫСАН 91",
+      "category": "pokryvala",
+      "mainPhoto": "images/pokryvala/c5e7eab6a04fe7979cc9308e82a235e1.jpg",
+      "sidePhotos": [],
+      "allPhotos": [
+        "images/pokryvala/c5e7eab6a04fe7979cc9308e82a235e1.jpg"
+      ],
+      "count": 1,
+      "tag": "10 / ПОКРЫВАЛА • ТӨСЕК ЖАПҚЫШ"
+    },
+    {
+      "id": 1292,
+      "title": "ПОКРЫВАЛО / ТӨСЕК ЖАПҚЫШ • НЫСАН 92",
+      "category": "pokryvala",
+      "mainPhoto": "images/pokryvala/d_vSankplB5fdzlFyu6_ug1_8TynBdLotSS_FlvULluE5uX2jh8vAzaipT_HkcHgf.jpg",
+      "sidePhotos": [],
+      "allPhotos": [
+        "images/pokryvala/d_vSankplB5fdzlFyu6_ug1_8TynBdLotSS_FlvULluE5uX2jh8vAzaipT_HkcHgf.jpg"
+      ],
+      "count": 1,
+      "tag": "10 / ПОКРЫВАЛА • ТӨСЕК ЖАПҚЫШ"
+    },
+    {
+      "id": 1293,
+      "title": "ПОКРЫВАЛО / ТӨСЕК ЖАПҚЫШ • НЫСАН 93",
+      "category": "pokryvala",
+      "mainPhoto": "images/pokryvala/fccfff0fcb6e83624b861377c3ee6a74.jpg",
+      "sidePhotos": [],
+      "allPhotos": [
+        "images/pokryvala/fccfff0fcb6e83624b861377c3ee6a74.jpg"
+      ],
+      "count": 1,
+      "tag": "10 / ПОКРЫВАЛА • ТӨСЕК ЖАПҚЫШ"
+    },
+    {
+      "id": 1294,
+      "title": "ПОКРЫВАЛО / ТӨСЕК ЖАПҚЫШ • НЫСАН 94",
+      "category": "pokryvala",
+      "mainPhoto": "images/pokryvala/file_0000000012ec81faa92049aa66fcb57e (2).png",
+      "sidePhotos": [],
+      "allPhotos": [
+        "images/pokryvala/file_0000000012ec81faa92049aa66fcb57e (2).png"
+      ],
+      "count": 1,
+      "tag": "10 / ПОКРЫВАЛА • ТӨСЕК ЖАПҚЫШ"
+    },
+    {
+      "id": 1295,
+      "title": "ПОКРЫВАЛО / ТӨСЕК ЖАПҚЫШ • НЫСАН 95",
+      "category": "pokryvala",
+      "mainPhoto": "images/pokryvala/file_000000005d308206973105c502f844ce.png",
+      "sidePhotos": [],
+      "allPhotos": [
+        "images/pokryvala/file_000000005d308206973105c502f844ce.png"
+      ],
+      "count": 1,
+      "tag": "10 / ПОКРЫВАЛА • ТӨСЕК ЖАПҚЫШ"
+    },
+    {
+      "id": 1296,
+      "title": "ПОКРЫВАЛО / ТӨСЕК ЖАПҚЫШ • НЫСАН 96",
+      "category": "pokryvala",
+      "mainPhoto": "images/pokryvala/file_0000000098bc81faa4ab3dea5698e255.png",
+      "sidePhotos": [],
+      "allPhotos": [
+        "images/pokryvala/file_0000000098bc81faa4ab3dea5698e255.png"
+      ],
+      "count": 1,
+      "tag": "10 / ПОКРЫВАЛА • ТӨСЕК ЖАПҚЫШ"
+    },
+    {
+      "id": 1297,
+      "title": "ПОКРЫВАЛО / ТӨСЕК ЖАПҚЫШ • НЫСАН 97",
+      "category": "pokryvala",
+      "mainPhoto": "images/pokryvala/qdWiWA2F3cbZoTBOpvOJTMGcgoTGsjNrOX_2pHWrYGxfM_HMzKVCCJg3wWlPUPFr5MQJFOxsj19x0.jpg",
+      "sidePhotos": [],
+      "allPhotos": [
+        "images/pokryvala/qdWiWA2F3cbZoTBOpvOJTMGcgoTGsjNrOX_2pHWrYGxfM_HMzKVCCJg3wWlPUPFr5MQJFOxsj19x0.jpg"
+      ],
+      "count": 1,
+      "tag": "10 / ПОКРЫВАЛА • ТӨСЕК ЖАПҚЫШ"
+    },
+    {
+      "id": 1298,
+      "title": "ПОКРЫВАЛО / ТӨСЕК ЖАПҚЫШ • НЫСАН 98",
+      "category": "pokryvala",
+      "mainPhoto": "images/pokryvala/vJFg7xAOfk9DdIqQA5v2tT66Afvv5Sn1BagnfRDRW0m7jVLblHIUDWzudrh5yOW.jpg",
+      "sidePhotos": [],
+      "allPhotos": [
+        "images/pokryvala/vJFg7xAOfk9DdIqQA5v2tT66Afvv5Sn1BagnfRDRW0m7jVLblHIUDWzudrh5yOW.jpg"
+      ],
+      "count": 1,
+      "tag": "10 / ПОКРЫВАЛА • ТӨСЕК ЖАПҚЫШ"
+    }
+  ]
+}

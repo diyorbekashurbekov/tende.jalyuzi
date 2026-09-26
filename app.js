@@ -397,6 +397,26 @@
       });
     }
 
+    // Bespoke Bedspreads & Cushions / Покрывала cases (180 photos, 98 cases)
+    if (window.POKRYVALA_CASES_DATA && window.POKRYVALA_CASES_DATA.cases) {
+      window.POKRYVALA_CASES_DATA.cases.forEach((c, idx) => {
+        const rawList = [c.mainPhoto, ...(c.sidePhotos || []), ...(c.allPhotos || [])].filter(Boolean);
+        const photos = Array.from(new Set(rawList));
+        const numStr = String(idx + 1).padStart(2, '0');
+        const title = c.title || `ПОКРЫВАЛО / ТӨСЕК ЖАПҚЫШ • НЫСАН ${numStr}`;
+        cases.push({
+          id: `pokryvala-${c.id || idx + 1}`,
+          category: 'pokryvala',
+          title: title,
+          mainPhoto: photos[0] || c.mainPhoto,
+          sidePhotos: photos.slice(1),
+          allPhotos: photos,
+          count: photos.length,
+          tag: '10 / ПОКРЫВАЛА • ТӨСЕК ЖАПҚЫШ'
+        });
+      });
+    }
+
     // Fallbacks
     if (cases.length === 0) {
       const fallbacks = [
@@ -426,7 +446,8 @@
       classic: ALL_PROJECT_CASES.filter(c => c.category === 'classic').length,
       motor: ALL_PROJECT_CASES.filter(c => c.category === 'motor').length,
       stairs: ALL_PROJECT_CASES.filter(c => c.category === 'stairs').length,
-      taraz: ALL_PROJECT_CASES.filter(c => c.category === 'taraz').length
+      taraz: ALL_PROJECT_CASES.filter(c => c.category === 'taraz').length,
+      pokryvala: ALL_PROJECT_CASES.filter(c => c.category === 'pokryvala').length
     };
     const map = {
       badgeAll: counts.all,
@@ -438,7 +459,8 @@
       badgeClassic: counts.classic,
       badgeMotor: counts.motor,
       badgeStairs: counts.stairs,
-      badgeTaraz: counts.taraz
+      badgeTaraz: counts.taraz,
+      badgePokryvala: counts.pokryvala
     };
     Object.entries(map).forEach(([id, val]) => {
       const el = document.getElementById(id);
@@ -460,6 +482,7 @@
         else if (cat === 'motor') label.textContent = `МОТОРЛЫ / ЭЛЕКТРО (${counts.motor})`;
         else if (cat === 'stairs') label.textContent = `БАСПАЛДАҚ / ЛЕСТНИЦА (${counts.stairs})`;
         else if (cat === 'taraz') label.textContent = `ТАРАЗ (${counts.taraz})`;
+        else if (cat === 'pokryvala') label.textContent = `ПОКРЫВАЛА (${counts.pokryvala})`;
       }
     });
   }
@@ -755,7 +778,8 @@
       { title: 'ИТАЛЬЯН КЛАССИКАСЫ (КЛАССИКА)', cat: 'classic' },
       { title: 'МОТОРЛЫ ЖҮЙЕЛЕР (ЭЛЕКТРОКАРНИЗ)', cat: 'motor' },
       { title: 'БАСПАЛДАҚ / ЛЕСТНИЦА (ВИТРАЖДАР)', cat: 'stairs' },
-      { title: 'ТАРАЗ ЖОБАЛАРЫ (ПРОЕКТЫ ТАРАЗ)', cat: 'taraz' }
+      { title: 'ТАРАЗ ЖОБАЛАРЫ (ПРОЕКТЫ ТАРАЗ)', cat: 'taraz' },
+      { title: 'ПОКРЫВАЛА / ТӨСЕК ЖАПҚЫШ (ДИЗАЙНЕРЛІК)', cat: 'pokryvala' }
     ];
 
     stacksGrid.innerHTML = stackGroups.map(sg => {

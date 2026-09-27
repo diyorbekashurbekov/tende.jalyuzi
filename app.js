@@ -6,8 +6,12 @@
 (function () {
   'use strict';
 
-  const IS_GITHUB_PAGES = typeof window !== 'undefined' && window.location && window.location.hostname.includes('github.io');
+  const HOSTNAME = (typeof window !== 'undefined' && window.location) ? window.location.hostname : '';
+  const IS_GITHUB_PAGES = HOSTNAME.includes('github.io');
+  const IS_VERCEL = HOSTNAME.includes('vercel.app');
   const GITHUB_PAGES_BASE = 'https://diyorbekashurbekov.github.io/tende.jalyuzi/';
+  const VERCEL_BASE = 'https://tende-jalyuzi.vercel.app/';
+  const SITE_BASE = IS_VERCEL ? VERCEL_BASE : GITHUB_PAGES_BASE;
 
   function resolveImgUrl(url) {
     if (!url) return '';
@@ -16,8 +20,8 @@
     }
     const clean = String(url).replace(/^\/+/, '');
     const encoded = encodeURI(clean);
-    if (IS_GITHUB_PAGES) {
-      return GITHUB_PAGES_BASE + encoded;
+    if (IS_GITHUB_PAGES || IS_VERCEL) {
+      return SITE_BASE + encoded;
     }
     return encoded;
   }
@@ -27,13 +31,13 @@
     if (!url) return '';
     if (url.startsWith('http://') || url.startsWith('https://')) return url;
     const clean = String(url).replace(/^\/+/, '');
-    return GITHUB_PAGES_BASE + encodeURI(clean);
+    return SITE_BASE + encodeURI(clean);
   }
 
   function getSafeOnError(rel) {
     if (!rel) return 'this.onerror=null;';
     const clean = String(rel).replace(/^\/+/, '');
-    const fallback = GITHUB_PAGES_BASE + encodeURI(clean);
+    const fallback = SITE_BASE + encodeURI(clean);
     return "this.onerror=null; this.src='" + fallback + "';";
   }
 
@@ -224,7 +228,7 @@
   let ALL_PROJECT_CASES = [];
   let FILTERED_CASES = [];
   let currentCategory = 'all';
-  let displayedCount = 24;
+  let displayedCount = 48;
 
   function buildDatabase() {
     const cases = [];
@@ -474,10 +478,11 @@
       return;
     }
 
-    grid.innerHTML = visibleItems.map(item => {
+    grid.innerHTML = visibleItems.map((item, itemIdx) => {
       const photos = (item.allPhotos && item.allPhotos.length > 0) ? item.allPhotos : [item.mainPhoto];
       const hasMultiple = photos.length > 1;
       const initialImg = photos[0];
+      const loadStrategy = itemIdx < 12 ? 'eager' : 'lazy';
 
       return `
         <article class="case-card" data-case-id="${item.id}">
@@ -490,7 +495,7 @@
               <button class="card-angle-arrow next" data-dir="1" title="Келесі ракурс / Вперед" aria-label="Следующий ракурс">›</button>
               <span class="swipe-hint-badge">‹ сырғытыңыз / свайп ›</span>
             ` : ''}
-            <img src="${resolveImgUrl(initialImg)}" data-rel="${(initialImg || '').replace(/^\/+/, '')}" onerror="${getSafeOnError(initialImg)}" alt="${item.title}" class="case-card-img" loading="lazy" decoding="async">
+            <img src="${resolveImgUrl(initialImg)}" data-rel="${(initialImg || '').replace(/^\/+/, '')}" onerror="${getSafeOnError(initialImg)}" alt="${item.title}" class="case-card-img" loading="${loadStrategy}" decoding="async">
             <div class="photo-watermark">
               <img src="assets/tende-logo-pink-512.png" alt="TENDE">
             </div>
@@ -502,7 +507,7 @@
             <div class="card-angle-thumbs-strip" title="Ракурсты таңдау / Выбрать ракурс">
               <span class="angle-label-note">РАКУРСТАР / КАДРЫ:</span>
               ${photos.map((p, pIdx) => `
-                <img src="${resolveImgUrl(p)}" data-rel="${(p || '').replace(/^\/+/, '')}" onerror="${getSafeOnError(p)}" class="angle-thumb-item ${pIdx === 0 ? 'active' : ''}" data-angle-idx="${pIdx}" title="${pIdx + 1}-кадр" alt="Кадр ${pIdx + 1}" loading="lazy" decoding="async">
+                <img src="${resolveImgUrl(p)}" data-rel="${(p || '').replace(/^\/+/, '')}" onerror="${getSafeOnError(p)}" class="angle-thumb-item ${pIdx === 0 ? 'active' : ''}" data-angle-idx="${pIdx}" title="${pIdx + 1}-кадр" alt="Кадр ${pIdx + 1}" loading="${loadStrategy}" decoding="async">
               `).join('')}
             </div>
           ` : ''}
@@ -575,7 +580,7 @@
             mainImg.style.opacity = '1';
           };
           pTemp.onerror = function() {
-            mainImg.src = GITHUB_PAGES_BASE + encodeURI(cleanRel);
+            mainImg.src = SITE_BASE + encodeURI(cleanRel);
             mainImg.style.opacity = '1';
           };
           pTemp.src = targetUrl;
@@ -662,7 +667,7 @@
 
   function filterCases(category = 'all', searchQuery = '') {
     currentCategory = category;
-    displayedCount = 24;
+    displayedCount = 48;
 
     FILTERED_CASES = ALL_PROJECT_CASES.filter(c => {
       const matchCat = (category === 'all') || (c.category === category);
@@ -857,7 +862,7 @@
         if (viewerLoader) viewerLoader.classList.remove('active');
       };
       tempImg.onerror = function() {
-        viewerImg.src = GITHUB_PAGES_BASE + encodeURI(cleanRel);
+        viewerImg.src = SITE_BASE + encodeURI(cleanRel);
         viewerImg.classList.add('loaded');
         if (viewerLoader) viewerLoader.classList.remove('active');
       };
@@ -970,6 +975,50 @@
 
     const savedWm = localStorage.getItem('tende_wm_mode') || 'pink';
     setWatermarkMode(savedWm);
+
+    // ======================================================================
+    // AGGRESSIVE BACKGROUND PRELOADER — load ALL images so everything is instant
+    // ======================================================================
+    preloadAllImages();
   });
+
+  /** Preload every image from all cases in small batches so browser caches them */
+  function preloadAllImages() {
+    const allUrls = [];
+    ALL_PROJECT_CASES.forEach(c => {
+      const photos = (c.allPhotos && c.allPhotos.length > 0) ? c.allPhotos : [c.mainPhoto];
+      photos.forEach(p => {
+        if (p) allUrls.push(resolveImgUrl(p));
+      });
+    });
+
+    // Also preload hero images
+    HERO_SLIDES.forEach(s => {
+      if (s.img) allUrls.push(resolveImgUrl(s.img));
+    });
+
+    // Remove duplicates
+    const unique = [...new Set(allUrls)];
+
+    // Load in batches of 6 with small delay so we don't block the main thread
+    const BATCH = 6;
+    let idx = 0;
+
+    function loadBatch() {
+      const end = Math.min(idx + BATCH, unique.length);
+      for (let i = idx; i < end; i++) {
+        const img = new Image();
+        img.decoding = 'async';
+        img.src = unique[i];
+      }
+      idx = end;
+      if (idx < unique.length) {
+        setTimeout(loadBatch, 80);
+      }
+    }
+
+    // Start preloading after a brief delay so first paint is fast
+    setTimeout(loadBatch, 300);
+  }
 
 })();

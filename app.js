@@ -22,6 +22,14 @@
     return encoded;
   }
 
+  /** Always returns absolute URL for external links (WhatsApp messages etc.) */
+  function getFullPhotoUrl(url) {
+    if (!url) return '';
+    if (url.startsWith('http://') || url.startsWith('https://')) return url;
+    const clean = String(url).replace(/^\/+/, '');
+    return GITHUB_PAGES_BASE + encodeURI(clean);
+  }
+
   function getSafeOnError(rel) {
     if (!rel) return 'this.onerror=null;';
     const clean = String(rel).replace(/^\/+/, '');
@@ -501,7 +509,7 @@
 
           <div class="case-card-body">
             <h3 class="case-title">${item.title}</h3>
-            <a href="https://wa.me/77078458493?text=${encodeURIComponent(`Сәлеметсіз бе / Здравствуйте! TENDE онлайн каталогындағы мына жоба бойынша есептегім келеді: ${item.title} (${resolveImgUrl(initialImg)})`)}" target="_blank" class="case-wa-direct-btn">
+            <a href="https://wa.me/77078458493?text=${encodeURIComponent(`Сәлеметсіз бе / Здравствуйте! TENDE онлайн каталогындағы мына жоба бойынша есептегім келеді: ${item.title} (${getFullPhotoUrl(initialImg)})`)}" target="_blank" class="case-wa-direct-btn">
               ЕСЕПТЕУ / РАСЧЕТ ↗
             </a>
           </div>
@@ -590,7 +598,7 @@
         });
 
         if (waBtn) {
-          const msg = `Сәлеметсіз бе! TENDE онлайн каталогындағы мына перде бойынша есептегім келеді: ${item.title} (Кадр ${currentAngle + 1}: ${resolveImgUrl(photoUrl)})`;
+          const msg = `Сәлеметсіз бе! TENDE онлайн каталогындағы мына перде бойынша есептегім келеді: ${item.title} (Кадр ${currentAngle + 1}: ${getFullPhotoUrl(photoUrl)})`;
           waBtn.href = `https://wa.me/77078458493?text=${encodeURIComponent(msg)}`;
         }
       }
@@ -875,7 +883,7 @@
     if (viewerCounter) viewerCounter.textContent = `${activePhotoIndex + 1} / ${photos.length}`;
 
     if (viewerWaLink) {
-      const msg = `Сәлеметсіз бе / Здравствуйте! Мені мына жоба қызықтырды / Интересует проект: ${activeCase.title} (${resolveImgUrl(currentPhoto)}). Бағасын білгім келеді / Подскажите стоимость?`;
+      const msg = `Сәлеметсіз бе / Здравствуйте! Мені мына жоба қызықтырды / Интересует проект: ${activeCase.title} (${getFullPhotoUrl(currentPhoto)}). Бағасын білгім келеді / Подскажите стоимость?`;
       viewerWaLink.href = `https://wa.me/77078458493?text=${encodeURIComponent(msg)}`;
     }
 

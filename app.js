@@ -221,7 +221,7 @@
   function buildDatabase() {
     const cases = [];
 
-    // Grand Salon & Living cases
+    // 1. ЗАЛ / ҚОНАҚ БӨЛМЕ (Grand Salon & Living cases - 70 cases + 35 tarazList photos = 105 cases, 220 photos)
     if (window.CURTAIN_CASES_DATA && window.CURTAIN_CASES_DATA.cases) {
       window.CURTAIN_CASES_DATA.cases.forEach((c, idx) => {
         const rawList = [c.mainPhoto, ...(c.sidePhotos || []), ...(c.allPhotos || [])].filter(Boolean);
@@ -241,17 +241,37 @@
       });
     }
 
-    // Grand Foyer / Hall cases
+    // Include all remaining зал photos (35 photos in images/zal) directly into ЗАЛ
+    if (window.CURTAIN_CASES_DATA && window.CURTAIN_CASES_DATA.tarazList) {
+      const offset = (window.CURTAIN_CASES_DATA.cases || []).length;
+      window.CURTAIN_CASES_DATA.tarazList.forEach((photo, idx) => {
+        const numStr = String(offset + idx + 1).padStart(2, '0');
+        cases.push({
+          id: `zal-${offset + idx + 1}`,
+          category: 'zal',
+          title: `ЗАЛ / ҚОНАҚ БӨЛМЕ • НЫСАН ${numStr}`,
+          mainPhoto: photo,
+          sidePhotos: [],
+          allPhotos: [photo],
+          count: 1,
+          tag: '01 / ЗАЛ • ҚОНАҚ БӨЛМЕ'
+        });
+      });
+    }
+
+    // 2. ХОЛЛ / ПРИХОЖАЯ (Grand Foyer & Hall - 61 cases, 123 photos)
     if (window.HOLL_CASES_DATA && window.HOLL_CASES_DATA.stacks) {
+      let hCount = 0;
       window.HOLL_CASES_DATA.stacks.forEach((stack, sIdx) => {
         (stack.cases || []).forEach((c, cIdx) => {
+          hCount++;
           const main = c.mainPhoto || c.photo;
           const rawList = [main, ...(c.sidePhotos || []), ...(c.allPhotos || [])].filter(Boolean);
           const photos = Array.from(new Set(rawList));
-          const numStr = String(cIdx + 1).padStart(2, '0');
+          const numStr = String(hCount).padStart(2, '0');
           const title = (c.title ? c.title.replace(/^ХОЛЛ/, 'ХОЛЛ / ПРИХОЖАЯ') : '') || `ХОЛЛ / ПРИХОЖАЯ • НЫСАН ${numStr}`;
           cases.push({
-            id: `holl-${c.id || sIdx * 20 + cIdx + 1}`,
+            id: `holl-${c.id || hCount}`,
             category: 'holl',
             title: title,
             mainPhoto: photos[0] || main,
@@ -264,7 +284,7 @@
       });
     }
 
-    // Master Bedroom cases (176 photos, 79 cases)
+    // 3. ЖАТЫН БӨЛМЕ / СПАЛЬНЯ (Master Bedroom - 79 cases, 176 photos)
     if (window.BEDROOM_CASES_DATA && window.BEDROOM_CASES_DATA.cases) {
       window.BEDROOM_CASES_DATA.cases.forEach((c, idx) => {
         const rawList = [c.mainPhoto, ...(c.sidePhotos || []), ...(c.allPhotos || [])].filter(Boolean);
@@ -284,7 +304,7 @@
       });
     }
 
-    // Bespoke Kitchen cases (from Telegram: 77 photos, 43 projects)
+    // 4. АС ҮЙ / КУХНЯ (Bespoke Kitchen - 43 cases, 77 photos)
     if (window.KITCHEN_CASES_DATA && window.KITCHEN_CASES_DATA.cases) {
       window.KITCHEN_CASES_DATA.cases.forEach((c, idx) => {
         const rawList = [c.mainPhoto, ...(c.sidePhotos || []), ...(c.allPhotos || [])].filter(Boolean);
@@ -299,69 +319,37 @@
           sidePhotos: photos.slice(1),
           allPhotos: photos,
           count: photos.length,
-          tag: '05 / АС ҮЙ • КУХНЯ'
+          tag: '04 / АС ҮЙ • КУХНЯ'
         });
       });
     }
 
-    // Roman shades cases
+    // 5. РИМ ШТОРЛАРЫ / ЖАЛЮЗИ (Roman Shades & Blinds - 90 cases, 218 photos)
     if (window.RIM_CASES_DATA && window.RIM_CASES_DATA.stacks) {
+      let rCount = 0;
       window.RIM_CASES_DATA.stacks.forEach((stack, sIdx) => {
-        let cat = 'asui';
-        let tagName = '05 / АС ҮЙ • КУХНЯ';
-        let defaultPrefix = 'РИМ / АС ҮЙ • НЫСАН ';
-        if (sIdx === 1 || sIdx === 2) { 
-          cat = 'classic'; 
-          tagName = '06 / КЛАССИКА'; 
-          defaultPrefix = 'КЛАССИКА • НЫСАН ';
-        }
-        if (sIdx === 3) { 
-          cat = 'motor'; 
-          tagName = '07 / МОТОРЛЫ • ЭЛЕКТРО'; 
-          defaultPrefix = 'МОТОРЛЫ / ЭЛЕКТРО • НЫСАН ';
-        }
-
         (stack.cases || []).forEach((c, cIdx) => {
+          rCount++;
           const main = c.mainPhoto || c.photo;
           const rawList = [main, ...(c.sidePhotos || []), ...(c.allPhotos || [])].filter(Boolean);
           const photos = Array.from(new Set(rawList));
-          const numStr = String(cIdx + 1).padStart(2, '0');
-          const title = (c.title ? c.title.replace(/^РИМ/, cat === 'asui' ? 'РИМ / АС ҮЙ' : 'КЛАССИКА') : '') || `${defaultPrefix}${numStr}`;
+          const numStr = String(rCount).padStart(2, '0');
+          const title = (c.title ? c.title.replace(/^РИМ/, 'РИМ / ЖАЛЮЗИ') : '') || `РИМ / ЖАЛЮЗИ • НЫСАН ${numStr}`;
           cases.push({
-            id: `rim-${c.id || sIdx * 30 + cIdx + 1}`,
-            category: cat,
+            id: `rim-${c.id || rCount}`,
+            category: 'rim',
             title: title,
             mainPhoto: photos[0] || main,
             sidePhotos: photos.slice(1),
             allPhotos: photos,
             count: photos.length,
-            tag: tagName
+            tag: '05 / РИМ • ЖАЛЮЗИ'
           });
         });
       });
     }
 
-    // Tulle specific
-    if (window.CURTAIN_CASES_DATA && window.CURTAIN_CASES_DATA.cases) {
-      const tulleItems = window.CURTAIN_CASES_DATA.cases.slice(10, 30);
-      tulleItems.forEach((c, idx) => {
-        const rawList = [c.mainPhoto, ...(c.sidePhotos || []), ...(c.allPhotos || [])].filter(Boolean);
-        const photos = Array.from(new Set(rawList));
-        const numStr = String(idx + 1).padStart(2, '0');
-        cases.push({
-          id: `tulle-${idx + 1}`,
-          category: 'tulle',
-          title: `ТЮЛЬ / МӨЛДІР • НЫСАН ${numStr}`,
-          mainPhoto: photos[0] || c.mainPhoto,
-          sidePhotos: photos.slice(1),
-          allPhotos: photos,
-          count: photos.length,
-          tag: '04 / ТЮЛЬ • МӨЛДІР'
-        });
-      });
-    }
-
-    // Staircase cases (from Telegram: 39 photos, 13 projects)
+    // 6. БАСПАЛДАҚ / ЛЕСТНИЦА (Staircase - 13 cases, 39 photos)
     if (window.STAIRS_CASES_DATA && window.STAIRS_CASES_DATA.cases) {
       window.STAIRS_CASES_DATA.cases.forEach((c, idx) => {
         const rawList = [c.mainPhoto, ...(c.sidePhotos || []), ...(c.allPhotos || [])].filter(Boolean);
@@ -375,35 +363,18 @@
           sidePhotos: photos.slice(1),
           allPhotos: photos,
           count: photos.length,
-          tag: '08 / БАСПАЛДАҚ'
+          tag: '06 / БАСПАЛДАҚ • ЛЕСТНИЦА'
         });
       });
     }
 
-    // Taraz cases
-    if (window.CURTAIN_CASES_DATA && window.CURTAIN_CASES_DATA.tarazList) {
-      window.CURTAIN_CASES_DATA.tarazList.forEach((photo, idx) => {
-        const numStr = String(idx + 1).padStart(2, '0');
-        cases.push({
-          id: `taraz-${idx + 1}`,
-          category: 'taraz',
-          title: `ТАРАЗ ЖОБАЛАРЫ • НЫСАН ${numStr}`,
-          mainPhoto: photo,
-          sidePhotos: [],
-          allPhotos: [photo],
-          count: 1,
-          tag: '09 / ТАРАЗ • ЖОБАЛАР'
-        });
-      });
-    }
-
-    // Bespoke Bedspreads & Cushions / Покрывала cases (180 photos, 98 cases)
+    // 7. ПОКРЫВАЛА / ТӨСЕК ЖАПҚЫШ (Bedspreads - 98 cases, 180 photos)
     if (window.POKRYVALA_CASES_DATA && window.POKRYVALA_CASES_DATA.cases) {
       window.POKRYVALA_CASES_DATA.cases.forEach((c, idx) => {
         const rawList = [c.mainPhoto, ...(c.sidePhotos || []), ...(c.allPhotos || [])].filter(Boolean);
         const photos = Array.from(new Set(rawList));
         const numStr = String(idx + 1).padStart(2, '0');
-        const title = c.title || `ПОКРЫВАЛО / ТӨСЕК ЖАПҚЫШ • НЫСАН ${numStr}`;
+        const title = c.title || `ПОКРЫВАЛА / ТӨСЕК ЖАПҚЫШ • НЫСАН ${numStr}`;
         cases.push({
           id: `pokryvala-${c.id || idx + 1}`,
           category: 'pokryvala',
@@ -412,7 +383,7 @@
           sidePhotos: photos.slice(1),
           allPhotos: photos,
           count: photos.length,
-          tag: '10 / ПОКРЫВАЛА • ТӨСЕК ЖАПҚЫШ'
+          tag: '07 / ПОКРЫВАЛА • ТӨСЕК ЖАПҚЫШ'
         });
       });
     }
@@ -423,11 +394,10 @@
         { id: 'z1', category: 'zal', title: 'ЗАЛ • 01', mainPhoto: 'images/zal/20220505_223134.jpg', tag: '01 / ЗАЛ', count: 2 },
         { id: 'h1', category: 'holl', title: 'ХОЛЛ • 02', mainPhoto: 'images/holl/02a8dc5268de5c37373368b763175d69.jpg', tag: '02 / ХОЛЛ', count: 3 },
         { id: 'b1', category: 'bedroom', title: 'ЖАТЫН • 03', mainPhoto: 'images/bedroom/20221222_212022.jpg', tag: '03 / ЖАТЫН', count: 2 },
-        { id: 't1', category: 'tulle', title: 'ТЮЛЬ • 04', mainPhoto: 'images/zal/20240715_190351.jpg', tag: '04 / ТЮЛЬ', count: 2 },
-        { id: 'r1', category: 'asui', title: 'АС ҮЙ • 05', mainPhoto: 'images/rim/0A9kZ0tC_2weNTqIEmdENY5onRQmu6cRW5QwJDXwZgmlSY69ECYnzlmG8JCk5c_Z.jpg', tag: '05 / АС ҮЙ', count: 2 },
-        { id: 'c1', category: 'classic', title: 'КЛАССИКА • 06', mainPhoto: 'images/rim/IMG-20250826-WA0014.jpg', tag: '06 / КЛАССИКА', count: 3 },
-        { id: 'm1', category: 'motor', title: 'МОТОРЛЫ • 07', mainPhoto: 'images/rim/20231016_212545.jpg', tag: '07 / МОТОРЛЫ', count: 2 },
-        { id: 'tr1', category: 'taraz', title: 'ТАРАЗ • 08', mainPhoto: 'images/zal/Screenshot_20221111_155517_Instagram.jpg', tag: '08 / ТАРАЗ', count: 1 }
+        { id: 'r1', category: 'asui', title: 'АС ҮЙ • 04', mainPhoto: 'images/kitchen/20221019_220107.jpg', tag: '04 / АС ҮЙ', count: 3 },
+        { id: 'rm1', category: 'rim', title: 'РИМ • 05', mainPhoto: 'images/rim/0A9kZ0tC_2weNTqIEmdENY5onRQmu6cRW5QwJDXwZgmlSY69ECYnzlmG8JCk5c_Z.jpg', tag: '05 / РИМ', count: 1 },
+        { id: 's1', category: 'stairs', title: 'БАСПАЛДАҚ • 06', mainPhoto: 'images/stairs/IMG-20260424-WA0053.jpg', tag: '06 / БАСПАЛДАҚ', count: 1 },
+        { id: 'p1', category: 'pokryvala', title: 'ПОКРЫВАЛА • 07', mainPhoto: 'images/pokryvala/IMG-20250627-WA0018.jpg', tag: '07 / ПОКРЫВАЛА', count: 1 }
       ];
       fallbacks.forEach(f => cases.push({ ...f, allPhotos: [f.mainPhoto], sidePhotos: [] }));
     }
@@ -441,12 +411,9 @@
       zal: ALL_PROJECT_CASES.filter(c => c.category === 'zal').length,
       holl: ALL_PROJECT_CASES.filter(c => c.category === 'holl').length,
       bedroom: ALL_PROJECT_CASES.filter(c => c.category === 'bedroom').length,
-      tulle: ALL_PROJECT_CASES.filter(c => c.category === 'tulle').length,
       asui: ALL_PROJECT_CASES.filter(c => c.category === 'asui').length,
-      classic: ALL_PROJECT_CASES.filter(c => c.category === 'classic').length,
-      motor: ALL_PROJECT_CASES.filter(c => c.category === 'motor').length,
+      rim: ALL_PROJECT_CASES.filter(c => c.category === 'rim').length,
       stairs: ALL_PROJECT_CASES.filter(c => c.category === 'stairs').length,
-      taraz: ALL_PROJECT_CASES.filter(c => c.category === 'taraz').length,
       pokryvala: ALL_PROJECT_CASES.filter(c => c.category === 'pokryvala').length
     };
     const map = {
@@ -454,12 +421,9 @@
       badgeZal: counts.zal,
       badgeHoll: counts.holl,
       badgeBedroom: counts.bedroom,
-      badgeTulle: counts.tulle,
       badgeAsui: counts.asui,
-      badgeClassic: counts.classic,
-      badgeMotor: counts.motor,
+      badgeRim: counts.rim,
       badgeStairs: counts.stairs,
-      badgeTaraz: counts.taraz,
       badgePokryvala: counts.pokryvala
     };
     Object.entries(map).forEach(([id, val]) => {
@@ -476,12 +440,9 @@
         else if (cat === 'zal') label.textContent = `ЗАЛ / ҚОНАҚ БӨЛМЕ (${counts.zal})`;
         else if (cat === 'holl') label.textContent = `ХОЛЛ / ПРИХОЖАЯ (${counts.holl})`;
         else if (cat === 'bedroom') label.textContent = `ЖАТЫН / СПАЛЬНЯ (${counts.bedroom})`;
-        else if (cat === 'tulle') label.textContent = `ТЮЛЬ (${counts.tulle})`;
         else if (cat === 'asui') label.textContent = `АС ҮЙ / КУХНЯ (${counts.asui})`;
-        else if (cat === 'classic') label.textContent = `КЛАССИКА (${counts.classic})`;
-        else if (cat === 'motor') label.textContent = `МОТОРЛЫ / ЭЛЕКТРО (${counts.motor})`;
+        else if (cat === 'rim') label.textContent = `РИМ / ЖАЛЮЗИ (${counts.rim})`;
         else if (cat === 'stairs') label.textContent = `БАСПАЛДАҚ / ЛЕСТНИЦА (${counts.stairs})`;
-        else if (cat === 'taraz') label.textContent = `ТАРАЗ (${counts.taraz})`;
         else if (cat === 'pokryvala') label.textContent = `ПОКРЫВАЛА (${counts.pokryvala})`;
       }
     });
@@ -795,12 +756,9 @@
       { title: 'ЗАЛ / ҚОНАҚ БӨЛМЕ (ГОСТИНАЯ)', cat: 'zal' },
       { title: 'ХОЛЛ / ПРИХОЖАЯ (ВИТРАЖДАР)', cat: 'holl' },
       { title: 'ЖАТЫН БӨЛМЕ (СПАЛЬНЯ)', cat: 'bedroom' },
-      { title: 'АС ҮЙ ЖӘНЕ РИМ (КУХНЯ)', cat: 'asui' },
-      { title: 'ЭФИРЛІ ТЮЛЬ (ТЮЛИ)', cat: 'tulle' },
-      { title: 'ИТАЛЬЯН КЛАССИКАСЫ (КЛАССИКА)', cat: 'classic' },
-      { title: 'МОТОРЛЫ ЖҮЙЕЛЕР (ЭЛЕКТРОКАРНИЗ)', cat: 'motor' },
+      { title: 'АС ҮЙ (КУХНЯ)', cat: 'asui' },
+      { title: 'РИМ ШТОРЛАРЫ / ЖАЛЮЗИ', cat: 'rim' },
       { title: 'БАСПАЛДАҚ / ЛЕСТНИЦА (ВИТРАЖДАР)', cat: 'stairs' },
-      { title: 'ТАРАЗ ЖОБАЛАРЫ (ПРОЕКТЫ ТАРАЗ)', cat: 'taraz' },
       { title: 'ПОКРЫВАЛА / ТӨСЕК ЖАПҚЫШ (ДИЗАЙНЕРЛІК)', cat: 'pokryvala' }
     ];
 

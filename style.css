@@ -314,6 +314,42 @@ img {
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
 }
 
+.vip-ig-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.52rem 1.15rem;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(225, 48, 108, 0.25);
+  color: #C13584;
+  border-radius: var(--radius-full);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+  transition: all 0.35s var(--ease-luxe);
+  box-shadow: 0 2px 12px rgba(193, 53, 132, 0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+.vip-ig-btn:hover {
+  background: linear-gradient(135deg, #833AB4 0%, #FD1D1D 50%, #FCAF45 100%);
+  color: #FFFFFF;
+  border-color: transparent;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(225, 48, 108, 0.35);
+}
+
+.vip-ig-btn .ig-icon {
+  flex-shrink: 0;
+  transition: transform 0.35s ease;
+}
+
+.vip-ig-btn:hover .ig-icon {
+  transform: scale(1.15);
+}
+
 .vip-wa-btn {
   display: inline-flex;
   align-items: center;
@@ -1344,29 +1380,64 @@ body.wm-mode-hidden .photo-watermark {
 .footer-clean-links {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 1.15rem;
   font-size: 0.78rem;
   color: var(--text-secondary);
+  flex-wrap: wrap;
 }
 
 .footer-wa-link {
-  color: #25D366;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 1.15rem;
+  border-radius: var(--radius-full);
+  background: rgba(37, 211, 102, 0.08);
+  border: 1px solid rgba(37, 211, 102, 0.25);
+  color: #128C7E;
   font-weight: 700;
-  transition: all 0.3s ease;
+  font-size: 0.76rem;
+  letter-spacing: 0.04em;
+  transition: all 0.3s var(--ease-luxe);
 }
 
 .footer-wa-link:hover {
-  transform: translateY(-1px);
+  background: #25D366;
+  color: #FFFFFF;
+  border-color: transparent;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.3);
+}
+
+.footer-wa-link .wa-icon {
+  flex-shrink: 0;
 }
 
 .footer-ig-link {
-  color: var(--accent-dark);
-  font-weight: 600;
-  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 1.15rem;
+  border-radius: var(--radius-full);
+  background: rgba(193, 53, 132, 0.08);
+  border: 1px solid rgba(193, 53, 132, 0.25);
+  color: #C13584;
+  font-weight: 700;
+  font-size: 0.76rem;
+  letter-spacing: 0.04em;
+  transition: all 0.3s var(--ease-luxe);
 }
 
 .footer-ig-link:hover {
-  color: var(--accent);
+  background: linear-gradient(135deg, #833AB4 0%, #FD1D1D 50%, #FCAF45 100%);
+  color: #FFFFFF;
+  border-color: transparent;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 22px rgba(225, 48, 108, 0.35);
+}
+
+.footer-ig-link .ig-icon {
+  flex-shrink: 0;
 }
 
 /* ==========================================================================
@@ -1378,14 +1449,14 @@ body.wm-mode-hidden .photo-watermark {
   bottom: 1.15rem;
   left: 50%;
   transform: translateX(-50%);
-  background: rgba(255, 255, 253, 0.92);
+  background: rgba(255, 255, 253, 0.94);
   backdrop-filter: blur(24px) saturate(1.5);
   border: 1.5px solid var(--border-medium);
   border-radius: var(--radius-full);
-  padding: 0.45rem 0.85rem;
+  padding: 0.4rem 0.65rem;
   z-index: 150;
   align-items: center;
-  gap: 0.4rem;
+  gap: 0.35rem;
   box-shadow: 0 16px 48px rgba(0, 0, 0, 0.12), 0 4px 12px rgba(0, 0, 0, 0.04);
 }
 
@@ -1393,7 +1464,7 @@ body.wm-mode-hidden .photo-watermark {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0.4rem 0.9rem;
+  padding: 0.35rem 0.75rem;
   border-radius: var(--radius-full);
   color: var(--text-secondary);
   font-size: 0.58rem;
@@ -1419,6 +1490,16 @@ body.wm-mode-hidden .photo-watermark {
   background: var(--accent);
 }
 
+.m-dock-btn.m-dock-ig {
+  background: linear-gradient(135deg, rgba(131, 58, 180, 0.08) 0%, rgba(253, 29, 29, 0.08) 100%);
+  color: #C13584;
+}
+
+.m-dock-btn.m-dock-ig:active {
+  background: linear-gradient(135deg, #833AB4 0%, #FD1D1D 50%, #FCAF45 100%);
+  color: #FFFFFF;
+}
+
 .m-dock-btn.m-dock-wa {
   background: #25D366;
   color: #000;
@@ -1426,7 +1507,10 @@ body.wm-mode-hidden .photo-watermark {
 }
 
 .m-icon {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* ==========================================================================
@@ -1545,6 +1629,54 @@ body.wm-mode-hidden .photo-watermark {
   .card-angle-arrow.next { right: 0.35rem; }
   .section-container {
     padding: 0 1rem;
+  }
+  .header-actions {
+    gap: 0.45rem;
+  }
+  .vip-ig-btn {
+    padding: 0.45rem 0.8rem;
+    font-size: 0.65rem;
+  }
+  .footer-clean-inner {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.25rem;
+  }
+  .footer-clean-links {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 560px) {
+  .vip-ig-btn .ig-btn-text {
+    display: none;
+  }
+  .vip-ig-btn {
+    padding: 0;
+    width: 36px;
+    height: 36px;
+    justify-content: center;
+    border-radius: 50%;
+  }
+  .vip-wa-btn {
+    padding: 0.5rem 0.9rem;
+    font-size: 0.66rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .vip-wa-btn .wa-btn-text {
+    display: none;
+  }
+  .vip-wa-btn {
+    padding: 0;
+    width: 36px;
+    height: 36px;
+    justify-content: center;
+  }
+  .wa-status-pulse {
+    display: none;
   }
 }
 

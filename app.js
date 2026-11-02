@@ -482,7 +482,7 @@
       const photos = (item.allPhotos && item.allPhotos.length > 0) ? item.allPhotos : [item.mainPhoto];
       const hasMultiple = photos.length > 1;
       const initialImg = photos[0];
-      const loadStrategy = itemIdx < 12 ? 'eager' : 'lazy';
+      const loadStrategy = itemIdx < 4 ? 'eager' : 'lazy';
 
       return `
         <article class="case-card" data-case-id="${item.id}">
@@ -507,7 +507,7 @@
             <div class="card-angle-thumbs-strip" title="Ракурсты таңдау / Выбрать ракурс">
               <span class="angle-label-note">РАКУРСТАР / КАДРЫ:</span>
               ${photos.map((p, pIdx) => `
-                <img src="${resolveImgUrl(p)}" data-rel="${(p || '').replace(/^\/+/, '')}" onerror="${getSafeOnError(p)}" class="angle-thumb-item ${pIdx === 0 ? 'active' : ''}" data-angle-idx="${pIdx}" title="${pIdx + 1}-кадр" alt="Кадр ${pIdx + 1}" loading="${loadStrategy}" decoding="async">
+                <img src="${resolveImgUrl(p)}" data-rel="${(p || '').replace(/^\/+/, '')}" onerror="${getSafeOnError(p)}" class="angle-thumb-item ${pIdx === 0 ? 'active' : ''}" data-angle-idx="${pIdx}" title="${pIdx + 1}-кадр" alt="Кадр ${pIdx + 1}" loading="lazy" decoding="async">
               `).join('')}
             </div>
           ` : ''}
@@ -552,14 +552,6 @@
           pImg.src = resolveImgUrl(pUrl);
         });
       }, { once: true, passive: true });
-
-      // Preload secondary frames so switching to the 2nd photo is instantaneous
-      if (photos.length > 1) {
-        photos.slice(1).forEach(pUrl => {
-          const pImg = new Image();
-          pImg.src = resolveImgUrl(pUrl);
-        });
-      }
 
       function switchAngle(idx) {
         if (photos.length <= 1) return;
@@ -975,50 +967,7 @@
 
     const savedWm = localStorage.getItem('tende_wm_mode') || 'pink';
     setWatermarkMode(savedWm);
-
-    // ======================================================================
-    // AGGRESSIVE BACKGROUND PRELOADER — load ALL images so everything is instant
-    // ======================================================================
-    preloadAllImages();
   });
 
-  /** Preload every image from all cases in small batches so browser caches them */
-  function preloadAllImages() {
-    const allUrls = [];
-    ALL_PROJECT_CASES.forEach(c => {
-      const photos = (c.allPhotos && c.allPhotos.length > 0) ? c.allPhotos : [c.mainPhoto];
-      photos.forEach(p => {
-        if (p) allUrls.push(resolveImgUrl(p));
-      });
-    });
-
-    // Also preload hero images
-    HERO_SLIDES.forEach(s => {
-      if (s.img) allUrls.push(resolveImgUrl(s.img));
-    });
-
-    // Remove duplicates
-    const unique = [...new Set(allUrls)];
-
-    // Load in batches of 6 with small delay so we don't block the main thread
-    const BATCH = 6;
-    let idx = 0;
-
-    function loadBatch() {
-      const end = Math.min(idx + BATCH, unique.length);
-      for (let i = idx; i < end; i++) {
-        const img = new Image();
-        img.decoding = 'async';
-        img.src = unique[i];
-      }
-      idx = end;
-      if (idx < unique.length) {
-        setTimeout(loadBatch, 80);
-      }
-    }
-
-    // Start preloading after a brief delay so first paint is fast
-    setTimeout(loadBatch, 300);
-  }
 
 })();

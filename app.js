@@ -26,6 +26,13 @@
     return encoded;
   }
 
+  /** Smaller copy of a photo: 'images-md' (800px, cards) or 'images-sm' (200px, thumbnails) */
+  function sizedImgUrl(url, folder) {
+    const clean = String(url || '').replace(/^\/+/, '');
+    if (!clean.startsWith('images/')) return resolveImgUrl(url);
+    return resolveImgUrl(folder + clean.slice('images'.length));
+  }
+
   /** Always returns absolute URL for external links (WhatsApp messages etc.) */
   function getFullPhotoUrl(url) {
     if (!url) return '';
@@ -519,7 +526,7 @@
               <button class="card-angle-arrow next" data-dir="1" title="Келесі ракурс / Вперед" aria-label="Следующий ракурс">›</button>
               <span class="swipe-hint-badge">‹ сырғытыңыз / свайп ›</span>
             ` : ''}
-            <img ${loadStrategy === 'eager' ? 'src' : 'data-src'}="${resolveImgUrl(initialImg)}" data-rel="${(initialImg || '').replace(/^\/+/, '')}" onerror="${getSafeOnError(initialImg)}" alt="${item.title}" class="case-card-img" decoding="async">
+            <img ${loadStrategy === 'eager' ? 'src' : 'data-src'}="${sizedImgUrl(initialImg, 'images-md')}" data-rel="${(initialImg || '').replace(/^\/+/, '')}" onerror="${getSafeOnError(initialImg)}" alt="${item.title}" class="case-card-img" decoding="async">
             <div class="photo-watermark">
               <img src="assets/tende-logo-pink-512.png" alt="TENDE">
             </div>
@@ -531,7 +538,7 @@
             <div class="card-angle-thumbs-strip" title="Ракурсты таңдау / Выбрать ракурс">
               <span class="angle-label-note">РАКУРСТАР / КАДРЫ:</span>
               ${photos.map((p, pIdx) => `
-                <img data-src="${resolveImgUrl(p)}" data-rel="${(p || '').replace(/^\/+/, '')}" onerror="${getSafeOnError(p)}" class="angle-thumb-item ${pIdx === 0 ? 'active' : ''}" data-angle-idx="${pIdx}" title="${pIdx + 1}-кадр" alt="Кадр ${pIdx + 1}" decoding="async">
+                <img data-src="${sizedImgUrl(p, 'images-sm')}" data-rel="${(p || '').replace(/^\/+/, '')}" onerror="${getSafeOnError(p)}" class="angle-thumb-item ${pIdx === 0 ? 'active' : ''}" data-angle-idx="${pIdx}" title="${pIdx + 1}-кадр" alt="Кадр ${pIdx + 1}" decoding="async">
               `).join('')}
             </div>
           ` : ''}
@@ -566,14 +573,14 @@
       card.addEventListener('pointerenter', () => {
         photos.forEach(pUrl => {
           const pImg = new Image();
-          pImg.src = resolveImgUrl(pUrl);
+          pImg.src = sizedImgUrl(pUrl, 'images-md');
         });
       }, { once: true, passive: true });
 
       card.addEventListener('touchstart', () => {
         photos.forEach(pUrl => {
           const pImg = new Image();
-          pImg.src = resolveImgUrl(pUrl);
+          pImg.src = sizedImgUrl(pUrl, 'images-md');
         });
       }, { once: true, passive: true });
 
@@ -587,7 +594,7 @@
 
         if (mainImg) {
           const cleanRel = (photoUrl || '').replace(/^\/+/, '');
-          const targetUrl = resolveImgUrl(photoUrl);
+          const targetUrl = sizedImgUrl(photoUrl, 'images-md');
 
           mainImg.style.opacity = '0.4';
           const pTemp = new Image();
@@ -796,9 +803,9 @@
     stacksGrid.innerHTML = stackGroups.map(sg => {
       const items = ALL_PROJECT_CASES.filter(c => c.category === sg.cat);
       const slice = items.slice(0, 3);
-      const img1 = slice[0] ? resolveImgUrl(slice[0].mainPhoto) : '';
-      const img2 = slice[1] ? resolveImgUrl(slice[1].mainPhoto) : img1;
-      const img3 = slice[2] ? resolveImgUrl(slice[2].mainPhoto) : img1;
+      const img1 = slice[0] ? sizedImgUrl(slice[0].mainPhoto, 'images-md') : '';
+      const img2 = slice[1] ? sizedImgUrl(slice[1].mainPhoto, 'images-md') : img1;
+      const img3 = slice[2] ? sizedImgUrl(slice[2].mainPhoto, 'images-md') : img1;
 
       return `
         <div class="stack-card" data-stack-cat="${sg.cat}">
@@ -912,7 +919,7 @@
 
     if (viewerFilmstrip) {
       viewerFilmstrip.innerHTML = photos.map((p, idx) => `
-        <img src="${resolveImgUrl(p)}" onerror="${getSafeOnError(p)}" class="filmstrip-thumb ${idx === activePhotoIndex ? 'active' : ''}" data-idx="${idx}" alt="Thumb" loading="lazy" decoding="async">
+        <img src="${sizedImgUrl(p, 'images-sm')}" onerror="${getSafeOnError(p)}" class="filmstrip-thumb ${idx === activePhotoIndex ? 'active' : ''}" data-idx="${idx}" alt="Thumb" loading="lazy" decoding="async">
       `).join('');
 
       viewerFilmstrip.querySelectorAll('.filmstrip-thumb').forEach(th => {

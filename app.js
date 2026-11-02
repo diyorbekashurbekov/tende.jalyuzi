@@ -34,6 +34,30 @@
     return SITE_BASE + encodeURI(clean);
   }
 
+  /** Load <img data-src> only when it comes near the screen (works on all browsers) */
+  let lazyObserver = null;
+  function lazyLoadImages(root) {
+    const imgs = root.querySelectorAll('img[data-src]');
+    const load = (img) => {
+      if (!img.getAttribute('src')) img.src = img.dataset.src;
+      img.removeAttribute('data-src');
+    };
+    if (!('IntersectionObserver' in window)) {
+      imgs.forEach(load);
+      return;
+    }
+    if (lazyObserver) lazyObserver.disconnect();
+    lazyObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          load(entry.target);
+          lazyObserver.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: '800px 0px' });
+    imgs.forEach(img => lazyObserver.observe(img));
+  }
+
   function getSafeOnError(rel) {
     if (!rel) return 'this.onerror=null;';
     const clean = String(rel).replace(/^\/+/, '');
@@ -495,7 +519,7 @@
               <button class="card-angle-arrow next" data-dir="1" title="Келесі ракурс / Вперед" aria-label="Следующий ракурс">›</button>
               <span class="swipe-hint-badge">‹ сырғытыңыз / свайп ›</span>
             ` : ''}
-            <img src="${resolveImgUrl(initialImg)}" data-rel="${(initialImg || '').replace(/^\/+/, '')}" onerror="${getSafeOnError(initialImg)}" alt="${item.title}" class="case-card-img" loading="${loadStrategy}" decoding="async">
+            <img ${loadStrategy === 'eager' ? 'src' : 'data-src'}="${resolveImgUrl(initialImg)}" data-rel="${(initialImg || '').replace(/^\/+/, '')}" onerror="${getSafeOnError(initialImg)}" alt="${item.title}" class="case-card-img" decoding="async">
             <div class="photo-watermark">
               <img src="assets/tende-logo-pink-512.png" alt="TENDE">
             </div>
@@ -507,7 +531,7 @@
             <div class="card-angle-thumbs-strip" title="Ракурсты таңдау / Выбрать ракурс">
               <span class="angle-label-note">РАКУРСТАР / КАДРЫ:</span>
               ${photos.map((p, pIdx) => `
-                <img src="${resolveImgUrl(p)}" data-rel="${(p || '').replace(/^\/+/, '')}" onerror="${getSafeOnError(p)}" class="angle-thumb-item ${pIdx === 0 ? 'active' : ''}" data-angle-idx="${pIdx}" title="${pIdx + 1}-кадр" alt="Кадр ${pIdx + 1}" loading="lazy" decoding="async">
+                <img data-src="${resolveImgUrl(p)}" data-rel="${(p || '').replace(/^\/+/, '')}" onerror="${getSafeOnError(p)}" class="angle-thumb-item ${pIdx === 0 ? 'active' : ''}" data-angle-idx="${pIdx}" title="${pIdx + 1}-кадр" alt="Кадр ${pIdx + 1}" decoding="async">
               `).join('')}
             </div>
           ` : ''}
@@ -655,6 +679,8 @@
         });
       }
     });
+
+    lazyLoadImages(grid);
   }
 
   function filterCases(category = 'all', searchQuery = '') {

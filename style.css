@@ -805,8 +805,6 @@ img {
   -webkit-transform: translateZ(0);
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
-  content-visibility: auto;
-  contain-intrinsic-size: 380px;
 }
 
 .case-card:nth-child(1) { animation-delay: 0.03s; }
@@ -844,6 +842,11 @@ img {
   object-fit: cover;
   transition: opacity 0.3s ease, transform 0.7s var(--ease-luxe);
   will-change: transform, opacity;
+}
+
+.case-card-img:not([src]),
+.angle-thumb-item:not([src]) {
+  visibility: hidden;
 }
 
 .case-card:hover .case-card-img {
